@@ -6,11 +6,11 @@
 using namespace std;
 
 /* -----------------------------------------------------------------------
-// Estrutura de código para declaração de classe domínio.
+// Estrutura de cÃ³digo para declaraÃ§Ã£o de classe domÃ­nio.
 //
-// Essa estrutura de código pode ser aproveitada na declaração de domínio.
+// Essa estrutura de cÃ³digo pode ser aproveitada na declaraÃ§Ã£o de domÃ­nio.
 //
-// Seguem as atividades para adaptação:
+// Seguem as atividades para adaptaÃ§Ã£o:
 //
 // Substituir Dominio por nome da classe.
 //
@@ -19,10 +19,10 @@ using namespace std;
 class Dominio {
     private:
         Tipo valor;                      // Atributo para armazenar valor.
-        void validar(Tipo);              // Método para validar valor.
+        void validar(Tipo);              // MÃ©todo para validar valor.
     public:
-        void setValor(Tipo);             // Método para atribuir valor.
-        Tipo getValor() const;           // Método para recuperar valor.
+        void setValor(Tipo);             // MÃ©todo para atribuir valor.
+        Tipo getValor() const;           // MÃ©todo para recuperar valor.
 };
 
 inline Tipo Dominio::getValor() const{
@@ -32,14 +32,14 @@ inline Tipo Dominio::getValor() const{
 ----------------------------------------------------------------------- */
 
 // -----------------------------------------------------------------------
-// Exemplos de uso da estrutura de código anterior.
+// Exemplos de uso da estrutura de cÃ³digo anterior.
 
 // -----------------------------------------------------------------------
-// Exemplo de declaração de classe domínio e implementação de método.
+// Exemplo de declaraÃ§Ã£o de classe domÃ­nio e implementaÃ§Ã£o de mÃ©todo.
 
 /*class Codigo {
 private:
-        static const int LIMITE = 25;       // Declaração para evitar números mágicos.
+        static const int LIMITE = 25;       // DeclaraÃ§Ã£o para evitar nÃºmeros mÃ¡gicos.
         int valor;
         void validar(int);
 public:
@@ -52,11 +52,11 @@ inline int Codigo::getValor() const{
 }*/
 
 // -----------------------------------------------------------------------
-// Exemplo de declaração de classe domínio e implementação de método.
+// Exemplo de declaraÃ§Ã£o de classe domÃ­nio e implementaÃ§Ã£o de mÃ©todo.
 
 /*class Prioridade {
     private:
-        static const int INVALIDO = 0;      // Declaração para evitar números mágicos.
+        static const int INVALIDO = 0;      // DeclaraÃ§Ã£o para evitar nÃºmeros mÃ¡gicos.
         int valor;
         void validar(int);
     public:
@@ -68,16 +68,92 @@ inline int Prioridade::getValor() const{
     return valor;
 }*/
 
-/*class Conta {
-    private:
-        ;                      // Atributo para armazenar valor.
-        void validar(Tipo);
-        string senha;
-// Método para validar valor.
-    public:
-        void setValor(Tipo);             // Método para atribuir valor.
-        Tipo getValor() const;           // Método para recuperar valor.
-};*/
+class Conta {
+private:
+    std::string email;
+    std::string senha;
+
+public:
+    void setEmail(const std::string& email) {
+        if (!validarEmail(email)) {
+            throw std::invalid_argument("Email invÃ¡lido.");
+        }
+        this->email = email;
+    }
+
+    void setSenha(const std::string& senha) {
+        if (!validarSenha(senha)) {
+            throw std::invalid_argument("Senha invÃ¡lida.");
+        }
+        this->senha = senha;
+    }
+
+    std::string getEmail() const {
+        return email;
+    }
+
+    std::string getSenha() const {
+        return senha;
+    }
+
+private:
+    bool validarEmail(const std::string& email) {
+        const std::regex emailRegex(R"([a-zA-Z0-9._%+-]{2,10}@[a-zA-Z0-9.-]{2,20})");
+        if (!std::regex_match(email, emailRegex)) {
+            return false;
+        }
+
+        size_t atPos = email.find('@');
+        if (atPos != std::string::npos) {
+            if (atPos > 0 && email[atPos - 1] == '.') {
+                return false;
+            }
+            if (atPos < email.length() - 1 && email[atPos + 1] == '.') {
+                return false;
+            }
+        }
+
+        size_t dotPos = email.find("..");
+        if (dotPos != std::string::npos) {
+            return false;
+        }
+
+        return true;
+    }
+
+    bool validarSenha(const std::string& senha) {
+        // Pelo menos um caractere Ã© letra maiÃºscula
+        bool temMaiuscula = false;
+        // Pelo menos um caractere Ã© letra minÃºscula
+        bool temMinuscula = false;
+        // Pelo menos um caractere Ã© dÃ­gito
+        bool temDigito = false;
+        // Pelo menos um caracter Ã© sinal de pontuaÃ§Ã£o
+        bool temPonto = false;
+
+        std::set<char> caracteresDuplicados;
+
+        for (char c : senha) {
+            if (isupper(c)) {
+                temMaiuscula = true;
+            } else if (islower(c)) {
+                temMinuscula = true;
+            } else if (isdigit(c)) {
+                temDigito = true;
+            } else if (ispunct(c)) {
+                temPonto = true;
+            }
+
+            if (caracteresDuplicados.count(c) > 0) {
+                return false;  // Caractere duplicado encontrado
+            }
+
+            caracteresDuplicados.insert(c);
+        }
+
+        return temMaiuscula && temMinuscula && temDigito && temPonto;
+    }
+};
 
 class Conta{
     private:
@@ -110,7 +186,7 @@ class Quadro{
         char getCodigo();
         void setNome(string);
         string getNome();
-        void setDescrição(string);
+        void setDescriÃ§Ã£o(string);
         string getDescricao();
         void setLimite(int);
         int getLimite();
@@ -128,7 +204,7 @@ class Cartao{
         char getCodigo();
         void setNome(string);
         string getNome();
-        void setDescrição(string);
+        void setDescriÃ§Ã£o(string);
         string getDescricao();
         void setColuna(string));
         string getColuna();
