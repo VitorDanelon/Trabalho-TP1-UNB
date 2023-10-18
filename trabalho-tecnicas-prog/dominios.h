@@ -27,6 +27,7 @@ class Conta{
 
 };
 
+//Vitor
 class Quadro{
     private:
     char codigo;
@@ -44,6 +45,8 @@ class Quadro{
         void setLimite(int);
         int getLimite();
 };
+
+//Luca
 
 class Cartao{
     private:

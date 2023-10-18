@@ -3,6 +3,7 @@
 
 #include "dominios.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -72,21 +73,52 @@ inline Prioridade Projeto::getPrioridade() const {
 
 
 
+//class Usuario {
+//private:
+    //Conta conta;
+    //Quadro quadro;
+    //vector<Cartao> cartoes;
+
+//public:
+    //void criarUsuario();
+   // Conta getConta();
+    //void criarQuadro();
+    //Quadro getQuadro();
+    //void criarCartao();
+    //vector<Cartao> getCartoes();
+
+
+//};
+
+
 class Usuario {
 private:
     Conta conta;
     Quadro quadro;
-    vector<Cartao> cartoes;
+    std::vector<Cartao> cartoes;
 
 public:
-    void criarUsuario();
-   // Conta getConta();
-    void criarQuadro();
-    Quadro getQuadro();
-    void criarCartao();
-    vector<Cartao> getCartoes();
+    Usuario(std::string nome, std::string email, std::string senha);
 
+    std::string getNome();
+    std::string getEmail();
 
+    vector visualizarConta();
+    void editarConta();
+    void eliminarConta();
+
+    bool validarSenha(std::string senha);
+
+    void criarQuadro(char codigo, std::string nome, std::string descricao, int limite);
+    vector visualizarQuadro(char codigo);
+    void eliminarQuadro();
+
+    void criarCartao(char codigo, std::string nome, std::string descricao, int limite, std::string coluna);
+    vector visualizarCartao(char codigo)
+    void eliminarCartao(char codigo);
+    void editarCartao(char codigo);
+    void moverCartao(char codigo);
+    void listarCartoes();
 };
 
 
