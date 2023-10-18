@@ -79,12 +79,14 @@ private:
     vector<Cartao> cartoes;
 
 public:
-    void criarConta(string email, string senha);
-    Conta getConta();
+    void criarUsuario();
+   // Conta getConta();
     void criarQuadro();
     Quadro getQuadro();
     void criarCartao();
     vector<Cartao> getCartoes();
+
+
 };
 
 
