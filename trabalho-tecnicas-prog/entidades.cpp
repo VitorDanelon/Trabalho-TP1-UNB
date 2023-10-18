@@ -76,40 +76,4 @@ void Usuario::criarQuadro() {
     }
 }
 
-Quadro Usuario::getQuadro() {
-    return quadro;
-}
 
-void Usuario::criarCartao() {
-    Cartao novoCartao;
-
-    try {
-       
-        std::string nomeCartao;
-        std::cout << "Digite o nome do novo cartão: ";
-        std::cin >> nomeCartao;
-
-        Nome nomeDominio;
-        nomeDominio.setValor(nomeCartao);
-
-        // Validação da descrição do cartão
-        std::cout << "Digite a descrição do novo cartão: ";
-        std::string descricaoCartao;
-        std::cin.ignore();
-        getline(std::cin, descricaoCartao);
-        Texto descricaoDominio;
-        descricaoDominio.setValor(descricaoCartao);
-
-        novoCartao.setNome(nomeCartao);
-        novoCartao.setDescricao(descricaoCartao);
-
-        cartoes.push_back(novoCartao);
-
-    } catch (const std::invalid_argument &e) {
-        std::cerr << "Erro ao criar cartão: " << e.what() << std::endl;
-    }
-}
-
-std::vector<Cartao> Usuario::getCartoes() {
-    return cartoes;
-}
