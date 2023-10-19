@@ -1,5 +1,7 @@
 #include "dominios.h"
 #include <stdexcept>
+#include <cctype>
+#include <string>
 using namespace std;
 // --------------------------------------------------------------------------
 // Implementações de métodos de classe domínio.
@@ -90,4 +92,88 @@ bool Conta::validarSenha(const std::string& senha) {
 
     return temMaiuscula && temMinuscula && temDigito && temPonto;
 }
-};
+
+bool Quadro::validarTexto(const std::string& texto) {
+    if (texto.length() < 5 || texto.length() > 30){
+        return false;
+    }
+
+    bool prevSpace = false;
+    bool prevPunctuation = false;
+
+    for (size_t i = 0; i < texto.length(); i++) {
+        char c = texto[i];
+
+        if (i == 0) {
+            if (!isupper(c)) {
+                return false;
+            }
+        }
+        else {
+            if (isalnum(c) || c == ' ') {
+                prevSpace = (c == ' ');
+                prevPunctuation = false;
+            } else if (c == '.' || c == ';' || c == '?' || c == '!') {
+                if (prevPunctuation || i == texto.length() - 1 || !isupper(texto[i + 1])) {
+                    return false;
+                }
+                prevSpace = false;
+                prevPunctuation = true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+void Quadro::setNome(const std::string& nome) {
+    if (!validarTexto(nome)) {
+        throw std::invalid_argument("Texto Inválido.");
+    }
+    this->nome = nome;
+}
+
+void Quadro::setDescricao(const std::string& descricao) {
+    if (!validarTexto(descricao)) {
+        throw std::invalid_argument("Texto Inválido.");
+    }
+    this->descricao = descricao;
+}
+
+bool Quadro::validarCodigo(const std::string& codigo) {
+    if (codigo.length() != 4) {
+        return false;
+    }
+
+    for (int i = 0; i < 4; i++) {
+        if (i < 2) {
+            if (!isupper(codigo[i])) {
+                return false;
+            }
+        } else {
+            if (!isdigit(codigo[i])) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+void Quadro::setCodigo(const std::string& codigo) {
+    if (!validarCodigo(codigo)) {
+        throw std::invalid_argument("Formato inválido.");
+    }
+    this->codigo = codigo;
+}
+
+void Quadro::setLimite(const std::string& limite) {
+    if (!validarLimite(limite)) {
+        throw std::invalid_argument("Limite")
+    }
+}
+
+

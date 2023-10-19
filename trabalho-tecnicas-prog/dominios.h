@@ -40,10 +40,13 @@ class Quadro{
         char getCodigo();
         void setNome(string);
         string getNome();
-        void setDescrição(string);
+        void setDescricao(string);
         string getDescricao();
         void setLimite(int);
         int getLimite();
+        bool validarTexto(const std::string& texto);
+        static bool validarCodigo(const std::string& codigo);
+
 };
 
 //Luca
@@ -60,9 +63,9 @@ class Cartao{
         char getCodigo();
         void setNome(string);
         string getNome();
-        void setDescrição(string);
+        void setDescricao(string);
         string getDescricao();
-        void setColuna(string));
+        void setColuna(string);
         string getColuna();
 };
 
