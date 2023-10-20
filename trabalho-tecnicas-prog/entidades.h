@@ -45,12 +45,12 @@ class Cartao{
     Texto nome;
     Texto descricao;
     Coluna coluna;
+    bool excluido;
 
     public:
-        //Criar cartão
-        //Visualizar cartão
-        //Mover cartão
-        //Eliminar cartão
+    void visualizarCartao();
+    void moverCartao(Coluna novaColuna);
+    void eliminarCartao();
 };
 //Alo
 #endif
