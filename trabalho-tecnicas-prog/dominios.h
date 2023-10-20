@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//Código (Luca Vitor)
+//CÃ³digo (Luca Vitor)
         void setCodigo(char);
         char getCodigo();
         static bool validarCodigo(const std::string& codigo);
@@ -13,7 +13,7 @@ using namespace std;
 //Coluna (Luca)
         void setColuna(string);
         string getColuna();
-        //VALIDAR COLUNA
+        setColuna(string);
 
 //Email (Raphael)
     bool validarEmail(string);
