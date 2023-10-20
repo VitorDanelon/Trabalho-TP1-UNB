@@ -34,5 +34,5 @@ using namespace std;
         bool validarTexto(const std::string& texto);
         //GET TEXTO
         //SET TEXTO
-
+//Alo
 #endif // DOMINIOS_H_INCLUDED

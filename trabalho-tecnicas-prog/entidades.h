@@ -52,5 +52,5 @@ class Cartao{
         //Mover cartão
         //Eliminar cartão
 };
-
+//Alo
 #endif
