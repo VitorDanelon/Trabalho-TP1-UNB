@@ -32,7 +32,7 @@ using namespace std;
 
 //Texto (Raphael Luca Vitor)
         bool validarTexto(const std::string& texto);
-        //GET TEXTO
-        //SET TEXTO
+        void setTexto(const string& texto);
+        string getTexto() const;
 //Alo
 #endif // DOMINIOS_H_INCLUDED
