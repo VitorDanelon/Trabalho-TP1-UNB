@@ -197,8 +197,15 @@ public:
         }
     }
 
-    std::string getValor() const {
+    std::string getTexto() const {
         return valor;
+    }
+
+    void setTexto(const std::string& novoValor) {
+        if (!validarTexto(novoValor)) {
+            throw std::invalid_argument("Novo texto é inválido.");
+        }
+        valor = novoValor;
     }
 
 private:
@@ -361,14 +368,3 @@ public:
         }
     }
 };
-
-
-
-
-
-
-
-
-
-
-
