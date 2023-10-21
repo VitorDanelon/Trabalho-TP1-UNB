@@ -9,7 +9,7 @@ string Email::getEmail() const {
 }
 void Email::setEmail(const std::string& email) {
     if (!validarEmail(email)) {
-        throw std::invalid_argument("Email inv�lido.");
+        throw std::invalid_argument("Email invalido.");
     }
     this->email = email;
 }

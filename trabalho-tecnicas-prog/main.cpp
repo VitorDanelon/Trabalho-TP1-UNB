@@ -75,15 +75,15 @@ int main()
     switch(testeA.run()){
         case TUConta::SUCESSO: cout << "SUCESSO - CONTA" << endl;
                                 break;
-        case TUConta::FALHA  : cout << "FALHA - PROJETO" << endl;
+        case TUConta::FALHA  : cout << "FALHA - CONTA" << endl;
                                 break;
     }
 
     TUEmail testeB;
      switch(testeB.run()){
-        case TUEmail::SUCESSO: cout << "SUCESSO - CONTA" << endl;
+        case TUEmail::SUCESSO: cout << "SUCESSO - EMAIL" << endl;
                                 break;
-        case TUEmail::FALHA  : cout << "FALHA - PROJETO" << endl;
+        case TUEmail::FALHA  : cout << "FALHA - EMAIL" << endl;
                                 break;
     }
 

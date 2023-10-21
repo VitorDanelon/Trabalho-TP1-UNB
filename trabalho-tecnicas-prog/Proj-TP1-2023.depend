@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1697914322 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1697905154 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
+	<stdexcept>
+
+1697904780 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\entidades.h
+	"dominios.h"
+	<string>
+
+1697904194 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.h
+	"dominios.h"
+	"entidades.h"
+
