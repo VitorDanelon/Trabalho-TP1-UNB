@@ -3,40 +3,17 @@
 #include <cctype>
 #include <string>
 using namespace std;
-// --------------------------------------------------------------------------
-// Implementações de métodos de classe domínio.
 
-// --------------------------------------------------------------------------
-// Método para validação de valor.
-
-//void Codigo::validar(int codigo){
-//    if (codigo > LIMITE)
-//        throw invalid_argument("Argumento invalido.");
-//}
-
-void Conta::setEmail(const std::string& email) {
+string Email::getEmail() const {
+    return email;
+}
+void Email::setEmail(const std::string& email) {
     if (!validarEmail(email)) {
-        throw std::invalid_argument("Email inválido.");
+        throw std::invalid_argument("Email invï¿½lido.");
     }
     this->email = email;
 }
-
-void Conta::setSenha(const std::string& senha) {
-    if (!validarSenha(senha)) {
-        throw std::invalid_argument("Senha inválida.");
-    }
-    this->senha = senha;
-}
-
-string Conta::getEmail() const {
-    return email;
-}
-
-string Conta::getSenha() const {
-    return senha;
-}
-
-bool Conta::validarEmail(const std::string& email) {
+bool Email::validarEmail(const std::string& email) {
     const std::regex emailRegex(R"([a-zA-Z0-9._%+-]{2,10}@[a-zA-Z0-9.-]{2,20})");
     if (!std::regex_match(email, emailRegex)) {
         return false;
@@ -60,14 +37,25 @@ bool Conta::validarEmail(const std::string& email) {
     return true;
 }
 
-bool Conta::validarSenha(const std::string& senha) {
-    // Pelo menos um caractere é letra maiúscula
+
+
+string Senha::getSenha() const {
+    return senha;
+}
+void Senha::setSenha(const std::string& senha) {
+    if (!validarSenha(senha)) {
+        throw std::invalid_argument("Senha invï¿½lida.");
+    }
+    this->senha = senha;
+}
+bool Senha::validarSenha(const std::string& senha) {
+    // Pelo menos um caractere ï¿½ letra maiï¿½scula
     bool temMaiuscula = false;
-    // Pelo menos um caractere é letra minúscula
+    // Pelo menos um caractere ï¿½ letra minï¿½scula
     bool temMinuscula = false;
-    // Pelo menos um caractere é dígito
+    // Pelo menos um caractere ï¿½ dï¿½gito
     bool temDigito = false;
-    // Pelo menos um caracter é sinal de pontuação
+    // Pelo menos um caracter ï¿½ sinal de pontuaï¿½ï¿½o
     bool temPonto = false;
 
     std::set<char> caracteresDuplicados;
@@ -93,7 +81,7 @@ bool Conta::validarSenha(const std::string& senha) {
     return temMaiuscula && temMinuscula && temDigito && temPonto;
 }
 
-bool Quadro::validarTexto(const std::string& texto) {
+bool Texto::validarTexto(const std::string& texto) {
     if (texto.length() < 5 || texto.length() > 30){
         return false;
     }
@@ -129,51 +117,41 @@ bool Quadro::validarTexto(const std::string& texto) {
     return true;
 }
 
-void Quadro::setNome(const std::string& nome) {
-    if (!validarTexto(nome)) {
-        throw std::invalid_argument("Texto Inválido.");
-    }
-    this->nome = nome;
-}
+//setTexto
+//getTexto
 
-void Quadro::setDescricao(const std::string& descricao) {
-    if (!validarTexto(descricao)) {
-        throw std::invalid_argument("Texto Inválido.");
-    }
-    this->descricao = descricao;
-}
 
-bool Quadro::validarCodigo(const std::string& codigo) {
-    if (codigo.length() != 4) {
-        return false;
-    }
+// bool Codigo::validarCodigo(const std::string& codigo) {
+//     if (codigo.length() != 4) {
+//         return false;
+//     }
 
-    for (int i = 0; i < 4; i++) {
-        if (i < 2) {
-            if (!isupper(codigo[i])) {
-                return false;
-            }
-        } else {
-            if (!isdigit(codigo[i])) {
-                return false;
-            }
-        }
-    }
+//     for (int i = 0; i < 4; i++) {
+//         if (i < 2) {
+//             if (!isupper(codigo[i])) {
+//                 return false;
+//             }
+//         } else {
+//             if (!isdigit(codigo[i])) {
+//                 return false;
+//             }
+//         }
+//     }
 
-    return true;
-}
+//     return true;
+// }
 
-void Quadro::setCodigo(const std::string& codigo) {
-    if (!validarCodigo(codigo)) {
-        throw std::invalid_argument("Formato inválido.");
-    }
-    this->codigo = codigo;
-}
+// void Codigo::setCodigo(const std::string& codigo) {
+//     if (!validarCodigo(codigo)) {
+//         throw std::invalid_argument("Formato invï¿½lido.");
+//     }
+//     this->codigo = codigo;
+// }
 
-void Quadro::setLimite(const std::string& limite) {
-    if (!validarLimite(limite)) {
-        throw std::invalid_argument("Limite")
-    }
-}
+// void Limite::setLimite(const std::string& limite) {
+//     if (!validarLimite(limite)) {
+//         throw std::invalid_argument("Limite")
+//     }
+// }
 
 

@@ -5,34 +5,44 @@
 
 using namespace std;
 
-//Código (Luca Vitor)
-        void setCodigo(char);
-        char getCodigo();
-        static bool validarCodigo(const std::string& codigo);
-
-//Coluna (Luca)
-        void setColuna(string);
-        string getColuna();
-        //VALIDAR COLUNA
-
-//Email (Raphael)
-    bool validarEmail(string);
+class Email{
+private:
+    string email;
+public:
     void setEmail(string);
     string getEmail() const;
+    bool validarEmail();
 
-//Limite (Vitor)
-    void setLimite(int);
-    int getLimite();
-    //VALIDAR LIMITE
+};
 
-//Senha (Raphael)
-    bool validarSenha(string);
+class Texto{;
+private:
+    string texto;
+public:
+    void setTexto(string);
+    string getTexto() const;
+    bool validarTexto();
+
+};
+
+class Senha{
+private:
+    string senha;
+public:
     void setSenha(string);
     string getSenha() const;
+    bool validarSenha();
+};
 
-//Texto (Raphael Luca Vitor)
-        bool validarTexto(const std::string& texto);
-        //GET TEXTO
-        //SET TEXTO
-//Alo
-#endif // DOMINIOS_H_INCLUDED
+
+
+// //Senha (Raphael)
+//     bool validarSenha(string);
+//     void setSenha(string);
+//     string getSenha() const;
+
+// //Texto (Raphael Luca Vitor)
+//         bool validarTexto(const std::string& texto);
+//         //GET TEXTO
+
+#endif

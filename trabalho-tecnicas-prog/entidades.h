@@ -3,8 +3,6 @@
 
 #include "dominios.h"
 #include <string>
-#include <vector>
-#include <stdexcept>
 
 using namespace std;
 
@@ -16,41 +14,16 @@ class Conta{
         Senha senha;
 
     public:
-        //Criar conta
-        //Visualizar conta
-        //Editar conta
-        //Eliminar conta
+        string visualizarConta() const;
+        void editarConta(const string& novoNome, const string& novaSenha);
+        void eliminarConta();
+
 
 };
 
-//Vitor
-class Quadro{
-    private:
-    Codigo codigo;
-    Texto nome;
-    Texto descricao;
-    Limite limite;
+//Vitor classe quadro
 
-    public:
-    //Criar Quadro
-    //Visualizar Quadro
-    //Eliminar Quadro
 
-};
+//Luca classe cartao
 
-//Luca
-class Cartao{
-    private:
-    Codigo codigo;
-    Texto nome;
-    Texto descricao;
-    Coluna coluna;
-
-    public:
-        //Criar cartão
-        //Visualizar cartão
-        //Mover cartão
-        //Eliminar cartão
-};
-//Alo
 #endif
