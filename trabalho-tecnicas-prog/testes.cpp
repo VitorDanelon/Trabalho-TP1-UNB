@@ -184,6 +184,233 @@ void testeQuadro::executarTeste() {
 
 }
 
+
+void TUEmail::setUp() {
+    email = Email();
+    estado = SUCESSO;
+}
+
+void TUEmail::tearDown() {
+    // Limpar recursos, se necessário
+}
+
+void TUEmail::testarCenarioSucesso() {
+    // Teste com um valor de e-mail válido
+    try {
+        email.setEmail("ema.il@example.com");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    if (email.getEmail() != "ema.il@example.com") {
+        estado = FALHA;
+    }
+
+    //std::cout << "Teste de cenario de sucesso executado." << std::endl;
+}
+
+void TUEmail::testarCenarioFalha() {
+    // Teste com um valor de e-mail inválido
+    try {
+        email.setEmail("email_inválido");
+        //std::cout << "Teste de cenário de falha: Esperava-se uma exceção, mas nenhuma exceção foi lançada." << std::endl;
+        estado = FALHA;
+    } catch (const std::invalid_argument& e) {
+        //std::cout << "Teste de cenário de falha executado com sucesso: Exceção lançada, como esperado." << std::endl;
+    }
+}
+
+int TUEmail::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+
+void TUTexto::setUp() {
+    texto = Texto();
+    estado = SUCESSO;
+}
+void TUTexto::tearDown() {
+    // Limpar recursos, se necessário
+}
+void TUTexto::testarCenarioSucesso() {
+    // Teste com um valor de texto válido
+    try {
+        texto.setTexto("Texto válido.");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    if (texto.getTexto() != "Texto válido.") {
+        estado = FALHA;
+        std::cout << "caiu no if." << std::endl;
+        //std::cout <<  "sou" + texto.getTexto() << std::endl;
+    }else{
+        //std::cout << "Teste de cenário de sucesso executado." << std::endl;
+    }
+
+
+}
+void TUTexto::testarCenarioFalha() {
+    // Teste com um valor de texto inválido
+    try {
+        texto.setTexto("texto inválido!");
+        //std::cout << "Teste de cenário de falha: Esperava-se uma exceção, mas nenhuma exceção foi lançada." << std::endl;
+        estado = FALHA;
+    } catch (const std::invalid_argument& e) {
+        //std::cout << "Teste de cenário de falha executado com sucesso: Exceção lançada, como esperado." << std::endl;
+    }
+}
+int TUTexto::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    //tearDown();
+    return estado;
+}
+
+void TUSenha::setUp() {
+    senha = Senha();
+    estado = SUCESSO;
+}
+
+void TUSenha::tearDown() {
+    // Limpar recursos, se necessário
+}
+
+void TUSenha::testarCenarioSucesso() {
+    // Teste com uma senha válida
+    try {
+        senha.setSenha("S3cr!");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    if (senha.getSenha() != "S3cr!") {
+        estado = FALHA;
+    }//else{
+        //std::cout << "Teste de cenário de sucesso executado." << std::endl;
+
+
+
+}
+
+void TUSenha::testarCenarioFalha() {
+    // Teste com uma senha inválida
+    try {
+        senha.setSenha("senha"); // Senha inválida, menos de 5 caracteres
+        //std::cout << "Teste de cenário de falha: Esperava-se uma exceção, mas nenhuma exceção foi lançada." << std::endl;
+        estado = FALHA;
+    } catch (const std::invalid_argument& e) {
+        //std::cout << "Teste de cenário de falha executado com sucesso: Exceção lançada, como esperado." << std::endl;
+    }
+}
+
+int TUSenha::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    //tearDown();
+    return estado;
+}
+
+
+void TUCodigo::setUp() {
+    codigo = Codigo();
+    estado = SUCESSO;
+}
+
+void TUCodigo::tearDown() {
+    // Limpar recursos, se necessário
+}
+
+void TUCodigo::testarCenarioSucesso() {
+    // Teste com um código válido
+    try {
+        codigo.setCodigo("AB12");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    if (codigo.getCodigo() != "AB12") {
+        std::cout << "caiu no if" << std::endl;
+        estado = FALHA;
+    }else{
+        std::cout << "Teste de cenário de sucesso executado." << std::endl;
+    }
+
+
+}
+
+void TUCodigo::testarCenarioFalha() {
+    // Teste com um código inválido
+    try {
+        codigo.setCodigo("ABC1"); // Código inválido, deve ter exatamente 4 caracteres
+        //std::cout << "Teste de cenário de falha: Esperava-se uma exceção, mas nenhuma exceção foi lançada." << std::endl;
+        estado = FALHA;
+    } catch (const std::invalid_argument& e) {
+        //std::cout << "Teste de cenário de falha executado com sucesso: Exceção lançada, como esperado." << std::endl;
+    }
+}
+
+int TUCodigo::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    //tearDown();
+    return estado;
+}
+
+void TULimite::setUp() {
+    limite = Limite();
+    estado = SUCESSO;
+}
+
+void TULimite::tearDown() {
+    // Limpar recursos, se necessário
+}
+
+void TULimite::testarCenarioSucesso() {
+    // Teste com um limite válido
+    try {
+        limite.setLimite("15");
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+
+    if (limite.getLimite() != "15") {
+        estado = FALHA;
+    }//else{
+        //std::cout << "Teste de cenário de sucesso executado." << std::endl;
+
+
+
+}
+
+void TULimite::testarCenarioFalha() {
+    // Teste com um limite inválido
+    try {
+        limite.setLimite("14"); // Limite inválido, deve ser múltiplo de 5 e <= 20
+        //std::cout << "Teste de cenário de falha: Esperava-se uma exceção, mas nenhuma exceção foi lançada." << std::endl;
+        estado = FALHA;
+    } catch (const std::invalid_argument& e) {
+        //std::cout << "Teste de cenário de falha executado com sucesso: Exceção lançada, como esperado." << std::endl;
+    }
+}
+
+int TULimite::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+
+
 //     texto = new Texto();
 //     estado = SUCESSO;
 // }

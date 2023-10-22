@@ -124,7 +124,7 @@ string Texto::getTexto() const {
     return texto;
 }
 
-void Texto::setTexto(const string& texto) {
+void Texto::setTexto(const std::string& texto) {
     if (!validarTexto(texto)) {
         throw std::invalid_argument("Texto invalido.");
     }
