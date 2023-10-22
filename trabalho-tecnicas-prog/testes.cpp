@@ -113,8 +113,18 @@ void TUColuna::testarCenarioValido() {
 
 void TUColuna::testarCenarioInvalido() {
     // Cenário inválido
-    // Insira casos de teste inválidos aqui, se necessário.
+    Coluna coluna;
 
-    // Verifique se a classe Coluna lida corretamente com cenários inválidos.
+    // Tente definir uma coluna inválida
+    try {
+        coluna.setColuna("Nome Inválido com espaço");
+        // Se a linha acima não lançar uma exceção, o teste falhará
+        cout << "Teste de coluna inválida falhou: espaço no nome." << endl;
+    } catch (const invalid_argument& e) {
+        // Espera-se uma exceção
+    }
+
+    // Adicione mais casos de teste inválidos, se necessário.
 }
+
 
