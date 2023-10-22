@@ -159,14 +159,38 @@ public:
 
 };
 
+class Coluna {
+private:
+    //enum Status{
+        //SOLICITADO,
+        //EM_EXECUCAO,
+        //CONCLUIDO};
 
-// //Senha (Raphael)
-//     bool validarSenha(string);
-//     void setSenha(string);
-//     string getSenha() const;
+    string coluna;
 
-// //Texto (Raphael Luca Vitor)
-//         bool validarTexto(const std::string& texto);
-//         //GET TEXTO
+
+public:
+
+    /**
+     * @brief Define o valor da coluna.
+     *
+     * @param valor O valor da coluna a ser definido.
+     */
+    void setColuna(const std::string& coluna); //
+
+    /**
+     * @brief Obtém o valor da coluna.
+     *
+     * @return O valor atual da coluna.
+     */
+    string getColuna();
+
+    //bool validarColuna(const std::string& coluna);
+
+};
+
+
+
+
 
 #endif

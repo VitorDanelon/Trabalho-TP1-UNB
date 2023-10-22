@@ -79,6 +79,52 @@ class Quadro{
         void eliminarQuadro();
 
 };
+
+/**
+ * @brief Classe que representa um Cartão.
+ */
+class Cartao {
+private:
+    Codigo codigo;/**< Código do cartao. */
+    Texto nome; /**< Nome cartao . */
+    Texto descricao/**< Texto do cartao. */;
+    Coluna coluna;/**< Código associado ao cartao. */
+    //bool excluido;/**< Status do cartao excluido. */
+
+public:
+    /**
+     * @brief Metodo que constroi a classe Cartao.
+     * @param codigo O código do cartão.
+     * @param nome O nome do cartão.
+     * @param descricao A descrição do cartão.
+     * @param coluna A coluna à qual o cartão pertence.
+     */
+    Cartao(const string& codigo, const string& nome, const string& descricao, const string& coluna);
+
+    /**
+     * @brief Visualiza os detalhes do cartão.
+     * @param codigo O codigo do cartao a ser visualizado.
+     * @return Uma string contendo os detalhes do cartão.
+     */
+    string visualizarCartao(); //codigo c
+
+    /**
+     * @brief Metodo que move o cartão para uma nova coluna.
+     *
+     * @param novaColuna A nova coluna para qual o cartão deve ser movido.
+     */
+    void moverCartao(const string& coluna);; //codigo ,coluna
+
+    /**
+     * @brief Metodo que elimina o cartão do quadro.
+     *
+     * @param codigo O codigo do cartao a ser eliminado
+     * @param coluna Coluna destino do cartao
+     */
+    void eliminarCartao();
+};
+
+
 //Luca classe cartao
 
 #endif

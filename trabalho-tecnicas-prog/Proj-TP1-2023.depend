@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1697999333 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
+1698001041 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"
 	"testes.h"
 
-1697984085 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
+1698006838 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
 	<stdexcept>
 
-1697999736 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\entidades.h
+1698006946 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\entidades.h
 	"dominios.h"
 	<string>
 
-1697999312 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.h
+1698001020 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.h
 	"dominios.h"
 	"entidades.h"
 
@@ -27,7 +27,7 @@
 	"entidades.h"
 	<iostream>
 
-1698000676 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.cpp
+1698001174 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.cpp
 	"testes.h"
 	<iostream>
 

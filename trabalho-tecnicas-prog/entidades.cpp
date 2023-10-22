@@ -52,3 +52,30 @@ void Quadro::eliminarQuadro(){
     limite.setLimite("");
 }
 
+Cartao::Cartao(const string& codigo, const string& nome, const string& descricao, const string& coluna){
+    this->codigo.setCodigo(codigo);
+    this->nome.setTexto(nome);
+    this->descricao.setTexto(descricao);
+    this->coluna.setColuna(coluna);
+
+}
+
+string Cartao::visualizarCartao() {
+    std::cout << "Código: " + codigo.getCodigo() << std::endl;
+    std::cout << "Nome: " + nome.getTexto() << std::endl;
+    std::cout << "Descrição: " + descricao.getTexto() << std::endl;
+    std::cout << "Coluna: " + coluna.getColuna() << std::endl;
+}
+
+void Cartao::moverCartao(const string& coluna) {
+    this->coluna.setColuna(coluna);
+}
+
+void Cartao::eliminarCartao() {
+    codigo.setCodigo("");
+    nome.setTexto("");
+    descricao.setTexto("");
+    coluna.setColuna("SOLICITADO");
+
+}
+

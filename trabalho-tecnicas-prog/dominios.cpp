@@ -224,6 +224,21 @@ bool Limite::validarLimite(const std::string& limite) {
     return false;
 }
 
+void Coluna::setColuna(const std::string& coluna) {
+        if (coluna == "SOLICITADO" || coluna == "EM_EXECUCAO" || coluna == "CONCLUIDO") {
+            this->coluna = coluna;
+        } else {
+            throw std::invalid_argument("Valor de coluna inválido, dever ser SOLICITADO, EM_EXECUCAO, CONCLUIDO");
+        }
+}
+ string Coluna::getColuna() {
+        return coluna;
+}
+
+
+
+
+
 // bool Codigo::validarCodigo(const std::string& codigo) {
 //     if (codigo.length() != 4) {
 //         return false;
