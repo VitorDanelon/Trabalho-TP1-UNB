@@ -48,8 +48,21 @@ class Conta{
 };
 
 //Vitor classe quadro
+class Quadro{
+    private:
+        Codigo codigo;
+        Texto nome;
+        Texto descricao;
+        Limite limite;
 
+    public:
+        Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite);
 
+        string visualizarQuadro() const;
+
+        void eliminarQuadro();
+
+};
 //Luca classe cartao
 
 #endif

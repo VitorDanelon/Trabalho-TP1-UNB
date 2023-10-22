@@ -175,7 +175,15 @@ int TUConta::run() {
     return estado;
 }
 
-// void TUTexto::setUp() {
+
+void testeQuadro::executarTeste() {
+    Quadro quadro1("AX07", "Alfredo", "Alfredo1234", "5");
+
+    std::cout << "Teste 1 - Quadro 1:\n" << quadro1.visualizarQuadro() << std::endl;
+
+
+}
+
 //     texto = new Texto();
 //     estado = SUCESSO;
 // }

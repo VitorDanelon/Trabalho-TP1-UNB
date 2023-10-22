@@ -79,6 +79,8 @@ int main()
                                 break;
     }
 
+    testeQuadro teste;
+    teste.executarTeste();
     // TUEmail testeB;
     //  switch(testeB.run()){
     //     case TUEmail::SUCESSO: cout << "SUCESSO - EMAIL" << endl;

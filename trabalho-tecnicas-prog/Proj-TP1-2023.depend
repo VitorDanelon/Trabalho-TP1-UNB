@@ -31,3 +31,35 @@
 	"testes.h"
 	<iostream>
 
+1697940456 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1697945267 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
+	<stdexcept>
+
+1697944954 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\entidades.h
+	"dominios.h"
+	<string>
+
+1697946813 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1697946884 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.cpp
+	"testes.h"
+	<iostream>
+
+1697944922 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\entidades.cpp
+	"entidades.h"
+	<iostream>
+
+1697945986 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.cpp
+	"dominios.h"
+	<regex>
+	<stdexcept>
+	<cctype>
+	<set>
+

@@ -112,10 +112,10 @@ public:
     int run();
 };
 
-
-
-
-
+class testeQuadro {
+public:
+    void executarTeste();
+};
 
 
 #endif // TESTES_H_INCLUDED

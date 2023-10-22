@@ -167,9 +167,60 @@ bool Texto::validarTexto(const std::string& texto) {
     return true;
 }
 
-//setTexto
-//getTexto
+// GET CÓDIGO
+string Codigo::getCodigo() const {
+    return codigo;
+}
+//SET CÓDIGO
+void Codigo::setCodigo(const std::string& codigo) {
+    if (!validarCodigo(codigo)) {
+        throw std::invalid_argument("Código inválido.");
+    }
+    this->codigo = codigo;
+}
+//VERIFICAR CÓDIGO
+bool Codigo::validarCodigo(const std::string& codigo) {
+    if (codigo.length() != 4)
+        return false;
+    for (int i = 0; i < 4; ++i) {
+        if (i<2) {
+            if (!isupper(codigo[i]) || codigo[i] < 'A' || codigo[i] > 'Z') {
+                return false;
+            }
+        else {
+            if (!isdigit(codigo[i]) || codigo[i] < '0' || codigo[i] > '9') {
+                return false;
+            }
+        }
+        }
+    }
+    return true;
+}
 
+//GET LIMITE
+string Limite::getLimite() const {
+    return limite;
+}
+//SET LIMITE
+void Limite::setLimite(const std::string& limite) {
+    if (!validarLimite(limite)) {
+        throw std::invalid_argument("Limite invalido.");
+    }
+    this->limite = limite;
+}
+
+//VERIFICAR LIMITE
+bool Limite::validarLimite(const std::string& limite) {
+    try {
+        int numero = std::stoi(limite);
+        if (numero % 5 == 0 && numero <= 20) {
+            return true;
+        }
+    } catch (const std::invalid_argument& e) {
+        // A conversão falhou, a string não é um número.
+    }
+    return false;
+}
 
 // bool Codigo::validarCodigo(const std::string& codigo) {
 //     if (codigo.length() != 4) {

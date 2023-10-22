@@ -99,6 +99,31 @@ public:
 
 };
 
+class Codigo{
+private:
+    string codigo;
+
+public:
+    void setCodigo(const std::string& codigo);
+
+    string getCodigo() const;
+
+    bool validarCodigo(const std::string& codigo);
+
+};
+
+class Limite{
+private:
+    string limite;
+
+public:
+    void setLimite(const std::string& limite);
+
+    string getLimite() const;
+
+    bool validarLimite(const std::string& limite);
+
+};
 
 
 // //Senha (Raphael)
