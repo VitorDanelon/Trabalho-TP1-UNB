@@ -124,7 +124,6 @@ void TUColuna::testarCenarioInvalido() {
         // Espera-se uma exceção
     }
 
-    // Adicione mais casos de teste inválidos, se necessário.
 }
 
 
