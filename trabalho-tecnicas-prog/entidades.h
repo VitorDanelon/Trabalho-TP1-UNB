@@ -66,6 +66,7 @@ class Quadro{
      * @param descricao Descrição do quadro.
      * @param limite Limite de cartoes.
      */
+        //void criarQuadro(const std::string&, const std::string&, const std::string&,const std::string& );
         Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite);
         /**
      * @brief Visualiza os dados do quadro.

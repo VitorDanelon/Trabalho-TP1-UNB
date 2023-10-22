@@ -179,21 +179,23 @@ void Codigo::setCodigo(const std::string& codigo) {
     this->codigo = codigo;
 }
 //VERIFICAR CÓDIGO
+
 bool Codigo::validarCodigo(const std::string& codigo) {
-    if (codigo.length() != 4)
-        return false;
-    for (int i = 0; i < 4; ++i) {
-        if (i<2) {
-            if (!isupper(codigo[i]) || codigo[i] < 'A' || codigo[i] > 'Z') {
+    try{
+            if (codigo.length() != 4){
                 return false;
             }
-        else {
-            if (!isdigit(codigo[i]) || codigo[i] < '0' || codigo[i] > '9') {
+
+
+            if (!isupper(codigo[0]) || !isupper(codigo[1]) || !isdigit(codigo[2]) || !isdigit(codigo[3])){
                 return false;
             }
-        }
-        }
+
+    }catch(const std::invalid_argument& e){
+         throw std::invalid_argument("A senha deve possui 4 caracteres");
     }
+
+
     return true;
 }
 

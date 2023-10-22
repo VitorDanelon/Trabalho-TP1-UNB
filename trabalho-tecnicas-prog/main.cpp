@@ -76,11 +76,15 @@ int main()
         case TUConta::SUCESSO: cout << "TESTE: CONTA - SUCESSO" << endl;
                                 break;
         case TUConta::FALHA  : cout << "TESTE : CONTA - FALHOU" << endl;
-                                break;
+                                //break;
     }
 
-    //testeQuadro teste;
-    //teste.executarTeste();
+
+
+
+
+
+    std::cout << "--------------Testes de Dominio--------------" << std::endl;
 
 
     TUEmail testeEmail;
@@ -102,7 +106,6 @@ int main()
     } else {
         std::cout << "TESTE: TEXTO - FALHOU." << std::endl;
     }
-
 
 
     TUSenha testeSenha;
@@ -129,6 +132,7 @@ int main()
     } else {
         std::cout << "TESTE: LIMITE - FALHOU." << std::endl;
     }
+
 
 
 

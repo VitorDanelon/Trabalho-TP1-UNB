@@ -32,6 +32,13 @@ Quadro::Quadro(const string& codigo, const string& nome, const string& descricao
     this->limite.setLimite(limite);
 }
 
+//void Quadro::criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite){
+    //this->codigo.setCodigo(codigo);
+    //this->nome.setTexto(nome);
+    //this->descricao.setTexto(descricao);
+    //this->limite.setLimite(limite);
+//}
+
 
 string Quadro::visualizarQuadro() const {
     return "Quadro: " + codigo.getCodigo() + "\nNome :" + nome.getTexto() + "\nDescrição: " + descricao.getTexto() + "\nLimite: " + limite.getLimite();

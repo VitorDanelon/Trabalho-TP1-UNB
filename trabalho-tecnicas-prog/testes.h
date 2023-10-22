@@ -112,10 +112,26 @@ public:
     int run();
 };
 
-class testeQuadro {
-public:
-    void executarTeste();
-};
+//class TUQuadro {
+//private:
+    //Quadro* quadro;
+    //int estado;
+
+    //void setUp();
+    //void tearDown();
+    //void testarCenarioSucesso();
+
+//public:
+    //const static int SUCESSO = 0;
+    //const static int FALHA = -1;
+
+    //int run();
+//};
+
+//class testeQuadro {
+//public:
+    //void executarTeste();
+//};
 
 //--------------------------------------------------------------------------testes de dominios
 class TUEmail {
