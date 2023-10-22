@@ -99,28 +99,62 @@ public:
 
 };
 
+/**
+ * @brief Classe que representa a entidade código presente nos quadros e cartoes.
+ */
 class Codigo{
 private:
-    string codigo;
+
+    string codigo; /**< Código a ser utilizado. */
 
 public:
+    /**
+     * @brief Metodo que define o codigo.
+     * @param codigo O código a ser definido.
+     */
+
     void setCodigo(const std::string& codigo);
+     /**
+     * @brief  Metodo que obtem o codigo atual.
+     * @return O código atual.
+     */
 
     string getCodigo() const;
+    /**
+     * @brief Metodo que valida o codigo.
+     * @param codigo O codigo a ser validado.
+     * @return True se o código for válido, False caso contrário.
+     */
 
     bool validarCodigo(const std::string& codigo);
 
 };
+/**
+ * @brief Classe que representa o limite definido para cartoes no quadro Kanban.
+ */
 
 class Limite{
 private:
-    string limite;
+
+    string limite; /**< Limite a ser definido. */
 
 public:
+     /**
+     * @brief Metodo que define o limite.
+     * @param limite O limite a ser definido (5,10,15 ou 20).
+     */
     void setLimite(const std::string& limite);
+    /**
+     * @brief Metodo que obtem o limite atual.
+     * @return O limite atual.
+     */
 
     string getLimite() const;
-
+    /**
+     * @brief Metodo que valida o limite.
+     * @param limite O limite a ser validado.
+     * @return True se o limite for valido, False caso contrario.
+     */
     bool validarLimite(const std::string& limite);
 
 };

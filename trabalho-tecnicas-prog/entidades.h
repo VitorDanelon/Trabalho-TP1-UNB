@@ -48,18 +48,33 @@ class Conta{
 };
 
 //Vitor classe quadro
+/**
+ * @brief Classe que representa o quadro Kanban.
+ */
 class Quadro{
     private:
-        Codigo codigo;
-        Texto nome;
-        Texto descricao;
-        Limite limite;
+        Codigo codigo; /**< Código associado ao quadro. */
+        Texto nome; /**< Nome dado ao quadro. */
+        Texto descricao; /**< Descrição do quadro. */
+        Limite limite; /**< Limite de cartões do quadro. */
 
     public:
+         /**
+     * @brief Metodo que constroi a classe Quadro.
+     * @param codigo Código do quadro.
+     * @param nome Nome do quadro.
+     * @param descricao Descrição do quadro.
+     * @param limite Limite de cartoes.
+     */
         Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite);
-
+        /**
+     * @brief Visualiza os dados do quadro.
+     * @return Uma string que contém os dados do quadro formatados para exibição.
+     */
         string visualizarQuadro() const;
-
+        /**
+     * @brief Elimina o quadro.
+     */
         void eliminarQuadro();
 
 };

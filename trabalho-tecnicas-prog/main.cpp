@@ -70,9 +70,9 @@ int main()
     //                             break;
     // }
 
-    TUConta testeA;
+    TUConta testeConta;
 
-    switch(testeA.run()){
+    switch(testeConta.run()){
         case TUConta::SUCESSO: cout << "SUCESSO - CONTA" << endl;
                                 break;
         case TUConta::FALHA  : cout << "FALHA - CONTA" << endl;

@@ -174,7 +174,7 @@ string Codigo::getCodigo() const {
 //SET CÓDIGO
 void Codigo::setCodigo(const std::string& codigo) {
     if (!validarCodigo(codigo)) {
-        throw std::invalid_argument("Código inválido.");
+        throw std::invalid_argument("Codigo invalido.");
     }
     this->codigo = codigo;
 }
