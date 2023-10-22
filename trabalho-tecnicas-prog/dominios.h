@@ -2,37 +2,37 @@
 #define DOMINIOS_H_INCLUDED
 
 #include <stdexcept>
+#include <string>
 
 using namespace std;
 
-//Código (Luca Vitor)
-        void setCodigo(char);
-        char getCodigo();
-        static bool validarCodigo(const std::string& codigo);
+/**
+ * @brief Classe para representar uma coluna.
+ *
+ * Esta classe fornece métodos para configurar e obter o valor de uma coluna.
+ */
+class Coluna {
+public:
+    /**
+     * @brief Define o valor da coluna.
+     *
+     * @param valor O valor da coluna a ser definido.
+     */
+    void setColuna(string valor);
 
-//Coluna (Luca)
-        void setColuna(string);
-        string getColuna();
-        setColuna(string);
+    /**
+     * @brief Obtém o valor da coluna.
+     *
+     * @return O valor atual da coluna.
+     */
+    string getColuna();
 
-//Email (Raphael)
-    bool validarEmail(string);
-    void setEmail(string);
-    string getEmail() const;
+    /**
+     * @brief Construtor da classe Coluna.
+     *
+     * @param valor O valor inicial da coluna.
+     */
+    Coluna(string valor);
+};
 
-//Limite (Vitor)
-    void setLimite(int);
-    int getLimite();
-    //VALIDAR LIMITE
-
-//Senha (Raphael)
-    bool validarSenha(string);
-    void setSenha(string);
-    string getSenha() const;
-
-//Texto (Raphael Luca Vitor)
-        bool validarTexto(const std::string& texto);
-        void setTexto(const string& texto);
-        string getTexto() const;
-//Alo
-#endif // DOMINIOS_H_INCLUDED
+#endif
