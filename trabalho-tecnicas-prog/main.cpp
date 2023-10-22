@@ -1,6 +1,6 @@
-// Exemplos de classes domínio, classe entidade e testes de unidade.
+// Exemplos de classes domï¿½nio, classe entidade e testes de unidade.
 
-// Incluir cabeçalhos.
+// Incluir cabeï¿½alhos.
 
 #include <iostream>
 
@@ -14,9 +14,9 @@ int main()
 {
 
 //---------------------------------------------------------------------------
-// Estrutura de código para instanciar e executar teste de unidade.
+// Estrutura de cï¿½digo para instanciar e executar teste de unidade.
 //
-// Esse código pode ser adaptado para instanciar e executar testes.
+// Esse cï¿½digo pode ser adaptado para instanciar e executar testes.
 
 /* --------------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ int main()
 
     TUnidade teste;
 
-    // Invocar método e apresentar mensagem acerca do resultado.
+    // Invocar mï¿½todo e apresentar mensagem acerca do resultado.
 
     switch(teste.run()){
         case TUnidade::SUCESSO: cout << "SUCESSO" << endl;
@@ -36,39 +36,80 @@ int main()
 -------------------------------------------------------------------------- */
 
     //-----------------------------------------------------------------------
-    // Exemplo de código construído a partir da estrutura de código anterior.
+    // Exemplo de cï¿½digo construï¿½do a partir da estrutura de cï¿½digo anterior.
 
     //-----------------------------------------------------------------------
-    // Exemplo de teste de classe domínio.
+    // Exemplo de teste de classe domï¿½nio.
 
-    // Instanciar classe de teste de domínio.
+    // Instanciar classe de teste de domï¿½nio.
 
-    TUCodigo testeA;
+    // TUCodigo testeA;
 
-    // Invocar método e apresentar mensagem acerca do resultado do teste.
+    // Invocar mï¿½todo e apresentar mensagem acerca do resultado do teste.
 
-    switch(testeA.run()){
-        case TUCodigo::SUCESSO: cout << "SUCESSO - CODIGO" << endl;
-                                break;
-        case TUCodigo::FALHA  : cout << "FALHA   - CODIGO" << endl;
-                                break;
-    }
+    // switch(testeA.run()){
+    //     case TUCodigo::SUCESSO: cout << "SUCESSO - CODIGO" << endl;
+    //                             break;
+    //     case TUCodigo::FALHA  : cout << "FALHA   - CODIGO" << endl;
+    //                             break;
+    // }
 
     //-----------------------------------------------------------------------
     // Exemplo de teste de classe entidade.
 
     // Instanciar classe de teste de entidade.
 
-    TUProjeto testeB;
+    // TUProjeto testeB;
 
-    // Invocar método e apresentar mensagem acerca do resultado do teste.
+    // Invocar mï¿½todo e apresentar mensagem acerca do resultado do teste.
 
-    switch(testeB.run()){
-        case TUProjeto::SUCESSO: cout << "SUCESSO - PROJETO" << endl;
+    // switch(testeB.run()){
+    //     case TUProjeto::SUCESSO: cout << "SUCESSO - PROJETO" << endl;
+    //                             break;
+    //     case TUProjeto::FALHA  : cout << "FALHA - PROJETO" << endl;
+    //                             break;
+    // }
+
+    TUConta testeA;
+
+    switch(testeA.run()){
+        case TUConta::SUCESSO: cout << "SUCESSO - CONTA" << endl;
                                 break;
-        case TUProjeto::FALHA  : cout << "FALHA   - PROJETO" << endl;
+        case TUConta::FALHA  : cout << "FALHA - CONTA" << endl;
                                 break;
     }
+
+    testeQuadro teste;
+    teste.executarTeste();
+    // TUEmail testeB;
+    //  switch(testeB.run()){
+    //     case TUEmail::SUCESSO: cout << "SUCESSO - EMAIL" << endl;
+    //                             break;
+    //     case TUEmail::FALHA  : cout << "FALHA - EMAIL" << endl;
+    //                             break;
+    // }
+
+    // TUTexto teste;
+    // int resultado = teste.run();
+
+    // if (resultado == TUTexto::SUCESSO) {
+    //     std::cout << "Esse Ã© o teste de sucesso de texto." << std::endl;
+    // } else {
+    //     std::cout << "Esse Ã© o teste de falha de texto." << std::endl;
+    // }
+TUCartao testeC;
+
+switch (testeC.run()) {
+    case TUCartao::SUCESSO:
+        cout << "SUCESSO - CARTAO" << endl;
+        break;
+    case TUCartao::FALHA:
+        cout << "FALHA - CARTAO" << endl;
+        break;
+}
+
+
+
 
     return 0;
 }
