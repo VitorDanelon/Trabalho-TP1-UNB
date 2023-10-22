@@ -1,13 +1,15 @@
 #include "dominios.h"
+#include <regex>
 #include <stdexcept>
 #include <cctype>
-#include <string>
+#include<set>
+
 using namespace std;
 
 string Email::getEmail() const {
     return email;
 }
-void Email::setEmail(const std::string& email) {
+void Email::setEmail(const std::string email) {
     if (!validarEmail(email)) {
         throw std::invalid_argument("Email invalido.");
     }
@@ -44,18 +46,52 @@ string Senha::getSenha() const {
 }
 void Senha::setSenha(const std::string& senha) {
     if (!validarSenha(senha)) {
-        throw std::invalid_argument("Senha inv�lida.");
+        throw std::invalid_argument("Senha invalida.");
     }
     this->senha = senha;
 }
+// bool Senha::validarSenha(const std::string& senha) {
+//     // Pelo menos um caractere � letra mai�scula
+//     bool temMaiuscula = false;
+//     // Pelo menos um caractere � letra min�scula
+//     bool temMinuscula = false;
+//     // Pelo menos um caractere � d�gito
+//     bool temDigito = false;
+//     // Pelo menos um caracter � sinal de pontua��o
+//     bool temPonto = false;
+
+//     std::set<char> caracteresDuplicados;
+
+//     for (char c : senha) {
+//         if (isupper(c)) {
+//             temMaiuscula = true;
+//         } else if (islower(c)) {
+//             temMinuscula = true;
+//         } else if (isdigit(c)) {
+//             temDigito = true;
+//         } else if (ispunct(c)) {
+//             temPonto = true;
+//         }
+
+//         if (caracteresDuplicados.count(c) > 0) {
+//             return false;  // Caractere duplicado encontrado
+//         }
+
+//         caracteresDuplicados.insert(c);
+//     }
+
+//     return temMaiuscula && temMinuscula && temDigito && temPonto;
+// }
+
 bool Senha::validarSenha(const std::string& senha) {
-    // Pelo menos um caractere � letra mai�scula
+    // Verifica se a senha tem exatamente 5 caracteres
+    if (senha.length() != 5) {
+        return false;
+    }
+
     bool temMaiuscula = false;
-    // Pelo menos um caractere � letra min�scula
     bool temMinuscula = false;
-    // Pelo menos um caractere � d�gito
     bool temDigito = false;
-    // Pelo menos um caracter � sinal de pontua��o
     bool temPonto = false;
 
     std::set<char> caracteresDuplicados;
@@ -67,8 +103,10 @@ bool Senha::validarSenha(const std::string& senha) {
             temMinuscula = true;
         } else if (isdigit(c)) {
             temDigito = true;
-        } else if (ispunct(c)) {
+        } else if (c == '.' || c == ',' || c == ';' || c == '?' || c == '!') {
             temPonto = true;
+        } else {
+            return false; // Caractere inválido encontrado
         }
 
         if (caracteresDuplicados.count(c) > 0) {
@@ -78,7 +116,19 @@ bool Senha::validarSenha(const std::string& senha) {
         caracteresDuplicados.insert(c);
     }
 
+    // Verifica se atende a todos os requisitos
     return temMaiuscula && temMinuscula && temDigito && temPonto;
+}
+
+string Texto::getTexto() const {
+    return texto;
+}
+
+void Texto::setTexto(const string& texto) {
+    if (!validarTexto(texto)) {
+        throw std::invalid_argument("Texto invalido.");
+    }
+    this->texto = texto;
 }
 
 bool Texto::validarTexto(const std::string& texto) {

@@ -1,9 +1,9 @@
-// Diretivas de compilação para controlar processo de inclusão.
+// Diretivas de compilaï¿½ï¿½o para controlar processo de inclusï¿½o.
 
 #ifndef TESTES_H_INCLUDED
 #define TESTES_H_INCLUDED
 
-// Incluir cabeçalhos.
+// Incluir cabeï¿½alhos.
 
 #include "dominios.h"
 #include "entidades.h"
@@ -11,45 +11,94 @@
 using namespace std;
 
 // --------------------------------------------------------------------------
-// Exemplo de declaração de classe para teste de unidade de classe domínio.
+// Exemplo de declaraï¿½ï¿½o de classe para teste de unidade de classe domï¿½nio.
 
 /*class TUCodigo {
 private:
-    const static int VALOR_VALIDO   = 20;   // Definição de constante para evitar número mágico.
-    const static int VALOR_INVALIDO = 30;   // Definição de constante para evitar número mágico.
-    Codigo *codigo;                         // Referência para unidade em teste.
+    const static int VALOR_VALIDO   = 20;   // Definiï¿½ï¿½o de constante para evitar nï¿½mero mï¿½gico.
+    const static int VALOR_INVALIDO = 30;   // Definiï¿½ï¿½o de constante para evitar nï¿½mero mï¿½gico.
+    Codigo *codigo;                         // Referï¿½ncia para unidade em teste.
     int estado;                             // Estado do teste.
-    void setUp();                           // Método para criar unidade em teste.
-    void tearDown();                        // Método para destruir unidade em teste.
-    void testarCenarioSucesso();            // Cenário de teste.
-    void testarCenarioFalha();              // Cenário de teste.
+    void setUp();                           // Mï¿½todo para criar unidade em teste.
+    void tearDown();                        // Mï¿½todo para destruir unidade em teste.
+    void testarCenarioSucesso();            // Cenï¿½rio de teste.
+    void testarCenarioFalha();              // Cenï¿½rio de teste.
 
 public:
-    const static int SUCESSO =  0;          // Definição de constante para reportar resultado de teste.
-    const static int FALHA   = -1;          // Definição de constante para reportar resultado de teste.
-    int run();                              // Método para executar teste.
+    const static int SUCESSO =  0;          // Definiï¿½ï¿½o de constante para reportar resultado de teste.
+    const static int FALHA   = -1;          // Definiï¿½ï¿½o de constante para reportar resultado de teste.
+    int run();                              // Mï¿½todo para executar teste.
 };
 
 // --------------------------------------------------------------------------
-// Exemplo de declaração de classe para teste de unidade de classe entidade.
+// Exemplo de declaraï¿½ï¿½o de classe para teste de unidade de classe entidade.
 
 /*class TUProjeto {
 private:
-    const static int VALOR_VALIDO   = 20;   // Definição de constante para evitar número mágico.
-    Projeto *projeto;                       // Referência para unidade em teste.
+    const static int VALOR_VALIDO   = 20;   // Definiï¿½ï¿½o de constante para evitar nï¿½mero mï¿½gico.
+    Projeto *projeto;                       // Referï¿½ncia para unidade em teste.
     int estado;                             // Estado do teste.
-    void setUp();                           // Método para criar unidade em teste.
-    void tearDown();                        // Método para destruir unidade em teste.
-    void testarCenarioSucesso();            // Cenário de teste.
+    void setUp();                           // Mï¿½todo para criar unidade em teste.
+    void tearDown();                        // Mï¿½todo para destruir unidade em teste.
+    void testarCenarioSucesso();            // Cenï¿½rio de teste.
 public:
-    const static int SUCESSO =  0;          // Definição de constante para reportar resultado de teste.
-    const static int FALHA   = -1;          // Definição de constante para reportar resultado de teste.
-    int run();                              // Método para executar teste.
+    const static int SUCESSO =  0;          // Definiï¿½ï¿½o de constante para reportar resultado de teste.
+    const static int FALHA   = -1;          // Definiï¿½ï¿½o de constante para reportar resultado de teste.
+    int run();                              // Mï¿½todo para executar teste.
 };*/
+
+// class TUConta {
+// private:
+//     Conta* conta;
+//     int estado;
+
+//     void setUp();
+//     void tearDown();
+//     void testarCenarioSucesso();
+
+// public:
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
+//     int run();
+// };
+
+
+// class TUEmail {
+// private:
+//     Email* email;
+//     int estado;
+
+//     void setUp();
+//     void tearDown();
+//     void testarCenarioSucesso();
+//     void testarCenarioFalha();
+
+// public:
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
+//     int run();
+// };
+
+// class TUTexto {
+// private:
+//     Texto *texto;  // ReferÃªncia para a unidade em teste.
+//     int estado;    // Estado do teste.
+
+//     void setUp();
+//     void tearDown();
+//     void testarCenarioSucesso();
+//     void testarCenarioFalha();
+
+// public:
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
+
+//     int run();
+// };
 
 class TUConta {
 private:
-    Conta* conta;
+    Conta *conta;
     int estado;
 
     void setUp();
@@ -59,23 +108,7 @@ private:
 public:
     const static int SUCESSO = 0;
     const static int FALHA = -1;
-    int run();
-};
 
-
-class TUEmail {
-private:
-    Email* email;
-    int estado;
-
-    void setUp();
-    void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
-
-public:
-    const static int SUCESSO = 0;
-    const static int FALHA = -1;
     int run();
 };
 

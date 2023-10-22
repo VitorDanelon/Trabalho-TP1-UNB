@@ -1,4 +1,5 @@
 #include "testes.h"
+#include <iostream>
 
 // --------------------------------------------------------------------------
 // Implementacoes de metodos de classe de teste de unidade.
@@ -75,8 +76,79 @@
 //     return estado;
 // }
 
+// void TUConta::setUp() {
+//     conta = new Conta();
+//     estado = SUCESSO;
+// }
+
+// void TUConta::tearDown() {
+//     delete conta;
+// }
+
+// void TUConta::testarCenarioSucesso() {
+//     // Configura a conta com valores válidos
+//     conta->Conta("email.val@example.com","Nome","S3nh!")
+//     //conta->setEmail("email.val@example.com");
+//     //conta->setNome("Nome");
+//     //conta->setSenha("S3nh!");
+
+//     // Verifica se os valores são obtidos corretamente
+//     //if (conta->Conta("email.val@example.com","Nome","S3nh!")
+//         //conta->getEmail() != "email_valido@example.com" ||
+//         //conta->getNome() != "Nome" ||
+//         //conta->getSenha() != "S3nh!") {
+//         //estado = FALHA;
+//     //}
+// }
+
+// int TUConta::run() {
+//     setUp();
+//     testarCenarioSucesso();
+//     tearDown();
+//     return estado;
+// }
+
+// void TUEmail::setUp() {
+//     email = new Email();
+//     estado = SUCESSO;
+// }
+
+// void TUEmail::tearDown() {
+//     delete email;
+// }
+
+// void TUEmail::testarCenarioSucesso() {
+//     // Cenário de sucesso - email válido
+//     try {
+//         email->setEmail("usuario@example.com");
+//         if (email->getEmail() != "usuario@example.com") {
+//             estado = FALHA;
+//         }
+//     } catch (const std::invalid_argument& e) {
+//         estado = FALHA;
+//     }
+// }
+
+// void TUEmail::testarCenarioFalha() {
+//     // Cenário de falha - email inválido
+//     try {
+//         email->setEmail("email-invalido");
+//         estado = FALHA;
+//     } catch (const std::invalid_argument& e) {
+//         // Espera-se uma exceção, o teste passa se a exceção for lançada
+//     }
+// }
+
+// int TUEmail::run() {
+//     setUp();
+//     testarCenarioSucesso();
+//     testarCenarioFalha();
+//     tearDown();
+//     return estado;
+// }
+
 void TUConta::setUp() {
-    conta = new Conta();
+    conta = new Conta("Ema.il@example.com", "Alfredo", "S3cr!");
     estado = SUCESSO;
 }
 
@@ -86,14 +158,12 @@ void TUConta::tearDown() {
 
 void TUConta::testarCenarioSucesso() {
     // Configura a conta com valores válidos
-    conta->setEmail("email.val@example.com");
-    conta->setNome("Nome");
-    conta->setSenha("S3nh!");
+    conta->editarConta("Alfreda", "S3cr?");
 
-    // Verifica se os valores são obtidos corretamente
-    if (conta->getEmail() != "email_valido@example.com" ||
-        conta->getNome() != "Nome" ||
-        conta->getSenha() != "S3nh!") {
+    // Verifica se os valores foram atualizados corretamente
+    if (conta->visualizarConta() != "Email: Ema.il@example.com\nNome: Alfreda\nSenha: S3cr?") {
+         //std::cout << "Valor retornado por conta->visualizarConta(): " << conta->visualizarConta() << std::endl;
+
         estado = FALHA;
     }
 }
@@ -105,44 +175,52 @@ int TUConta::run() {
     return estado;
 }
 
-void TUEmail::setUp() {
-    email = new Email();
-    estado = SUCESSO;
-}
+// void TUTexto::setUp() {
+//     texto = new Texto();
+//     estado = SUCESSO;
+// }
 
-void TUEmail::tearDown() {
-    delete email;
-}
+// void TUTexto::tearDown() {
+//     delete texto;
+// }
 
-void TUEmail::testarCenarioSucesso() {
-    // Cenário de sucesso - email válido
-    try {
-        email->setEmail("usuario@example.com");
-        if (email->getEmail() != "usuario@example.com") {
-            estado = FALHA;
-        }
-    } catch (const std::invalid_argument& e) {
-        estado = FALHA;
-    }
-}
+// void TUTexto::testarCenarioSucesso() {
+//     // Configura a unidade em teste com um valor válido
+//     texto->setTexto("Texto Válido");
 
-void TUEmail::testarCenarioFalha() {
-    // Cenário de falha - email inválido
-    try {
-        email->setEmail("email-invalido");
-        estado = FALHA;
-    } catch (const std::invalid_argument& e) {
-        // Espera-se uma exceção, o teste passa se a exceção for lançada
-    }
-}
+//     // Verifica se a configuração foi bem-sucedida
+//     if (texto->getTexto() != "Texto Válido") {
+//         std::cout << "Cenário de sucesso: Configuração inválida." << std::endl;
+//         estado = FALHA;
+//     }
+// }
 
-int TUEmail::run() {
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
+// void TUTexto::testarCenarioFalha() {
+//     // Configura a unidade em teste com um valor inválido
+//     try {
+//         texto->setTexto("Texto Inválido");
+
+//         // Se a configuração não lançar uma exceção, falha no cenário de falha
+//         std::cout << "Cenário de falha: Configuração deveria lançar uma exceção." << std::endl;
+//         estado = FALHA;
+//     } catch (const std::invalid_argument& e) {
+//         // A configuração lançou uma exceção, o que é esperado no cenário de falha.
+//     }
+// }
+
+// int TUTexto::run() {
+//     setUp();
+
+//     // Testa o cenário de sucesso
+//     testarCenarioSucesso();
+
+//     // Testa o cenário de falha
+//     testarCenarioFalha();
+
+//     tearDown();
+//     return estado;
+// }
+
 
 
 

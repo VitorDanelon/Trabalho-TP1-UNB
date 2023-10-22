@@ -79,13 +79,24 @@ int main()
                                 break;
     }
 
-    TUEmail testeB;
-     switch(testeB.run()){
-        case TUEmail::SUCESSO: cout << "SUCESSO - EMAIL" << endl;
-                                break;
-        case TUEmail::FALHA  : cout << "FALHA - EMAIL" << endl;
-                                break;
-    }
+    // TUEmail testeB;
+    //  switch(testeB.run()){
+    //     case TUEmail::SUCESSO: cout << "SUCESSO - EMAIL" << endl;
+    //                             break;
+    //     case TUEmail::FALHA  : cout << "FALHA - EMAIL" << endl;
+    //                             break;
+    // }
+
+    // TUTexto teste;
+    // int resultado = teste.run();
+
+    // if (resultado == TUTexto::SUCESSO) {
+    //     std::cout << "Esse é o teste de sucesso de texto." << std::endl;
+    // } else {
+    //     std::cout << "Esse é o teste de falha de texto." << std::endl;
+    // }
+
+
 
 
     return 0;

@@ -21,6 +21,12 @@ class Conta{
 
     public:
         /**
+     * @brief Método que constrói uma unidade da classe.
+     *
+     *
+     */
+        Conta(const string& email, const string& nome, const string& senha);
+        /**
      * @brief Visualiza os dados da conta.
      *
      * @return Uma string que contém os dados da conta formatados para exibição.

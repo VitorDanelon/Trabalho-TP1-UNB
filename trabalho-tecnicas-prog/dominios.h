@@ -14,12 +14,13 @@ class Email{
 private:
     string email; /**< O endereço de email. */
 public:
+    //Email(const string& email) : email(email) {}
      /**
      * @brief Método que define o endereço de email.
      *
      * @param email O email a ser definido.
      */
-    void setEmail(const string);
+    void setEmail(const std::string);
     /**
      * @brief Método que obtém o endereço de email atual.
      *
@@ -31,7 +32,8 @@ public:
      *
      * @return True se o email for válido, False caso contrário.
      */
-    bool validarEmail();
+    //bool validarEmail(string)
+        bool validarEmail(const std::string& email);
 
 };
 
@@ -49,7 +51,7 @@ public:
      *
      * @param texto O texto a ser definido.
      */
-    void setTexto(string);
+    void setTexto(const std::string& texto);
     /**
      * @brief Método que obtém o conteúdo do texto atual.
      *
@@ -61,7 +63,8 @@ public:
      *
      * @return True se o texto for válido, False caso contrário.
      */
-    bool validarTexto();
+    //bool validarTexto();
+    bool validarTexto(const std::string& texto);
 
 };
 /**
@@ -78,7 +81,8 @@ public:
      *
      * @param senha A senha a ser definida.
      */
-    void setSenha(string);
+    //void setSenha(const string);
+    void setSenha(const std::string& senha);
     /**
      * @brief Método que obtém a senha atual.
      *
@@ -90,7 +94,9 @@ public:
      *
      * @return True se a senha for válida, False caso contrário.
      */
-    bool validarSenha();
+    //bool validarSenha();
+    bool validarSenha(const std::string& senha);
+
 };
 
 
