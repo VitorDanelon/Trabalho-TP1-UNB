@@ -1,7 +1,7 @@
 #include "testes.h"
 
 // --------------------------------------------------------------------------
-// Implementa��es de m�todos de classe de teste de unidade.
+// Implementações de métodos de classe de teste de unidade.
 
 void TUCodigo::setUp(){
     codigo = new Codigo();
@@ -34,6 +34,10 @@ void TUCodigo::testarCenarioFalha(){
     }
 }
 
+
+
+
+
 int TUCodigo::run(){
     setUp();
     testarCenarioSucesso();
@@ -43,7 +47,7 @@ int TUCodigo::run(){
 }
 
 // --------------------------------------------------------------------------
-// Implementa��es de m�todos de classe de teste de unidade.
+// Implementações de métodos de classe de teste de unidade.
 
 void TUProjeto::setUp(){
     projeto = new Projeto();
@@ -73,5 +77,44 @@ int TUProjeto::run(){
     testarCenarioSucesso();
     tearDown();
     return estado;
+}
+// TUColuna.h
+class TUColuna {
+public:
+    static const int SUCESSO = 0;
+    static const int FALHA = 1;
+
+    int run();
+
+private:
+    void testarCenarioValido();
+    void testarCenarioInvalido();
+};
+
+// TUColuna.cpp
+int TUColuna::run() {
+    testarCenarioValido();
+    testarCenarioInvalido();
+
+    return SUCESSO;
+}
+
+void TUColuna::testarCenarioValido() {
+    // Cenário válido
+    Coluna coluna;
+
+    coluna.setColuna("Solicitado"); // Substitua pela coluna desejada.
+
+    // Verificar se a instância de Coluna foi criada corretamente.
+    assert(coluna.getColuna() == "Solicitado");
+
+    // Realizar mais verificações válidas, se necessário.
+}
+
+void TUColuna::testarCenarioInvalido() {
+    // Cenário inválido
+    // Insira casos de teste inválidos aqui, se necessário.
+
+    // Verifique se a classe Coluna lida corretamente com cenários inválidos.
 }
 
