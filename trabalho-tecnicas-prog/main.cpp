@@ -14,61 +14,6 @@ int main()
 {
 
 //---------------------------------------------------------------------------
-// Estrutura de c�digo para instanciar e executar teste de unidade.
-//
-// Esse c�digo pode ser adaptado para instanciar e executar testes.
-
-/* --------------------------------------------------------------------------
-
-    // Instanciar classe de teste de unidade.
-
-    TUnidade teste;
-
-    // Invocar m�todo e apresentar mensagem acerca do resultado.
-
-    switch(teste.run()){
-        case TUnidade::SUCESSO: cout << "SUCESSO" << endl;
-                                break;
-        case TUnidade::FALHA  : cout << "FALHA" << endl;
-                                break;
-    }
-
--------------------------------------------------------------------------- */
-
-    //-----------------------------------------------------------------------
-    // Exemplo de c�digo constru�do a partir da estrutura de c�digo anterior.
-
-    //-----------------------------------------------------------------------
-    // Exemplo de teste de classe dom�nio.
-
-    // Instanciar classe de teste de dom�nio.
-
-    // TUCodigo testeA;
-
-    // Invocar m�todo e apresentar mensagem acerca do resultado do teste.
-
-    // switch(testeA.run()){
-    //     case TUCodigo::SUCESSO: cout << "SUCESSO - CODIGO" << endl;
-    //                             break;
-    //     case TUCodigo::FALHA  : cout << "FALHA   - CODIGO" << endl;
-    //                             break;
-    // }
-
-    //-----------------------------------------------------------------------
-    // Exemplo de teste de classe entidade.
-
-    // Instanciar classe de teste de entidade.
-
-    // TUProjeto testeB;
-
-    // Invocar m�todo e apresentar mensagem acerca do resultado do teste.
-
-    // switch(testeB.run()){
-    //     case TUProjeto::SUCESSO: cout << "SUCESSO - PROJETO" << endl;
-    //                             break;
-    //     case TUProjeto::FALHA  : cout << "FALHA - PROJETO" << endl;
-    //                             break;
-    // }
 
     TUConta testeConta;
 
@@ -76,8 +21,27 @@ int main()
         case TUConta::SUCESSO: cout << "TESTE: CONTA - SUCESSO" << endl;
                                 break;
         case TUConta::FALHA  : cout << "TESTE : CONTA - FALHOU" << endl;
-                                //break;
+                                break;
     }
+
+    TUConta testeCartao;
+
+    switch(testeCartao.run()){
+        case TUCartao::SUCESSO: cout << "TESTE: CARTAO - SUCESSO" << endl;
+                                break;
+        case TUCartao::FALHA  : cout << "TESTE: CARTAO - FALHOU" << endl;
+                                break;
+    }
+
+    //TUQuadro testeQuadro;
+
+    //switch(testeQuadro.run()){
+        //case TUQuadro::SUCESSO: cout << "TESTE: Quadro - SUCESSO" << endl;
+                                //break;
+        //case TUQuadro::FALHA  : cout << "TESTE : Quadro - FALHOU" << endl;
+                                //break;
+    //}
+
 
 
 
@@ -133,25 +97,14 @@ int main()
         std::cout << "TESTE: LIMITE - FALHOU." << std::endl;
     }
 
+    TUColuna testeColuna;
+    int resultadoColuna = testeColuna.run();
+    if (resultadoColuna == TUColuna::SUCESSO) {
+        std::cout << "TESTE: COLUNA - SUCESSO" << std::endl;
+    } else {
+        std::cout << "TESTE: COLUNA - FALHOU." << std::endl;
+    }
 
-
-
-    // TUEmail testeB;
-    //  switch(testeB.run()){
-    //     case TUEmail::SUCESSO: cout << "SUCESSO - EMAIL" << endl;
-    //                             break;
-    //     case TUEmail::FALHA  : cout << "FALHA - EMAIL" << endl;
-    //                             break;
-    // }
-
-    // TUTexto teste;
-    // int resultado = teste.run();
-
-    // if (resultado == TUTexto::SUCESSO) {
-    //     std::cout << "Esse é o teste de sucesso de texto." << std::endl;
-    // } else {
-    //     std::cout << "Esse é o teste de falha de texto." << std::endl;
-    // }
 
 
 

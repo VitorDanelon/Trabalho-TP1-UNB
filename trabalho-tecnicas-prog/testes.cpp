@@ -2,150 +2,6 @@
 #include <iostream>
 
 // --------------------------------------------------------------------------
-// Implementacoes de metodos de classe de teste de unidade.
-
-// void TUCodigo::setUp(){
-//     codigo = new Codigo();
-//     estado = SUCESSO;
-// }
-
-// void TUCodigo::tearDown(){
-//     delete codigo;
-// }
-
-// void TUCodigo::testarCenarioSucesso(){
-//     try{
-//         codigo->setValor(VALOR_VALIDO);
-//         if (codigo->getValor() != VALOR_VALIDO)
-//             estado = FALHA;
-//     }
-//     catch(invalid_argument &excecao){
-//         estado = FALHA;
-//     }
-// }
-
-// void TUCodigo::testarCenarioFalha(){
-//     try{
-//         codigo->setValor(VALOR_INVALIDO);
-//         estado = FALHA;
-//     }
-//     catch(invalid_argument &excecao){
-//         if (codigo->getValor() == VALOR_INVALIDO)
-//             estado = FALHA;
-//     }
-// }
-
-// int TUCodigo::run(){
-//     setUp();
-//     testarCenarioSucesso();
-//     testarCenarioFalha();
-//     tearDown();
-//     return estado;
-// }
-
-// --------------------------------------------------------------------------
-// Implementa��es de m�todos de classe de teste de unidade.
-
-// void TUProjeto::setUp(){
-//     projeto = new Projeto();
-//     estado = SUCESSO;
-// }
-
-// void TUProjeto::tearDown(){
-//     delete projeto;
-// }
-
-// void TUProjeto::testarCenarioSucesso(){
-//     Codigo codigo;
-//     codigo.setValor(VALOR_VALIDO);
-//     projeto->setCodigo(codigo);
-//     if(projeto->getCodigo().getValor() != VALOR_VALIDO)
-//         estado = FALHA;
-
-//     Prioridade prioridade;
-//     prioridade.setValor(VALOR_VALIDO);
-//     projeto->setPrioridade(prioridade);
-//     if(projeto->getPrioridade().getValor() != VALOR_VALIDO)
-//         estado = FALHA;
-// }
-
-// int TUProjeto::run(){
-//     setUp();
-//     testarCenarioSucesso();
-//     tearDown();
-//     return estado;
-// }
-
-// void TUConta::setUp() {
-//     conta = new Conta();
-//     estado = SUCESSO;
-// }
-
-// void TUConta::tearDown() {
-//     delete conta;
-// }
-
-// void TUConta::testarCenarioSucesso() {
-//     // Configura a conta com valores válidos
-//     conta->Conta("email.val@example.com","Nome","S3nh!")
-//     //conta->setEmail("email.val@example.com");
-//     //conta->setNome("Nome");
-//     //conta->setSenha("S3nh!");
-
-//     // Verifica se os valores são obtidos corretamente
-//     //if (conta->Conta("email.val@example.com","Nome","S3nh!")
-//         //conta->getEmail() != "email_valido@example.com" ||
-//         //conta->getNome() != "Nome" ||
-//         //conta->getSenha() != "S3nh!") {
-//         //estado = FALHA;
-//     //}
-// }
-
-// int TUConta::run() {
-//     setUp();
-//     testarCenarioSucesso();
-//     tearDown();
-//     return estado;
-// }
-
-// void TUEmail::setUp() {
-//     email = new Email();
-//     estado = SUCESSO;
-// }
-
-// void TUEmail::tearDown() {
-//     delete email;
-// }
-
-// void TUEmail::testarCenarioSucesso() {
-//     // Cenário de sucesso - email válido
-//     try {
-//         email->setEmail("usuario@example.com");
-//         if (email->getEmail() != "usuario@example.com") {
-//             estado = FALHA;
-//         }
-//     } catch (const std::invalid_argument& e) {
-//         estado = FALHA;
-//     }
-// }
-
-// void TUEmail::testarCenarioFalha() {
-//     // Cenário de falha - email inválido
-//     try {
-//         email->setEmail("email-invalido");
-//         estado = FALHA;
-//     } catch (const std::invalid_argument& e) {
-//         // Espera-se uma exceção, o teste passa se a exceção for lançada
-//     }
-// }
-
-// int TUEmail::run() {
-//     setUp();
-//     testarCenarioSucesso();
-//     testarCenarioFalha();
-//     tearDown();
-//     return estado;
-// }
 
 void TUConta::setUp() {
     conta = new Conta("Ema.il@example.com", "Alfredo", "S3cr!");
@@ -176,17 +32,90 @@ int TUConta::run() {
     return estado;
 }
 
+void TUCartao::setUp() {
+    // Inicialize o estado e crie uma instância válida de Cartao
+
+    cartao = new Cartao("LD98", "Meu cartao.", "Uma descricao.", "SOLICITADO");
+    estado = SUCESSO;
+}
+
+void TUCartao::testarCenarioSucesso() {
+    // Testar visualizar o cartão
+    std::string detalhes = cartao->visualizarCartao();
+    if (!detalhes.empty()) {
+        estado = TUCartao::SUCESSO;
+    } else {
+        estado = TUCartao::FALHA;
+    }
+
+    // Testar mover o cartão
+    cartao->moverCartao("EM_EXECUCAO");
+    if (cartao->visualizarCartao() == "Codigo: LD98 \nNome: Meu cartao \nDescricao: Uma descricao \nColuna: EM_EXECUCAO") {
+        estado = TUCartao::SUCESSO;
+    } else {
+        estado = TUCartao::FALHA;
+    }
+
+    // Testar eliminar o cartão
+    cartao->eliminarCartao();
+    if (cartao->visualizarCartao() == "Codigo:  \nNome:  \nDescricao:  \nColuna: SOLICITADO" ) {
+        estado = TUCartao::SUCESSO;
+    } else {
+        estado = TUCartao::FALHA;
+    }
+}
+
+void TUCartao::tearDown() {
+    // Não há recursos para liberar
+}
+
+
+
+int TUCartao::run() {
+    setUp();
+    testarCenarioSucesso();
+    //tearDown();
+    return estado;
+}
+
+
+void TUQuadro::setUp() {
+    estado = SUCESSO;
+    quadro = new Quadro("AB94", "Meu quadro", "Uma descricao", "10");
+}
+
+void TUQuadro::tearDown() {
+    delete quadro;
+}
+
+void TUQuadro::testarCenarioSucesso() {
+    // Testar visualizar o quadro
+    std::string detalhes = quadro->visualizarQuadro();
+    if (detalhes == "Quadro: AB94\nNome: Meu quadro\nDescrição: Uma descricao \nLimite: 10") {
+        estado = SUCESSO;
+    } else {
+        estado = FALHA;
+    }
+
+    // Testar eliminar o quadro
+    quadro->eliminarQuadro();
+    if (quadro->visualizarQuadro() == "Quadro: \nNome : \nDescrição: \nLimite: ") {
+        estado = SUCESSO;
+    } else {
+        estado = FALHA;
+    }
+}
+
+int TUQuadro::run() {
+    setUp();
+    testarCenarioSucesso();
+    //tearDown();
+    return estado;
+}
 
 
 
 
-//void testeQuadro::executarTeste() {
-    //Quadro quadro1("AX07", "Alfredo", "Alfredo1234", "5");
-
-    //std::cout << "Teste 1 - Quadro 1:\n" << quadro1.visualizarQuadro() << std::endl;
-
-
-//}
 
 
 void TUEmail::setUp() {
@@ -253,8 +182,6 @@ void TUTexto::testarCenarioSucesso() {
         estado = FALHA;
         //std::cout << "caiu no if." << std::endl;
         //std::cout <<  "sou" + texto.getTexto() << std::endl;
-    }else{
-        std::cout << "Lembrar arrumar pontuacao na validacao de texto" << std::endl;
     }
 
 
@@ -415,6 +342,45 @@ int TULimite::run() {
     tearDown();
     return estado;
 }
+
+
+void TUColuna::setUp() {
+    coluna = Coluna();
+    estado = SUCESSO;
+}
+
+void TUColuna::tearDown() {
+    // Não há recursos para liberar
+}
+
+void TUColuna::testarCenarioSucesso() {
+    try {
+        coluna.setColuna("SOLICITADO");
+        if (coluna.getColuna() != "SOLICITADO") {
+            estado = FALHA;
+        }
+    } catch (const std::invalid_argument& e) {
+        estado = FALHA;
+    }
+}
+
+void TUColuna::testarCenarioFalha() {
+    try {
+        coluna.setColuna("INVALIDO");
+        estado = FALHA;
+    } catch (const std::invalid_argument& e) {
+        // Esperado: uma exceção deve ser lançada ao definir um valor inválido
+    }
+}
+
+int TUColuna::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    //tearDown();
+    return estado;
+}
+
 
 
 

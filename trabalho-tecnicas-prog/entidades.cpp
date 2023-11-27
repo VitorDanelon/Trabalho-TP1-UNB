@@ -1,7 +1,7 @@
 #include "entidades.h"
 #include <iostream>
 
-//raphael
+
 
 
 Conta::Conta(const string& email, const string& nome, const string& senha) {
@@ -32,16 +32,10 @@ Quadro::Quadro(const string& codigo, const string& nome, const string& descricao
     this->limite.setLimite(limite);
 }
 
-//void Quadro::criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite){
-    //this->codigo.setCodigo(codigo);
-    //this->nome.setTexto(nome);
-    //this->descricao.setTexto(descricao);
-    //this->limite.setLimite(limite);
-//}
 
 
 string Quadro::visualizarQuadro() const {
-    return "Quadro: " + codigo.getCodigo() + "\nNome :" + nome.getTexto() + "\nDescrição: " + descricao.getTexto() + "\nLimite: " + limite.getLimite();
+    return "Quadro: " + codigo.getCodigo() + "\nNome: " + nome.getTexto() + "\nDescrição: " + descricao.getTexto() + "\nLimite: " + limite.getLimite();
 
 }
 
@@ -61,10 +55,10 @@ Cartao::Cartao(const string& codigo, const string& nome, const string& descricao
 }
 
 string Cartao::visualizarCartao() {
-    std::cout << "Código: " + codigo.getCodigo() << std::endl;
-    std::cout << "Nome: " + nome.getTexto() << std::endl;
-    std::cout << "Descrição: " + descricao.getTexto() << std::endl;
-    std::cout << "Coluna: " + coluna.getColuna() << std::endl;
+
+    return "Codigo: " + codigo.getCodigo() + "\nNome: " + nome.getTexto() + "\nDescricao: " + descricao.getTexto() + "\nColuna: " + coluna.getColuna();
+
+
 }
 
 void Cartao::moverCartao(const string& coluna) {

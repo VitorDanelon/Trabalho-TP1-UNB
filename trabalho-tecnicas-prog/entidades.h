@@ -47,7 +47,7 @@ class Conta{
 
 };
 
-//Vitor classe quadro
+//222031822
 /**
  * @brief Classe que representa o quadro Kanban.
  */
@@ -66,7 +66,7 @@ class Quadro{
      * @param descricao Descrição do quadro.
      * @param limite Limite de cartoes.
      */
-        //void criarQuadro(const std::string&, const std::string&, const std::string&,const std::string& );
+
         Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite);
         /**
      * @brief Visualiza os dados do quadro.
@@ -79,7 +79,7 @@ class Quadro{
         void eliminarQuadro();
 
 };
-
+//202023940
 /**
  * @brief Classe que representa um Cartão.
  */
@@ -89,7 +89,7 @@ private:
     Texto nome; /**< Nome cartao . */
     Texto descricao/**< Texto do cartao. */;
     Coluna coluna;/**< Código associado ao cartao. */
-    //bool excluido;/**< Status do cartao excluido. */
+
 
 public:
     /**
@@ -111,15 +111,14 @@ public:
     /**
      * @brief Metodo que move o cartão para uma nova coluna.
      *
-     * @param novaColuna A nova coluna para qual o cartão deve ser movido.
+     * @param coluna A nova coluna para qual o cartão deve ser movido.
      */
     void moverCartao(const string& coluna);; //codigo ,coluna
 
     /**
      * @brief Metodo que elimina o cartão do quadro.
      *
-     * @param codigo O codigo do cartao a ser eliminado
-     * @param coluna Coluna destino do cartao
+     *
      */
     void eliminarCartao();
 };

@@ -4,39 +4,39 @@
 #include <stdexcept>
 
 using namespace std;
-
+//22033157
 /**
- * @brief A classe Email representa um endereço de email.
+ * @brief A classe Email representa um endereco de email.
  *
- * Esta classe contém um email e fornece métodos para definição, obtenção e validação do email.
+ * Esta classe contem um email e fornece metodos para definicao, obtencao e validacao do email.
  */
 class Email{
 private:
-    string email; /**< O endereço de email. */
+    string email; /**< O endereco de email. */
 public:
     //Email(const string& email) : email(email) {}
      /**
-     * @brief Método que define o endereço de email.
+     * @brief Metodo que define o endereco de email.
      *
      * @param email O email a ser definido.
      */
     void setEmail(const std::string);
     /**
-     * @brief Método que obtém o endereço de email atual.
+     * @brief Método que obtem o endereco de email atual.
      *
-     * @return O endereço de email atual.
+     * @return O endereco de email atual.
      */
     string getEmail() const;
     /**
-     * @brief Método que valida o formato do endereço de email.
+     * @brief Metodo que valida o formato do endereco de email.
      *
-     * @return True se o email for válido, False caso contrário.
+     * @return True se o email for valido, False caso contrario.
      */
     //bool validarEmail(string)
         bool validarEmail(const std::string& email);
 
 };
-
+//222033157
 /**
  * @brief A classe Texto representa um texto.
  *
@@ -67,6 +67,7 @@ public:
     bool validarTexto(const std::string& texto);
 
 };
+//222033157
 /**
  * @brief A classe Senha representa uma senha.
  *
@@ -98,7 +99,7 @@ public:
     bool validarSenha(const std::string& senha);
 
 };
-
+//222031822
 /**
  * @brief Classe que representa a entidade código presente nos quadros e cartoes.
  */
@@ -129,6 +130,7 @@ public:
     bool validarCodigo(const std::string& codigo);
 
 };
+//222031822
 /**
  * @brief Classe que representa o limite definido para cartoes no quadro Kanban.
  */
@@ -159,6 +161,10 @@ public:
 
 };
 
+/**
+ * @brief Classe que representa a coluna de status definida no cartoes.
+ */
+//202023940
 class Coluna {
 private:
     //enum Status{

@@ -50,41 +50,10 @@ void Senha::setSenha(const std::string& senha) {
     }
     this->senha = senha;
 }
-// bool Senha::validarSenha(const std::string& senha) {
-//     // Pelo menos um caractere � letra mai�scula
-//     bool temMaiuscula = false;
-//     // Pelo menos um caractere � letra min�scula
-//     bool temMinuscula = false;
-//     // Pelo menos um caractere � d�gito
-//     bool temDigito = false;
-//     // Pelo menos um caracter � sinal de pontua��o
-//     bool temPonto = false;
 
-//     std::set<char> caracteresDuplicados;
-
-//     for (char c : senha) {
-//         if (isupper(c)) {
-//             temMaiuscula = true;
-//         } else if (islower(c)) {
-//             temMinuscula = true;
-//         } else if (isdigit(c)) {
-//             temDigito = true;
-//         } else if (ispunct(c)) {
-//             temPonto = true;
-//         }
-
-//         if (caracteresDuplicados.count(c) > 0) {
-//             return false;  // Caractere duplicado encontrado
-//         }
-
-//         caracteresDuplicados.insert(c);
-//     }
-
-//     return temMaiuscula && temMinuscula && temDigito && temPonto;
-// }
 
 bool Senha::validarSenha(const std::string& senha) {
-    // Verifica se a senha tem exatamente 5 caracteres
+
     if (senha.length() != 5) {
         return false;
     }
@@ -106,17 +75,17 @@ bool Senha::validarSenha(const std::string& senha) {
         } else if (c == '.' || c == ',' || c == ';' || c == '?' || c == '!') {
             temPonto = true;
         } else {
-            return false; // Caractere inválido encontrado
+            return false;
         }
 
         if (caracteresDuplicados.count(c) > 0) {
-            return false;  // Caractere duplicado encontrado
+            return false;
         }
 
         caracteresDuplicados.insert(c);
     }
 
-    // Verifica se atende a todos os requisitos
+
     return temMaiuscula && temMinuscula && temDigito && temPonto;
 }
 
@@ -132,12 +101,12 @@ void Texto::setTexto(const std::string& texto) {
 }
 
 bool Texto::validarTexto(const std::string& texto) {
-    if (texto.length() < 5 || texto.length() > 30){
+   if (texto.length() < 5 || texto.length() > 30) {
         return false;
     }
 
-    bool prevSpace = false;
-    bool prevPunctuation = false;
+    bool prevEspaco = false;
+    bool prevPontuacao = false;
 
     for (size_t i = 0; i < texto.length(); i++) {
         char c = texto[i];
@@ -146,19 +115,17 @@ bool Texto::validarTexto(const std::string& texto) {
             if (!isupper(c)) {
                 return false;
             }
-        }
-        else {
+        } else {
             if (isalnum(c) || c == ' ') {
-                prevSpace = (c == ' ');
-                prevPunctuation = false;
+                prevEspaco = (c == ' ');
+                prevPontuacao = false;
             } else if (c == '.' || c == ';' || c == '?' || c == '!') {
-                if (prevPunctuation || i == texto.length() - 1 || !isupper(texto[i + 1])) {
+                if (prevPontuacao || (i < texto.length() - 1 && !isupper(texto[i + 1]))) {
                     return false;
                 }
-                prevSpace = false;
-                prevPunctuation = true;
-            }
-            else {
+                prevEspaco = false;
+                prevPontuacao = true;
+            } else {
                 return false;
             }
         }
@@ -167,18 +134,20 @@ bool Texto::validarTexto(const std::string& texto) {
     return true;
 }
 
-// GET CÓDIGO
+
+
+
 string Codigo::getCodigo() const {
     return codigo;
 }
-//SET CÓDIGO
+
 void Codigo::setCodigo(const std::string& codigo) {
     if (!validarCodigo(codigo)) {
         throw std::invalid_argument("Codigo invalido.");
     }
     this->codigo = codigo;
 }
-//VERIFICAR CÓDIGO
+
 
 bool Codigo::validarCodigo(const std::string& codigo) {
     try{
@@ -199,11 +168,11 @@ bool Codigo::validarCodigo(const std::string& codigo) {
     return true;
 }
 
-//GET LIMITE
+
 string Limite::getLimite() const {
     return limite;
 }
-//SET LIMITE
+
 void Limite::setLimite(const std::string& limite) {
     if (!validarLimite(limite)) {
         throw std::invalid_argument("Limite invalido.");
@@ -211,7 +180,7 @@ void Limite::setLimite(const std::string& limite) {
     this->limite = limite;
 }
 
-//VERIFICAR LIMITE
+
 bool Limite::validarLimite(const std::string& limite) {
     try {
         int numero = std::stoi(limite);
@@ -239,37 +208,6 @@ void Coluna::setColuna(const std::string& coluna) {
 
 
 
-// bool Codigo::validarCodigo(const std::string& codigo) {
-//     if (codigo.length() != 4) {
-//         return false;
-//     }
 
-//     for (int i = 0; i < 4; i++) {
-//         if (i < 2) {
-//             if (!isupper(codigo[i])) {
-//                 return false;
-//             }
-//         } else {
-//             if (!isdigit(codigo[i])) {
-//                 return false;
-//             }
-//         }
-//     }
-
-//     return true;
-// }
-
-// void Codigo::setCodigo(const std::string& codigo) {
-//     if (!validarCodigo(codigo)) {
-//         throw std::invalid_argument("Formato inv�lido.");
-//     }
-//     this->codigo = codigo;
-// }
-
-// void Limite::setLimite(const std::string& limite) {
-//     if (!validarLimite(limite)) {
-//         throw std::invalid_argument("Limite")
-//     }
-// }
 
 
