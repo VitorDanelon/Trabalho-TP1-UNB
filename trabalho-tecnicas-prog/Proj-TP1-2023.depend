@@ -63,3 +63,35 @@
 	<cctype>
 	<set>
 
+1698026123 source:c:\users\rcs\desktop\t1-tp1-202023940-222033157-222031822\trabalho-tecnicas-prog\dominios.cpp
+	"dominios.h"
+	<regex>
+	<stdexcept>
+	<cctype>
+	<set>
+
+1698026295 c:\users\rcs\desktop\t1-tp1-202023940-222033157-222031822\trabalho-tecnicas-prog\dominios.h
+	<stdexcept>
+
+1698026092 source:c:\users\rcs\desktop\t1-tp1-202023940-222033157-222031822\trabalho-tecnicas-prog\entidades.cpp
+	"entidades.h"
+	<iostream>
+
+1698026209 c:\users\rcs\desktop\t1-tp1-202023940-222033157-222031822\trabalho-tecnicas-prog\entidades.h
+	"dominios.h"
+	<string>
+
+1698025943 source:c:\users\rcs\desktop\t1-tp1-202023940-222033157-222031822\trabalho-tecnicas-prog\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1698023307 c:\users\rcs\desktop\t1-tp1-202023940-222033157-222031822\trabalho-tecnicas-prog\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1698026039 source:c:\users\rcs\desktop\t1-tp1-202023940-222033157-222031822\trabalho-tecnicas-prog\testes.cpp
+	"testes.h"
+	<iostream>
+

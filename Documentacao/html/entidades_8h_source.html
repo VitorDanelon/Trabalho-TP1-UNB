@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho-TP1: Código-Fonte de C:/Users/RCS/Desktop/Trab-TP1/Trabalho-TP1-UNB/trabalho-tecnicas-prog/entidades.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho-TP1<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Alunos com matricula:Luca Verdade Lenzoni 202023940, Raphael Camelo Santana 222033157 e Vitor Caldas Danelon Lopes 222031822</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6e5e4649d6873b14a641201b9fff8016.html">Trabalho-TP1-UNB</a></li><li class="navelem"><a class="el" href="dir_653eab43a25984972223282b3caee4a7.html">trabalho-tecnicas-prog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">entidades.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ENTIDADES_H_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ENTIDADES_H_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;dominios.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//matricula: 222033157</span></div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_conta.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_conta.html">Conta</a>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_class" href="class_email.html">Email</a> email; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_class" href="class_texto.html">Texto</a> nome; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_class" href="class_senha.html">Senha</a> senha; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_class" href="class_conta.html">Conta</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; email, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; nome, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; senha);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">string</span> <a class="code hl_function" href="class_conta.html#a81ba52310b2bcd90c0b80e2a5529ce35">visualizarConta</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_conta.html#a34826ee2630a67b421426e074667e178">editarConta</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; novoNome, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; novaSenha);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_conta.html#a4048981e8c847a9b7aff514f743ccd33">eliminarConta</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//Vitor classe quadro</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_quadro.html">   54</a></span><span class="keyword">class </span><a class="code hl_class" href="class_quadro.html">Quadro</a>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_class" href="class_codigo.html">Codigo</a> codigo; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_class" href="class_texto.html">Texto</a> nome; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_class" href="class_texto.html">Texto</a> descricao; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_class" href="class_limite.html">Limite</a> limite; </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="comment">//void criarQuadro(const std::string&amp;, const std::string&amp;, const std::string&amp;,const std::string&amp; );</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_class" href="class_quadro.html">Quadro</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; codigo, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; nome, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; descricao, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; limite);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordtype">string</span> <a class="code hl_function" href="class_quadro.html#adafca520db1e3440d3f3b76f44d3c87b">visualizarQuadro</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_quadro.html#a714c0134b8a104b66daf3c32c30bb850">eliminarQuadro</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="};">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_cartao.html">   86</a></span><span class="keyword">class </span><a class="code hl_class" href="class_cartao.html">Cartao</a> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_class" href="class_codigo.html">Codigo</a> codigo;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_class" href="class_texto.html">Texto</a> nome; </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_class" href="class_texto.html">Texto</a> descricao;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_class" href="class_coluna.html">Coluna</a> coluna;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">//bool excluido;/**&lt; Status do cartao excluido. */</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_class" href="class_cartao.html">Cartao</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; codigo, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; nome, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; descricao, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; coluna);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_cartao.html#a5112c7d9d6c72e148ae403d0f3c87cb3">visualizarCartao</a>(); <span class="comment">//codigo c</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_cartao.html#ab7e21ae0bb25f02f85615bb94c29208b">moverCartao</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; coluna);; <span class="comment">//codigo ,coluna</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_cartao.html#af2c131f82001b0956b70b3e5c0735274">eliminarCartao</a>();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">//Luca classe cartao</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_cartao_html"><div class="ttname"><a href="class_cartao.html">Cartao</a></div><div class="ttdoc">Classe que representa um Cart�o.</div><div class="ttdef"><b>Definição</b> entidades.h:86</div></div>
+<div class="ttc" id="aclass_cartao_html_a5112c7d9d6c72e148ae403d0f3c87cb3"><div class="ttname"><a href="class_cartao.html#a5112c7d9d6c72e148ae403d0f3c87cb3">Cartao::visualizarCartao</a></div><div class="ttdeci">string visualizarCartao()</div><div class="ttdoc">Visualiza os detalhes do cart�o.</div><div class="ttdef"><b>Definição</b> entidades.cpp:63</div></div>
+<div class="ttc" id="aclass_cartao_html_ab7e21ae0bb25f02f85615bb94c29208b"><div class="ttname"><a href="class_cartao.html#ab7e21ae0bb25f02f85615bb94c29208b">Cartao::moverCartao</a></div><div class="ttdeci">void moverCartao(const string &amp;coluna)</div><div class="ttdoc">Metodo que move o cart�o para uma nova coluna.</div><div class="ttdef"><b>Definição</b> entidades.cpp:73</div></div>
+<div class="ttc" id="aclass_cartao_html_af2c131f82001b0956b70b3e5c0735274"><div class="ttname"><a href="class_cartao.html#af2c131f82001b0956b70b3e5c0735274">Cartao::eliminarCartao</a></div><div class="ttdeci">void eliminarCartao()</div><div class="ttdoc">Metodo que elimina o cart�o do quadro.</div><div class="ttdef"><b>Definição</b> entidades.cpp:77</div></div>
+<div class="ttc" id="aclass_codigo_html"><div class="ttname"><a href="class_codigo.html">Codigo</a></div><div class="ttdoc">Classe que representa a entidade c�digo presente nos quadros e cartoes.</div><div class="ttdef"><b>Definição</b> dominios.h:105</div></div>
+<div class="ttc" id="aclass_coluna_html"><div class="ttname"><a href="class_coluna.html">Coluna</a></div><div class="ttdoc">Classe que representa a coluna de status definida no cartoes.</div><div class="ttdef"><b>Definição</b> dominios.h:166</div></div>
+<div class="ttc" id="aclass_conta_html"><div class="ttname"><a href="class_conta.html">Conta</a></div><div class="ttdoc">A classe Conta representa uma conta de usu�rio.</div><div class="ttdef"><b>Definição</b> entidades.h:16</div></div>
+<div class="ttc" id="aclass_conta_html_a34826ee2630a67b421426e074667e178"><div class="ttname"><a href="class_conta.html#a34826ee2630a67b421426e074667e178">Conta::editarConta</a></div><div class="ttdeci">void editarConta(const string &amp;novoNome, const string &amp;novaSenha)</div><div class="ttdoc">Edita o nome e/ou a senha da conta.</div><div class="ttdef"><b>Definição</b> entidades.cpp:17</div></div>
+<div class="ttc" id="aclass_conta_html_a4048981e8c847a9b7aff514f743ccd33"><div class="ttname"><a href="class_conta.html#a4048981e8c847a9b7aff514f743ccd33">Conta::eliminarConta</a></div><div class="ttdeci">void eliminarConta()</div><div class="ttdoc">Elimina a conta, redefinindo seus atributos para valores vazios.</div><div class="ttdef"><b>Definição</b> entidades.cpp:22</div></div>
+<div class="ttc" id="aclass_conta_html_a81ba52310b2bcd90c0b80e2a5529ce35"><div class="ttname"><a href="class_conta.html#a81ba52310b2bcd90c0b80e2a5529ce35">Conta::visualizarConta</a></div><div class="ttdeci">string visualizarConta() const</div><div class="ttdoc">Visualiza os dados da conta.</div><div class="ttdef"><b>Definição</b> entidades.cpp:13</div></div>
+<div class="ttc" id="aclass_email_html"><div class="ttname"><a href="class_email.html">Email</a></div><div class="ttdoc">A classe Email representa um endereco de email.</div><div class="ttdef"><b>Definição</b> dominios.h:13</div></div>
+<div class="ttc" id="aclass_limite_html"><div class="ttname"><a href="class_limite.html">Limite</a></div><div class="ttdoc">Classe que representa o limite definido para cartoes no quadro Kanban.</div><div class="ttdef"><b>Definição</b> dominios.h:136</div></div>
+<div class="ttc" id="aclass_quadro_html"><div class="ttname"><a href="class_quadro.html">Quadro</a></div><div class="ttdoc">Classe que representa o quadro Kanban.</div><div class="ttdef"><b>Definição</b> entidades.h:54</div></div>
+<div class="ttc" id="aclass_quadro_html_a714c0134b8a104b66daf3c32c30bb850"><div class="ttname"><a href="class_quadro.html#a714c0134b8a104b66daf3c32c30bb850">Quadro::eliminarQuadro</a></div><div class="ttdeci">void eliminarQuadro()</div><div class="ttdoc">Elimina o quadro.</div><div class="ttdef"><b>Definição</b> entidades.cpp:48</div></div>
+<div class="ttc" id="aclass_quadro_html_adafca520db1e3440d3f3b76f44d3c87b"><div class="ttname"><a href="class_quadro.html#adafca520db1e3440d3f3b76f44d3c87b">Quadro::visualizarQuadro</a></div><div class="ttdeci">string visualizarQuadro() const</div><div class="ttdoc">Visualiza os dados do quadro.</div><div class="ttdef"><b>Definição</b> entidades.cpp:43</div></div>
+<div class="ttc" id="aclass_senha_html"><div class="ttname"><a href="class_senha.html">Senha</a></div><div class="ttdoc">A classe Senha representa uma senha.</div><div class="ttdef"><b>Definição</b> dominios.h:75</div></div>
+<div class="ttc" id="aclass_texto_html"><div class="ttname"><a href="class_texto.html">Texto</a></div><div class="ttdoc">A classe Texto representa um texto.</div><div class="ttdef"><b>Definição</b> dominios.h:45</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
