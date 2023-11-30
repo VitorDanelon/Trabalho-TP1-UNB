@@ -53,14 +53,10 @@ void Cartao::eliminarCartao() {
 
 }
 // ---------------------------------------------------------------------------------
-// Implementações de métodos de classe controladora.
-
 void CntrIUQuadro::criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) {
     try {
-
         // Chamada do método da camada de lógica de negócios para criar um quadro.
         cntrLNQuadro->criarQuadro(codigo, nome, descricao, limite);
-
         cout << "Quadro criado com sucesso!" << endl;
 
     } catch (const exception& exp) {
@@ -72,14 +68,12 @@ void CntrIUQuadro::visualizarQuadro(const string& codigo) {
     try {
         // 1. Verificar se o código do quadro é válido.
         Codigo codigoObjeto;
-            if (!codigoObjeto.validarCodigo(codigo)) {
-
+        if (!codigoObjeto.validarCodigo(codigo)) {
             cout << "Erro ao ver o quadro: ";
-            }
-
+        }
 
         // 2. Chamar o método da camada de lógica de negócios para visualizar o quadro.
-        Quadro quadro = cntrLNQuadro-> visualizarQuadro(codigo);
+        Quadro quadro = cntrLNQuadro->visualizarQuadro(codigo);
 
         // 3. Exibir as informações do quadro.
         cout << "Detalhes do Quadro:" << endl;
@@ -93,7 +87,6 @@ void CntrIUQuadro::visualizarQuadro(const string& codigo) {
     }
 }
 
-
 void CntrIUQuadro::eliminarQuadro(const string& codigo) {
     try {
         // 1. Verificar se o código do quadro é válido.
@@ -103,7 +96,6 @@ void CntrIUQuadro::eliminarQuadro(const string& codigo) {
 
         // 2. Chamar o método da camada de lógica de negócios para eliminar o quadro.
         cntrLNQuadro->eliminarQuadro(codigo);
-
         cout << "Quadro eliminado com sucesso!" << endl;
 
     } catch (const exception& exp) {
@@ -111,26 +103,7 @@ void CntrIUQuadro::eliminarQuadro(const string& codigo) {
     }
 }
 
-
-void CntrIUQuadro::criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) {
-    try {
-        // 1. Verificar se os códigos e parâmetros são válidos.
-        if (!Codigo::validarCodigo(codigoQuadro) || !Codigo::validarCodigo(codigoCartao) ||
-            !Texto::validarTexto(nome) || !Texto::validarTexto(descricao) || !Coluna::validarColuna(coluna)) {
-            throw invalid_argument("Parâmetros inválidos para criar o cartão.");
-        }
-
-        // 2. Chamar o método da camada de lógica de negócios para criar o cartão.
-        cntrLNQuadro->criarCartao(codigoQuadro, codigoCartao, nome, descricao, coluna);
-        cout << "Cartão criado com sucesso!" << endl;
-
-    } catch (const exception& exp) {
-        cout << "Erro ao criar cartão: " << exp.what() << endl;
-    }
-}
-
-
-void CntrIUQuadro::visualizarCartao(const string& codigoQuadro, const string& codigoCartao) {
+void CntrIUCartao::visualizarCartao(const string& codigoQuadro, const string& codigoCartao) {
     try {
         // 1. Verificar se os códigos são válidos.
         if (!Codigo::validarCodigo(codigoQuadro) || !Codigo::validarCodigo(codigoCartao)) {
@@ -138,7 +111,7 @@ void CntrIUQuadro::visualizarCartao(const string& codigoQuadro, const string& co
         }
 
         // 2. Chamar o método da camada de lógica de negócios para visualizar o cartão.
-        cntrLNQuadro->visualizarCartao(codigoQuadro, codigoCartao);
+        cntrLNCartao->visualizarCartao(codigoQuadro, codigoCartao);
         // Exiba as informações do cartão conforme necessário.
 
     } catch (const exception& exp) {
@@ -146,8 +119,7 @@ void CntrIUQuadro::visualizarCartao(const string& codigoQuadro, const string& co
     }
 }
 
-
-void CntrIUQuadro::moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) {
+void CntrIUCartao::moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) {
     try {
         // 1. Verificar se os códigos e a nova coluna são válidos.
         if (!Codigo::validarCodigo(codigoQuadro) || !Codigo::validarCodigo(codigoCartao) || !Coluna::validarColuna(novaColuna)) {
@@ -155,7 +127,7 @@ void CntrIUQuadro::moverCartao(const string& codigoQuadro, const string& codigoC
         }
 
         // 2. Chamar o método da camada de lógica de negócios para mover o cartão.
-        cntrLNQuadro->moverCartao(codigoQuadro, codigoCartao, novaColuna);
+        cntrLNCartao->moverCartao(codigoQuadro, codigoCartao, novaColuna);
         cout << "Cartão movido com sucesso para a coluna " << novaColuna << endl;
 
     } catch (const exception& exp) {
@@ -163,8 +135,7 @@ void CntrIUQuadro::moverCartao(const string& codigoQuadro, const string& codigoC
     }
 }
 
-
-void CntrIUQuadro::eliminarCartao(const string& codigoQuadro, const string& codigoCartao) {
+void CntrIUCartao::eliminarCartao(const string& codigoQuadro, const string& codigoCartao) {
     try {
         // 1. Verificar se os códigos são válidos.
         if (!Codigo::validarCodigo(codigoQuadro) || !Codigo::validarCodigo(codigoCartao)) {
@@ -172,33 +143,14 @@ void CntrIUQuadro::eliminarCartao(const string& codigoQuadro, const string& codi
         }
 
         // 2. Chamar o método da camada de lógica de negócios para eliminar o cartão.
-        cntrLNQuadro->eliminarCartao(codigoQuadro, codigoCartao);
+        cntrLNCartao->eliminarCartao(codigoQuadro, codigoCartao);
         cout << "Cartão eliminado com sucesso!" << endl;
 
     } catch (const exception& exp) {
         cout << "Erro ao eliminar cartão: " << exp.what() << endl;
     }
-    // CntrLNQuadro.cpp
-
-
-
-class CntrLNQuadro : public ILNQuadro {
-public:
-    void visualizarQuadro(const std::string& codigo) override {
-        // Implementação do método visualizarQuadro
-    }
-
-    // Implementações dos outros métodos da interface
-};
-class CntrIUQuadro : public IUQuadro {
-private:
-    ILNQuadro* cntrLNQuadro;
-
-public:
-   
-    void visualizarQuadro(const string& codigo) override {
-        cntrLNQuadro->visualizarQuadro(codigo);
-    }
-};
 }
+
+
+
 
