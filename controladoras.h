@@ -3,7 +3,7 @@
 #include "dominios.h"
 #include <stdexcept>
 #include <string>
-#include "interfaces.h"
+#include "IAG.h"
 #include "dominios.h"
 #include <stdexcept>
 #include <iostream>
