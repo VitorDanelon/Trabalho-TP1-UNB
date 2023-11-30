@@ -1,6 +1,5 @@
+#ifndef CONTROLADORAS_H_INCLUDED
 #define CONTROLADORAS_H_INCLUDED
-#ifndef ENTIDADES_H_INCLUDED
-#define ENTIDADES_H_INCLUDED
 #include "dominios.h"
 #include <stdexcept>
 #include <string>
