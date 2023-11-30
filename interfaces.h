@@ -14,6 +14,7 @@ using namespace std;
 class ILNQuadro;
 class ILNCartao;
 class Quadro;
+class Cartao;
 // -------------------------------------------------------------------------------------------
 // Declaração de interface para serviço de quadro provido pela camada de apresentação.
 
