@@ -37,7 +37,7 @@ public:
 class ISQuadro {
 public:
     virtual void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) = 0;
-    virtual Quadro visualizarQuadro(const string& codigo) = 0;
+    virtual void visualizarQuadro(const string& codigo) = 0;
     virtual void eliminarQuadro(const string& codigo) = 0;
     virtual ~ISQuadro() {}  // Método destrutor virtual.
 };
@@ -63,7 +63,7 @@ private:
 public:
     Apresentacao(IAGestor* cntrIAGestor) : cntrIAGestor(cntrIAGestor) {}
 
-    void apresentarQuadrosECartoes(const std::string& email) override {
+    void apresentarQuadrosECartoes(const std::string& email) {
         // Aqui você pode chamar os métodos necessários do controlador para criar quadros e cartões.
         // Certifique-se de adaptar isso às suas necessidades específicas.
 
