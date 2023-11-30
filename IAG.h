@@ -1,8 +1,8 @@
-#ifndef INTERFACES_H_INCLUDED
-#define INTERFACES_H_INCLUDED
+#ifndef IAG.h_INCLUDED
+#define IAG.h_INCLUDED
 #include "dominios.h"
 #include "controladoras.h"
-#include "interfaces.h"
+#include "IAG.h"
 #include <stdexcept>
 
 
