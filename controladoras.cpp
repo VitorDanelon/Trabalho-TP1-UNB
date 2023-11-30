@@ -195,8 +195,7 @@ private:
     ILNQuadro* cntrLNQuadro;
 
 public:
-    // ... (outros métodos)
-
+   
     void visualizarQuadro(const string& codigo) override {
         cntrLNQuadro->visualizarQuadro(codigo);
     }
