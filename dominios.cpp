@@ -1,3 +1,4 @@
+
 #include "dominios.h"
 #include <regex>
 #include <stdexcept>
@@ -271,6 +272,5 @@ void Coluna::setColuna(const std::string& coluna) {
 //         throw std::invalid_argument("Limite")
 //     }
 // }
-
 
 
