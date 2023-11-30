@@ -91,21 +91,33 @@ public:
 class CntrIUQuadro : public IUQuadro {
 private:
     ILNQuadro *cntrLNQuadro;
+
 public:
-    void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite);
-    void visualizarQuadro(const string& codigo);
-    void eliminarQuadro(const string& codigo);
-    void setCntrLNQuadro(ILNQuadro *cntrLNQuadro);
-    void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna);
-    void visualizarCartao(const string& codigoQuadro, const string& codigoCartao);
-    void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna);
-    void eliminarCartao(const string& codigoQuadro, const string& codigoCartao);
-    void setCntrLNCartao(ILNCartao *cntrLNCartao);
+    void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override;
+    void visualizarQuadro(const string& codigo) override;
+    void eliminarQuadro(const string& codigo) override;
+    void setCntrLNQuadro(ILNQuadro *cntrLNQuadro) override;
 };
 
 void inline CntrIUQuadro::setCntrLNQuadro(ILNQuadro *cntrLNQuadro) {
     this->cntrLNQuadro = cntrLNQuadro;
 }
+class CntrIUCartao : public IUCartao {
+private:
+    ILNCartao *cntrLNCartao;
+
+public:
+    void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override;
+    void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override;
+    void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override;
+    void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override;
+    void setCntrLNCartao(ILNCartao *cntrLNCartao) override;
+};
+
+void inline CntrIUCartao::setCntrLNCartao(ILNCartao *cntrLNCartao) {
+    this->cntrLNCartao = cntrLNCartao;
+}
+
 
 
 #endif // CONTROLADORAS_H_INCLUDED
