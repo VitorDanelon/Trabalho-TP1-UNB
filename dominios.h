@@ -1,25 +1,30 @@
-#include "controladoras.h"
 #ifndef DOMINIOS_H_INCLUDED
 #define DOMINIOS_H_INCLUDED
+
 #include <stdexcept>
 
 using namespace std;
+//22033157
 
-
-class Email {
+class Email{
 private:
-    std::string email;
-
+    string email; /**< O endereco de email. */
 public:
-    std::string getEmail() const;
-    void setEmail(const std::string& email);
-    static bool validarEmail(const std::string& email);
-};
+    //Email(const string& email) : email(email) {}
 
+    void setEmail(const std::string);
+
+    string getEmail() const;
+
+    //bool validarEmail(string)
+        bool validarEmail(const std::string& email);
+
+};
+//222033157
 
 class Texto{;
 private:
-    string texto;
+    string texto; /**< O conteúdo do texto. */
 public:
 
     void setTexto(const std::string& texto);
@@ -30,6 +35,7 @@ public:
     bool validarTexto(const std::string& texto);
 
 };
+//222033157
 
 class Senha{
 private:
@@ -45,41 +51,55 @@ public:
     bool validarSenha(const std::string& senha);
 
 };
+//222031822
 
 class Codigo{
 private:
-    string codigo;
+
+    string codigo; /**< Código a ser utilizado. */
+
 public:
+
+
     void setCodigo(const std::string& codigo);
+
+
     string getCodigo() const;
+
     bool validarCodigo(const std::string& codigo);
 
 };
-
+//222031822
 
 class Limite{
 private:
 
-    string limite;
+    string limite; /**< Limite a ser definido. */
 
 public:
 
     void setLimite(const std::string& limite);
+
     string getLimite() const;
+
     bool validarLimite(const std::string& limite);
 
 };
+
+
+//202023940
 class Coluna {
 private:
-    enum Status{
-        SOLICITADO,
-        EM_EXECUCAO,
-        CONCLUIDO};
+    //enum Status{
+        //SOLICITADO,
+        //EM_EXECUCAO,
+        //CONCLUIDO};
 
     string coluna;
 
 
 public:
+
     void setColuna(const std::string& coluna); //
 
     string getColuna();
@@ -88,14 +108,6 @@ public:
 
 };
 
-void Coluna::setColuna(const std::string& coluna) {
-        if (coluna == "SOLICITADO" || coluna == "EM_EXECUCAO" || coluna == "CONCLUIDO") {
-            this->coluna = coluna;
-        } else {
-            throw std::invalid_argument("Valor de coluna inválido, dever ser SOLICITADO, EM_EXECUCAO, CONCLUIDO");
-        }
-}
- string Coluna::getColuna() {
-        return coluna;
-}
+
+
 #endif

@@ -12,12 +12,12 @@ int main() {
     // ---------------------------------------------------------------------------------
     // Instanciar classe controladora e classe stub.
 
-    IUQuadro* cntrIUQuadro = new CntrIUQuadro();
-    ILNQuadro* stubLNQuadro = new StubLNQuadro();
+    IUQuadro* cntrIAQuadro = new CntrIAQuadro();
+    ILNQuadro* stubISQuadro = new StubISQuadro();
 
     // Ligar instância de controladora a instância de stub.
 
-    cntrIUQuadro->setCntrLNQuadro(stubLNQuadro);
+    cntrIAQuadro->setCntrLNQuadro(stubISQuadro);
 
     // Simular a apresentação de tela inicial do sistema.
     // Vamos assumir que a autenticação já foi realizada.
@@ -40,7 +40,7 @@ int main() {
         cout << "Digite o limite do quadro: ";
         cin >> limite;
 
-        cntrIUQuadro->criarQuadro(codigoQuadro, nome, descricao, limite);
+        cntrIAGestor->criarQuadro(codigoQuadro, nome, descricao, limite);
     } catch (const invalid_argument& exp) {
         cout << "Erro ao criar quadro: " << exp.what() << endl;
     }
@@ -49,8 +49,8 @@ int main() {
 
     // Destruir instância de controladora e instância de stub.
 
-    delete cntrIUQuadro;
-    delete stubLNQuadro;
+    delete cntrIAGestor;
+    delete stubISQuadro;
 
     return 0;
 }

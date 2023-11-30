@@ -6,21 +6,21 @@
 
 // Stubs para as interfaces de Quadro e Cartao.
 
-class StubLNQuadro : public ILNQuadro {
+class StubISQuadro : public ISQuadro {
 public:
     void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override;
     void visualizarQuadro(const string& codigo) override;
     void eliminarQuadro(const string& codigo) override;
 };
 
-class StubLNCartao : public ILNCartao {
+class StubISCartao : public ISCartao {
 public:
     void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override;
     void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override;
     void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override;
     void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override;
 };
-class StubLNQuadro : public ILNQuadro {
+class StubISQuadro : public ISQuadro {
 public:
     void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override {
         std::cout << "StubLNQuadro: criarQuadro chamado" << std::endl;
@@ -35,7 +35,7 @@ public:
     }
 };
 
-class StubLNCartao : public ILNCartao {
+class StubISCartao : public ISCartao {
 public:
     void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override {
         std::cout << "StubLNCartao: criarCartao chamado" << std::endl;
