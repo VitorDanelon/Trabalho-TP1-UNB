@@ -11,10 +11,6 @@ public:
     void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override;
     void visualizarQuadro(const string& codigo) override;
     void eliminarQuadro(const string& codigo) override;
-    void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override;
-    void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override;
-    void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override;
-    void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override;
 };
 
 class StubLNCartao : public ILNCartao {
@@ -36,22 +32,6 @@ public:
 
     void eliminarQuadro(const string& codigo) override {
         std::cout << "StubLNQuadro: eliminarQuadro chamado" << std::endl;
-    }
-
-    void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override {
-        std::cout << "StubLNQuadro: criarCartao chamado" << std::endl;
-    }
-
-    void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override {
-        std::cout << "StubLNQuadro: visualizarCartao chamado" << std::endl;
-    }
-
-    void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override {
-        std::cout << "StubLNQuadro: moverCartao chamado" << std::endl;
-    }
-
-    void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override {
-        std::cout << "StubLNQuadro: eliminarCartao chamado" << std::endl;
     }
 };
 
