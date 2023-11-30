@@ -1,25 +1,26 @@
 #include "controladoras.h"
 #include <iostream>
+#include <string>
 
 
 
 
-IAConta::Conta(const string& email, const string& nome, const string& senha) {
+ControladoraConta::ControladoraConta(const string& email, const string& nome, const string& senha) {
     this->email.setEmail(email);
     this->nome.setTexto(nome);
     this->senha.setSenha(senha);
 }
 
-string IAConta::visualizarConta() const {
+string ControladoraConta::visualizarConta() const {
     return "Email: " + email.getEmail() + "\nNome: " + nome.getTexto() + "\nSenha: " + senha.getSenha();
 }
 
-void IAConta::editarConta(const string& novoNome, const string& novaSenha) {
+void ControladoraConta::editarConta(const string& novoNome, const string& novaSenha) {
     nome.setTexto(novoNome);
     senha.setSenha(novaSenha);
 }
 
-void IAConta::eliminarConta(){
+void ControladoraConta::eliminarConta(){
     email.setEmail("");
     nome.setTexto("");
     senha.setSenha("");

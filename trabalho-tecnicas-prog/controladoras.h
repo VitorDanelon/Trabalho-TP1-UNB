@@ -2,22 +2,23 @@
 #define ENTIDADES_H_INCLUDED
 
 #include "dominios.h"
+
 #include "interfaces/IAC.h"
 #include <string>
 
 using namespace std;
 
 
-class ControladoraConta:public IAConta{
+class ControladoraConta : public IAConta {
     private:
         Email email; /**< Email associado à conta. */
         Texto nome; /**< Nome associado à conta. */
         Senha senha; /**< Senha associada à conta. */
 
     public:
-        Conta(const string& email, const string& nome, const string& senha);
-        string visualizarConta() const;
-        void editarConta(const string& novoNome, const string& novaSenha);
+        ControladoraConta(const string& email, const string& nome, const string& senha);
+        string visualizarConta() const ;
+        void editarConta(const string& novoNome, const string& novaSenha) ;
         void eliminarConta();
 
 };
