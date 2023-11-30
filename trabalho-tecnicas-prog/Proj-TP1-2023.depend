@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1698025943 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
+1701378665 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
 	<iostream>
 	"dominios.h"
-	"entidades.h"
-	"testes.h"
+	"stubs.h"
+	"controladoras.h"
+	"interfaces/IAA.h"
 
 1698026295 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
 	<stdexcept>
@@ -16,7 +17,7 @@
 	"dominios.h"
 	"entidades.h"
 
-1698026123 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.cpp
+1701378166 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.cpp
 	"dominios.h"
 	<regex>
 	<stdexcept>
@@ -92,4 +93,34 @@
 1698026039 source:c:\users\rcs\desktop\t1-tp1-202023940-222033157-222031822\trabalho-tecnicas-prog\testes.cpp
 	"testes.h"
 	<iostream>
+
+1701379035 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.cpp
+	"controladoras.h"
+	"dominios.h"
+	"interfaces/IAA.h"
+	<iostream>
+	<string>
+
+1701379275 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.h
+	"dominios.h"
+	"interfaces/IAA.h"
+	<stdexcept>
+	<string>
+
+1701379272 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\interfaces\iaa.h
+	<string>
+	"dominios.h"
+
+1698026295 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\\dominios.h
+	<stdexcept>
+
+1701379162 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\stubs.cpp
+	"stubs.h"
+
+1701368901 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\stubs.h
+	"dominios.h"
+	"interfaces/IAA.h"
+	<stdexcept>
+	<iostream>
+	<typeinfo>
 

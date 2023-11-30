@@ -1,7 +1,8 @@
 #ifndef STUBS_H_INCLUDED
 #define STUBS_H_INCLUDED
 
-#include "IAA.h"
+#include "dominios.h"
+#include "interfaces/IAA.h"
 
 #include <stdexcept>
 #include <iostream>
@@ -10,22 +11,22 @@
 using namespace std;
 
 // -------------------------------------------------------------------------------------------
-// Declaração de classe stub.
+// Declaraï¿½ï¿½o de classe stub.
 //
-// Classe StubIAAutenticação implementa a interface IAAutenticação.
+// Classe StubIAAutenticaï¿½ï¿½o implementa a interface IAAutenticaï¿½ï¿½o.
 
-class StubIAAntenticação:public IAAutenticacao{
+class StubISAutenticacao:public ISAutenticacao{
 
 private:
 
-    // Definições de valores a serem usados como gatilhos para notificações de erros.
+    // Definiï¿½ï¿½es de valores a serem usados como gatilhos para notificaï¿½ï¿½es de erros.
 
-    const static int TRIGGER_FALHA        = 67890;
-    const static int TRIGGER_ERRO_SISTEMA = 78901;
+    const static std::string TRIGGER_FALHA;
+    const static std::string TRIGGER_ERRO_SISTEMA;
 
 public:
 
-    // Declaração de método previsto em interface.
+    // Declaraï¿½ï¿½o de mï¿½todo previsto em interface.
 
     bool autenticar(const Email&, const Senha&);
 };

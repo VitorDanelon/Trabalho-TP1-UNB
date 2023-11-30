@@ -1,33 +1,39 @@
 #include "controladoras.h"
+#include "dominios.h"
+#include "interfaces/IAA.h"
 #include <iostream>
 #include <string>
 
+using namespace std;
 
 
+// ControladoraConta::ControladoraConta(const string& email, const string& nome, const string& senha) {
+//     this->email.setEmail(email);
+//     this->nome.setTexto(nome);
+//     this->senha.setSenha(senha);
+// }
 
-ControladoraConta::ControladoraConta(const string& email, const string& nome, const string& senha) {
-    this->email.setEmail(email);
-    this->nome.setTexto(nome);
-    this->senha.setSenha(senha);
+// string ControladoraConta::visualizarConta() const {
+//     return "Email: " + email.getEmail() + "\nNome: " + nome.getTexto() + "\nSenha: " + senha.getSenha();
+// }
+
+// void ControladoraConta::editarConta(const string& novoNome, const string& novaSenha) {
+//     nome.setTexto(novoNome);
+//     senha.setSenha(novaSenha);
+// }
+
+// void ControladoraConta::eliminarConta(){
+//     email.setEmail("");
+//     nome.setTexto("");
+//     senha.setSenha("");
+// }
+void ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth){
+        this->controladoraISAuth = controladoraISAuth;
 }
 
-string ControladoraConta::visualizarConta() const {
-    return "Email: " + email.getEmail() + "\nNome: " + nome.getTexto() + "\nSenha: " + senha.getSenha();
-}
-
-void ControladoraConta::editarConta(const string& novoNome, const string& novaSenha) {
-    nome.setTexto(novoNome);
-    senha.setSenha(novaSenha);
-}
-
-void ControladoraConta::eliminarConta(){
-    email.setEmail("");
-    nome.setTexto("");
-    senha.setSenha("");
-}
-bool ControladoraConta::autenticar(Email *email) {
+bool ControladoraAutenticacao::autenticar(Email *email) {
     Senha senha;
-    int entrada;
+    string entrada;
 
     // Solicitar Email e senha.
 
@@ -38,10 +44,10 @@ bool ControladoraConta::autenticar(Email *email) {
         try {
             std::cout << "Digite o Email : ";
             std::cin >> entrada;
-            email->setEmail(std::to_string(entrada)); // Converte o int para string
+            email->setEmail(entrada); // Converte o int para string
             std::cout << "Digite a senha     : ";
             std::cin >> entrada;
-            senha.setSenha(std::to_string(entrada)); // Converte o int para string
+            senha.setSenha(entrada); // Converte o int para string
             break;
         }
         catch (const std::invalid_argument &exp) {
@@ -49,14 +55,16 @@ bool ControladoraConta::autenticar(Email *email) {
         }
     }
 
-    // Solicitar autenticação.
+    // Solicitar autenticaï¿½ï¿½o.
 
-    bool resultado = controladoraContaAu->autenticar(*email, senha);
+    bool resultado = controladoraISAuth->autenticar(*email, senha);
 
-    // Retornar resultado da autenticação.
+    // Retornar resultado da autenticaï¿½ï¿½o.
 
     return resultado;
 }
+
+
 
 Quadro::Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite) {
     this->codigo.setCodigo(codigo);
@@ -68,7 +76,7 @@ Quadro::Quadro(const string& codigo, const string& nome, const string& descricao
 
 
 string Quadro::visualizarQuadro() const {
-    return "Quadro: " + codigo.getCodigo() + "\nNome: " + nome.getTexto() + "\nDescrição: " + descricao.getTexto() + "\nLimite: " + limite.getLimite();
+    return "Quadro: " + codigo.getCodigo() + "\nNome: " + nome.getTexto() + "\nDescriï¿½ï¿½o: " + descricao.getTexto() + "\nLimite: " + limite.getLimite();
 
 }
 

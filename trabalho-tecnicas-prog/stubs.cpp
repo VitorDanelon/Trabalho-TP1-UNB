@@ -1,30 +1,33 @@
 #include "stubs.h"
 
+using namespace std;
 // -------------------------------------------------------------------------------------------
-// Definições de constantes.
+// Definiï¿½ï¿½es de constantes.
 
-const int StubAAutenticacao::TRIGGER_FALHA;
-const int StubAAutenticacao::TRIGGER_ERRO_SISTEMA;
+const std::string StubISAutenticacao::TRIGGER_FALHA = "erro@email.com";
+const std::string StubISAutenticacao::TRIGGER_ERRO_SISTEMA = "erro.syst@email.com" ;
 
 // -------------------------------------------------------------------------------------------
-// Implementação de método.
+// Implementaï¿½ï¿½o de mï¿½todo.
 
-bool StubAAutenticacao::autenticar(const Email &email, const Senha &senha) {
+bool StubISAutenticacao::autenticar(const Email &email, const Senha &senha) {
 
     // Apresentar dados recebidos.
 
-    cout << endl << "StubAAutenticacao::autenticar" << endl ;
+    cout << endl << "StubISAutenticacao::autenticar" << endl ;
     cout << "Email = " << email.getEmail()   << endl ;
-    cout << "Senha     = " << senha.getEmail()       << endl ;
+    cout << "Senha = " << senha.getSenha()   << endl ;
 
     // Diferentes comportamentos dependendo do valor do Email
 
-    switch(email.getEmail()){
-        case TRIGGER_FALHA:
-            return false;
-        case TRIGGER_ERRO_SISTEMA:
-            throw runtime_error("Erro de sistema");
-    }
+    if(email.getEmail() == TRIGGER_FALHA){
+        return false;
+    };
+    if(email.getEmail() == TRIGGER_ERRO_SISTEMA){
+      throw runtime_error("Erro de sistema");
+    };
+
+
 
     return true;
 }

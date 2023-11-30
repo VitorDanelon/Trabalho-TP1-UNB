@@ -42,8 +42,11 @@
 		<Unit filename="controladoras.h" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h" />
+		<Unit filename="interfaces/IAA.h" />
 		<Unit filename="interfaces/IAC.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="stubs.cpp" />
+		<Unit filename="stubs.h" />
 		<Unit filename="testes.cpp" />
 		<Unit filename="testes.h" />
 		<Extensions>

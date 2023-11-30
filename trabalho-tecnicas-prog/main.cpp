@@ -5,8 +5,9 @@
 #include <iostream>
 
 #include "dominios.h"
+#include "stubs.h"
 #include "controladoras.h"
-#include "testes.h"
+// #include "testes.h"
 #include "interfaces/IAA.h"
 
 using namespace std;
@@ -114,10 +115,13 @@ using namespace std;
 // }
 
 int main() {
-    IAAutenticacao *StubAAutenticacao = new StubAAutenticacao();
+
+    IAAutenticacao *controladoraAutenticacao = new ControladoraAutenticacao();
+    ISAutenticacao *stubISAutenticacao = new StubISAutenticacao();
 
     // Ligar instância de controladora a instância de stub.
-    ControladoraConta->setCntrAAutenticacao(stubAAutenticacao);
+    controladoraAutenticacao->setCntrISAutenticacao(stubISAutenticacao);
+
 
     bool resultado;
     Email email;
@@ -129,7 +133,7 @@ int main() {
 
         try {
             // Solicitar serviço de autenticação.
-            resultado = cntrIAAutenticacao->autenticar(email, senha);
+            resultado = controladoraAutenticacao->autenticar(&email);
         } catch (const runtime_error &exp) {
             cout << "Erro de sistema." << endl;
             break;
@@ -147,8 +151,8 @@ int main() {
     }
 
     // Destruir instância de controladora e instância de stub.
-    delete cntrIAAutenticacao;
-    delete stubAAutenticacao;
+    delete controladoraAutenticacao;
+    delete stubISAutenticacao;
 
     return 0;
 }
