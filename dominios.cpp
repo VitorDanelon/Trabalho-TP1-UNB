@@ -12,7 +12,7 @@ std::string Email::getEmail() const {
     return email;
 }
 
-void Email::setEmail(const std::string& email) {
+void Email::validarEmail(const std::string& email) {
     if (!validarEmail(email)) {
         throw std::invalid_argument("Email inválido.");
     }
@@ -139,7 +139,7 @@ bool Texto::validarTexto(const std::string& texto) {
 }
 
 // GET CÓDIGO
-string Codigo::getCodigo() const {
+std::string Codigo::getCodigo() const  {
     return codigo;
 }
 //SET CÓDIGO

@@ -96,7 +96,7 @@ void testarFuncionalidades(IAG* iag) {
     // Associar quadro ao usuário
     iag->associarQuadroUsuario("usuario@teste.com", "Q001");
 
-    // Adicione outras chamadas de funções aqui conforme necessário para seus testes
+    /
 }
 
 int main() {
@@ -106,7 +106,7 @@ int main() {
     // Teste as funcionalidades usando o driver e o stub
     testarFuncionalidades(stub);
 
-    // Limpeza de memória
+
     delete stub;
 
     return 0;

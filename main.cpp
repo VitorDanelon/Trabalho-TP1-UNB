@@ -9,6 +9,25 @@
 using namespace std;
 
 int main() {
+
+
+
+    // Aqui você precisará criar instâncias necessárias, incluindo o controlador.
+    IAGestor* cntrIAGestor = new CntrIAGestor();  // Substitua com a implementação real.
+    IApresentacao* apresentacao = new Apresentacao(cntrIAGestor);
+
+    // Chame o método para apresentar quadros e cartões com um email genérico.
+    apresentacao->apresentarQuadrosECartoes("testw@exemplo.com");
+
+
+    delete apresentacao;
+    delete cntrIAGestor;
+
+    return 0;
+
+
+
+
     // ---------------------------------------------------------------------------------
     // Instanciar classe controladora e classe stub.
 

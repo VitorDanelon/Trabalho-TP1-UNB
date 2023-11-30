@@ -54,10 +54,6 @@ public:
 //222031822
 
 class Codigo{
-private:
-
-    string codigo; /**< Código a ser utilizado. */
-
 public:
 
 
@@ -67,6 +63,12 @@ public:
     string getCodigo() const;
 
     bool validarCodigo(const std::string& codigo);
+
+private:
+
+    string codigo;
+
+
 
 };
 //222031822

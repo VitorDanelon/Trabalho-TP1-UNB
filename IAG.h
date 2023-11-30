@@ -2,7 +2,7 @@
 #ifndef IAG.h_INCLUDED
 #define IAG.h_INCLUDED
 #include "dominios.h"
-
+//#include "IAPresentacao.h" // IA PRINCIPAL
 #include "controladoras.h"
 #include "IAG.h"
 #include <stdexcept>
@@ -53,6 +53,32 @@ public:
     virtual void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) = 0;
     virtual void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) = 0;
     virtual ~ISCartao() {}  // Método destrutor virtual.
+};
+
+
+class Apresentacao : public IApresentacao {
+private:
+    IAGestor* cntrIAGestor;
+
+public:
+    Apresentacao(IAGestor* cntrIAGestor) : cntrIAGestor(cntrIAGestor) {}
+
+    void apresentarQuadrosECartoes(const std::string& email) override {
+        // Aqui você pode chamar os métodos necessários do controlador para criar quadros e cartões.
+        // Certifique-se de adaptar isso às suas necessidades específicas.
+
+        // Criar quadro
+        cntrIAGestor->criarQuadro("Q001", "Quadro 1", "Descrição Quadro 1", "10");
+
+        // Criar cartão
+        cntrIAGestor->criarCartao("Q001", "C001", "Cartão 1", "Descrição Cartão 1", "TO_DO");
+
+        // Visualizar quadro
+        cntrIAGestor->visualizarQuadro("Q001");
+
+        // Visualizar cartão
+        cntrIAGestor->visualizarCartao("Q001", "C001");
+    }
 };
 
 #endif
