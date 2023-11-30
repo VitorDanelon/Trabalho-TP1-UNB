@@ -1,7 +1,6 @@
 #include <stdexcept>
 #include <iostream>
 #include <string>
-
 #include "dominios.h"
 #include "IAG.h"
 #include "controladoras.h"

@@ -1,7 +1,8 @@
+#include "dominios.cpp"
 #ifndef IAG.h_INCLUDED
 #define IAG.h_INCLUDED
 #include "dominios.h"
-#include "dominios.cpp"
+
 #include "controladoras.h"
 #include "IAG.h"
 #include <stdexcept>
