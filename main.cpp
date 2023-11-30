@@ -1,11 +1,8 @@
-// ---------------------------------------------------------------------------------
-// Incluir cabeçalhos.
-
 #include <stdexcept>
 #include <iostream>
 #include <string>
 
-#include "dominios.h"  // Certifique-se de incluir os cabeçalhos corretos.
+#include "dominios.h"
 #include "IAG.h"
 #include "controladoras.h"
 #include "stubs.h"
@@ -16,8 +13,8 @@ int main() {
     // ---------------------------------------------------------------------------------
     // Instanciar classe controladora e classe stub.
 
-    IUQuadro  *cntrIUQuadro = new CntrIUQuadro();
-    ILNQuadro *stubLNQuadro = new StubLNQuadro();
+    IUQuadro* cntrIUQuadro = new CntrIUQuadro();
+    ILNQuadro* stubLNQuadro = new StubLNQuadro();
 
     // Ligar instância de controladora a instância de stub.
 
@@ -45,7 +42,7 @@ int main() {
         cin >> limite;
 
         cntrIUQuadro->criarQuadro(codigoQuadro, nome, descricao, limite);
-    } catch (const runtime_error &exp) {
+    } catch (const invalid_argument& exp) {
         cout << "Erro ao criar quadro: " << exp.what() << endl;
     }
 
