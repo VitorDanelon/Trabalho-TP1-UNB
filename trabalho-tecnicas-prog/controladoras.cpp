@@ -25,6 +25,38 @@ void ControladoraConta::eliminarConta(){
     nome.setTexto("");
     senha.setSenha("");
 }
+bool ControladoraConta::autenticar(Email *email) {
+    Senha senha;
+    int entrada;
+
+    // Solicitar Email e senha.
+
+    while(true) {
+
+        std::cout << std::endl << "Autenticacao de usuario." << std::endl << std::endl;
+
+        try {
+            std::cout << "Digite o Email : ";
+            std::cin >> entrada;
+            email->setEmail(std::to_string(entrada)); // Converte o int para string
+            std::cout << "Digite a senha     : ";
+            std::cin >> entrada;
+            senha.setSenha(std::to_string(entrada)); // Converte o int para string
+            break;
+        }
+        catch (const std::invalid_argument &exp) {
+            std::cout << std::endl << "Dado em formato incorreto." << std::endl;
+        }
+    }
+
+    // Solicitar autenticação.
+
+    bool resultado = controladoraContaAu->autenticar(*email, senha);
+
+    // Retornar resultado da autenticação.
+
+    return resultado;
+}
 
 Quadro::Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite) {
     this->codigo.setCodigo(codigo);

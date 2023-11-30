@@ -7,6 +7,7 @@
 #include "dominios.h"
 #include "controladoras.h"
 #include "testes.h"
+#include "interfaces/IAA.h"
 
 using namespace std;
 
@@ -113,24 +114,41 @@ using namespace std;
 // }
 
 int main() {
-    // Aqui você pode realizar a lógica de interação com o usuário para autenticação, por exemplo...
+    IAAutenticacao *StubAAutenticacao = new StubAAutenticacao();
 
-    // Criando uma instância do módulo ControladoraConta (módulo de conta)
-    ControladoraConta minhaConta("meuemail@example.com", "Meu Nome", "MinhaSenha");
+    // Ligar instância de controladora a instância de stub.
+    ControladoraConta->setCntrAAutenticacao(stubAAutenticacao);
 
-    // Exemplo de interação com o módulo de conta através do módulo principal
-    std::cout << "Dados da conta:\n";
-    std::cout << minhaConta.visualizarConta() << std::endl;
+    bool resultado;
+    Email email;
+    Senha senha;
 
-    minhaConta.editarConta("Novo Nome", "NovaSenha");
+    while (true) {
+        // Simular apresentação de tela inicial do sistema.
+        cout << endl << "Tela inicial de sistema." << endl;
 
-    std::cout << "Conta após edição:\n";
-    std::cout << minhaConta.visualizarConta() << std::endl;
+        try {
+            // Solicitar serviço de autenticação.
+            resultado = cntrIAAutenticacao->autenticar(email, senha);
+        } catch (const runtime_error &exp) {
+            cout << "Erro de sistema." << endl;
+            break;
+        }
 
-    minhaConta.eliminarConta();
+        // Criticar resultado da autenticação.
+        if (resultado) {
+            cout << endl << "Sucesso autenticacao." << endl;
+            cout << endl << "Email = " << email.getEmail() << endl;
+            break;
+        } else {
+            cout << endl << "Erro autenticacao." << endl;
+            break;
+        }
+    }
 
-    std::cout << "Conta após exclusão:\n";
-    std::cout << minhaConta.visualizarConta() << std::endl;
+    // Destruir instância de controladora e instância de stub.
+    delete cntrIAAutenticacao;
+    delete stubAAutenticacao;
 
     return 0;
 }

@@ -3,25 +3,29 @@
 
 #include "dominios.h"
 
+#include "interfaces/IAA.h"
 #include "interfaces/IAC.h"
+#include <stdexcept>
 #include <string>
 
 using namespace std;
 
 
-class ControladoraConta : public IAConta {
+class ControladoraConta : public IAAutenticacao {
     private:
         Email email; /**< Email associado à conta. */
         Texto nome; /**< Nome associado à conta. */
         Senha senha; /**< Senha associada à conta. */
-
+        IAAutenticacao *controladoraContaAu;
     public:
         ControladoraConta(const string& email, const string& nome, const string& senha);
-        string visualizarConta() const ;
-        void editarConta(const string& novoNome, const string& novaSenha) ;
+        string visualizarConta() const;
+        void editarConta(const string& novoNome, const string& novaSenha);
         void eliminarConta();
-
+        bool autenticar(Email*);
+        void setControladoraAutenticacao(IAAutenticacao*);
 };
+
 
 //222031822
 /**
