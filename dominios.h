@@ -159,39 +159,39 @@ public:
 
 };
 
-class Coluna {
-private:
-    //enum Status{
-        //SOLICITADO,
-        //EM_EXECUCAO,
-        //CONCLUIDO};
 
-    string coluna;
+void Coluna::setColuna(const std::string& valor) {
+    if (!validarColuna(valor)) {
+        throw std::invalid_argument("Valor de coluna inválido. Deve ser SOLICITADO, EM_EXECUCAO, CONCLUIDO");
+    }
 
+    if (valor == "SOLICITADO") {
+        coluna = SOLICITADO;
+    } else if (valor == "EM_EXECUCAO") {
+        coluna = EM_EXECUCAO;
+    } else if (valor == "CONCLUIDO") {
+        coluna = CONCLUIDO;
+    }
+}
 
-public:
+std::string Coluna::getColuna() const {
+    switch (coluna) {
+        case SOLICITADO:
+            return "SOLICITADO";
+        case EM_EXECUCAO:
+            return "EM_EXECUCAO";
+        case CONCLUIDO:
+            return "CONCLUIDO";
+    }
+    return "";  // Retorno padrão, caso algo inesperado aconteça.
+}
 
-    /**
-     * @brief Define o valor da coluna.
-     *
-     * @param valor O valor da coluna a ser definido.
-     */
-    void setColuna(const std::string& coluna); //
-
-    /**
-     * @brief Obtém o valor da coluna.
-     *
-     * @return O valor atual da coluna.
-     */
-    string getColuna();
-
-    //bool validarColuna(const std::string& coluna);
-
-};
+bool Coluna::validarColuna(const std::string& valor) {
+    return (valor == "SOLICITADO" || valor == "EM_EXECUCAO" || valor == "CONCLUIDO");
+}
 
 
 
 
 
 #endif
-
