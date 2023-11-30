@@ -5,11 +5,9 @@
 #include "IAG.h"
 #include <stdexcept>
 
-
 using namespace std;
 
 // -------------------------------------------------------------------------------------------
-// Declaração adiantada (forward declaration)
 
 class ILNQuadro;
 class ILNCartao;
@@ -64,4 +62,4 @@ public:
     virtual ~ILNCartao() {}  // Método destrutor virtual.
 };
 
-#endif // INTERFACES_H_INCLUDED
+#endif 
