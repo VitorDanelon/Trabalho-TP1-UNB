@@ -1,5 +1,5 @@
-#include "controladoras.h"
 #include "dominios.h"
+#include "controladoras.h"
 #include <regex>
 #include <stdexcept>
 #include <cctype>
@@ -7,12 +7,13 @@
 
 using namespace std;
 
-string Email::getEmail() const {
+std::string Email::getEmail() const {
     return email;
 }
-void Email::setEmail(const std::string email) {
+
+void Email::setEmail(const std::string& email) {
     if (!validarEmail(email)) {
-        throw std::invalid_argument("Email invalido.");
+        throw std::invalid_argument("Email inválido.");
     }
     this->email = email;
 }

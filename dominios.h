@@ -5,43 +5,16 @@
 
 using namespace std;
 
-/**
- * @brief A classe Email representa um endereço de email.
- *
- * Esta classe contém um email e fornece métodos para definição, obtenção e validação do email.
- */
-class Email{
+class Email {
 private:
-    string email; /**< O endereço de email. */
-public:
-    //Email(const string& email) : email(email) {}
-     /**
-     * @brief Método que define o endereço de email.
-     *
-     * @param email O email a ser definido.
-     */
-    void setEmail(const std::string);
-    /**
-     * @brief Método que obtém o endereço de email atual.
-     *
-     * @return O endereço de email atual.
-     */
-    string getEmail() const;
-    /**
-     * @brief Método que valida o formato do endereço de email.
-     *
-     * @return True se o email for válido, False caso contrário.
-     */
-    //bool validarEmail(string)
-        bool validarEmail(const std::string& email);
+    std::string email;
 
+public:
+    std::string getEmail() const;
+    void setEmail(const std::string& email);
+    bool validarEmail(const std::string& email);
 };
 
-/**
- * @brief A classe Texto representa um texto.
- *
- * Esta classe contém um texto e fornece métodos para definição, obtenção e validação do texto.
- */
 class Texto{;
 private:
     string texto; /**< O conteúdo do texto. */

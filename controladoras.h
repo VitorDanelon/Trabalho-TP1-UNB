@@ -1,16 +1,11 @@
 #ifndef CONTROLADORAS_H_INCLUDED
 #define CONTROLADORAS_H_INCLUDED
-
 #include "dominios.h"
 #include "IAG.h"
 #include <stdexcept>
 #include <iostream>
 
-// Evite inclusões redundantes
-// #include <stdexcept>
-// #include <string>
 
-// Evite o uso de "using namespace std;" em arquivos de cabeçalho
 
 class Quadro {
 private:
