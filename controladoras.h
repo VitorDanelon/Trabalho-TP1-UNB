@@ -1,6 +1,5 @@
 #ifndef CONTROLADORAS_H_INCLUDED
 #define CONTROLADORAS_H_INCLUDED
-#include "dominios.h"
 #include "IAG.h"
 #include <stdexcept>
 #include <iostream>

@@ -1,6 +1,5 @@
-#include "IAG.h"
 #include "controladoras.h"
-#include "dominios.h"
+#include "IAG.h"
 #include "dominios.h"
 #include <iostream>
 #include <string>
@@ -149,7 +148,7 @@ void CntrIUCartao::eliminarCartao(const string& codigoQuadro, const string& codi
     } catch (const exception& exp) {
         cout << "Erro ao eliminar cartão: " << exp.what() << endl;
     }
-    
+
 void CntrIUQuadro::setCntrLNQuadro(ILNQuadro* cntrLNQuadro) {
     this->cntrLNQuadro = cntrLNQuadro;
 }

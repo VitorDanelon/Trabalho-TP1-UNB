@@ -1,5 +1,4 @@
 #include "dominios.h"
-#include "controladoras.h"
 #include <regex>
 #include <stdexcept>
 #include <cctype>
@@ -16,7 +15,7 @@ void Email::setEmail(const std::string& email) {
         throw std::invalid_argument("Email inválido.");
     }
     this->email = email;
-}
+}}
 bool Email::validarEmail(const std::string& email) {
     const std::regex emailRegex(R"([a-zA-Z0-9._%+-]{2,10}@[a-zA-Z0-9.-]{2,20})");
     if (!std::regex_match(email, emailRegex)) {
@@ -236,8 +235,6 @@ void Coluna::setColuna(const std::string& coluna) {
  string Coluna::getColuna() {
         return coluna;
 }
-
-
 
 
 

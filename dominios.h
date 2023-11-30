@@ -12,8 +12,9 @@ private:
 public:
     std::string getEmail() const;
     void setEmail(const std::string& email);
-    bool validarEmail(const std::string& email);
+    static bool validarEmail(const std::string& email);
 };
+
 
 class Texto{;
 private:
@@ -162,9 +163,5 @@ std::string Coluna::getColuna() const {
 bool Coluna::validarColuna(const std::string& valor) {
     return (valor == "SOLICITADO" || valor == "EM_EXECUCAO" || valor == "CONCLUIDO");
 }
-
-
-
-
 
 #endif
