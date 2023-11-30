@@ -1,10 +1,12 @@
 #include "dominios.h"
+#include "controladoras.h"
 #include <regex>
 #include <stdexcept>
 #include <cctype>
 #include<set>
 
 using namespace std;
+
 
 std::string Email::getEmail() const {
     return email;
@@ -15,7 +17,7 @@ void Email::setEmail(const std::string& email) {
         throw std::invalid_argument("Email inválido.");
     }
     this->email = email;
-}}
+}
 bool Email::validarEmail(const std::string& email) {
     const std::regex emailRegex(R"([a-zA-Z0-9._%+-]{2,10}@[a-zA-Z0-9.-]{2,20})");
     if (!std::regex_match(email, emailRegex)) {
@@ -51,38 +53,6 @@ void Senha::setSenha(const std::string& senha) {
     }
     this->senha = senha;
 }
-// bool Senha::validarSenha(const std::string& senha) {
-//     // Pelo menos um caractere � letra mai�scula
-//     bool temMaiuscula = false;
-//     // Pelo menos um caractere � letra min�scula
-//     bool temMinuscula = false;
-//     // Pelo menos um caractere � d�gito
-//     bool temDigito = false;
-//     // Pelo menos um caracter � sinal de pontua��o
-//     bool temPonto = false;
-
-//     std::set<char> caracteresDuplicados;
-
-//     for (char c : senha) {
-//         if (isupper(c)) {
-//             temMaiuscula = true;
-//         } else if (islower(c)) {
-//             temMinuscula = true;
-//         } else if (isdigit(c)) {
-//             temDigito = true;
-//         } else if (ispunct(c)) {
-//             temPonto = true;
-//         }
-
-//         if (caracteresDuplicados.count(c) > 0) {
-//             return false;  // Caractere duplicado encontrado
-//         }
-
-//         caracteresDuplicados.insert(c);
-//     }
-
-//     return temMaiuscula && temMinuscula && temDigito && temPonto;
-// }
 
 bool Senha::validarSenha(const std::string& senha) {
     // Verifica se a senha tem exatamente 5 caracteres
@@ -238,37 +208,6 @@ void Coluna::setColuna(const std::string& coluna) {
 
 
 
-// bool Codigo::validarCodigo(const std::string& codigo) {
-//     if (codigo.length() != 4) {
-//         return false;
-//     }
 
-//     for (int i = 0; i < 4; i++) {
-//         if (i < 2) {
-//             if (!isupper(codigo[i])) {
-//                 return false;
-//             }
-//         } else {
-//             if (!isdigit(codigo[i])) {
-//                 return false;
-//             }
-//         }
-//     }
-
-//     return true;
-// }
-
-// void Codigo::setCodigo(const std::string& codigo) {
-//     if (!validarCodigo(codigo)) {
-//         throw std::invalid_argument("Formato inv�lido.");
-//     }
-//     this->codigo = codigo;
-// }
-
-// void Limite::setLimite(const std::string& limite) {
-//     if (!validarLimite(limite)) {
-//         throw std::invalid_argument("Limite")
-//     }
-// }
 
 
