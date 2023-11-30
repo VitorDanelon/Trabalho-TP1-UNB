@@ -1,3 +1,4 @@
+#include "controladoras.h"
 #ifndef DOMINIOS_H_INCLUDED
 #define DOMINIOS_H_INCLUDED
 #include "controladoras.h"
@@ -69,36 +70,33 @@ public:
     bool validarLimite(const std::string& limite);
 
 };
+class Coluna {
+private:
+    enum Status{
+        SOLICITADO,
+        EM_EXECUCAO,
+        CONCLUIDO};
+
+    string coluna;
 
 
-void Coluna::setColuna(const std::string& valor) {
-    if (!validarColuna(valor)) {
-        throw std::invalid_argument("Valor de coluna inválido. Deve ser SOLICITADO, EM_EXECUCAO, CONCLUIDO");
-    }
+public:
+    void setColuna(const std::string& coluna); //
 
-    if (valor == "SOLICITADO") {
-        coluna = SOLICITADO;
-    } else if (valor == "EM_EXECUCAO") {
-        coluna = EM_EXECUCAO;
-    } else if (valor == "CONCLUIDO") {
-        coluna = CONCLUIDO;
-    }
+    string getColuna();
+
+    //bool validarColuna(const std::string& coluna);
+
+};
+
+void Coluna::setColuna(const std::string& coluna) {
+        if (coluna == "SOLICITADO" || coluna == "EM_EXECUCAO" || coluna == "CONCLUIDO") {
+            this->coluna = coluna;
+        } else {
+            throw std::invalid_argument("Valor de coluna inválido, dever ser SOLICITADO, EM_EXECUCAO, CONCLUIDO");
+        }
 }
-
-std::string Coluna::getColuna() const {
-    switch (coluna) {
-        case SOLICITADO:
-            return "SOLICITADO";
-        case EM_EXECUCAO:
-            return "EM_EXECUCAO";
-        case CONCLUIDO:
-            return "CONCLUIDO";
-    }
-    return "";  // Retorno padrão, caso algo inesperado aconteça.
+ string Coluna::getColuna() {
+        return coluna;
 }
-
-bool Coluna::validarColuna(const std::string& valor) {
-    return (valor == "SOLICITADO" || valor == "EM_EXECUCAO" || valor == "CONCLUIDO");
-}
-
 #endif
