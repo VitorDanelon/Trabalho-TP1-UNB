@@ -1,5 +1,5 @@
 #include "stubs.h"
-
+  /*
 // Implementação do método do stub para visualizar um cartão.
 void StubLNCartao::visualizarCartao(const string& codigoQuadro, const string& codigoCartao) {
     cout << "StubLNCartao::visualizarCartao" << endl;
@@ -70,4 +70,47 @@ void StubLNCartao::eliminarCartao(const string& codigoQuadro, const string& codi
     } catch (const exception& exp) {
         cout << "Erro ao eliminar cartão: " << exp.what() << endl;
     }
+*/
+
+// TESTE COM "DRIVER"
+
+    // Stub da camada de apresentação
+class StubIAG : public IAG {
+public:
+    void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override {
+        // Implementação do stub para criar um quadro
+        cout << "Quadro criado com código: " << codigo << ", nome: " << nome << ", descrição: " << descricao << ", limite: " << limite << endl;
+    }
+
+    void associarQuadroUsuario(const string& email, const string& codigo) override {
+        // Implementação do stub para associar um quadro a um usuário
+        cout << "Quadro " << codigo << " associado ao usuário com email: " << email << endl;
+    }
+};
+
+// Driver para testar as funcionalidades
+void testarFuncionalidades(IAG* iag) {
+    // Criar quadro
+    iag->criarQuadro("Q001", "Quadro Teste", "Descrição do Quadro", "15");
+
+    // Associar quadro ao usuário
+    iag->associarQuadroUsuario("usuario@teste.com", "Q001");
+
+    // Adicione outras chamadas de funções aqui conforme necessário para seus testes
+}
+
+int main() {
+    // Use o Stub no lugar da implementação real da camada de apresentação
+    IAG* stub = new StubIAG();
+
+    // Teste as funcionalidades usando o driver e o stub
+    testarFuncionalidades(stub);
+
+    // Limpeza de memória
+    delete stub;
+
+    return 0;
+}
+
+
 }

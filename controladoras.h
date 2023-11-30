@@ -1,9 +1,55 @@
-#include "dominios.h"
 #ifndef CONTROLADORAS_H_INCLUDED
 #define CONTROLADORAS_H_INCLUDED
+#include "dominios.h"
 #include "IAG.h"
 #include <stdexcept>
 #include <iostream>
+
+using namespace std;
+
+
+class ControladoraConta : public IAAutenticacao {
+    private:
+        Email email;
+        Texto nome;
+        Senha senha;
+        IAAutenticacao *controladoraContaAu;
+    public:
+        ControladoraConta(const string& email, const string& nome, const string& senha);
+        string visualizarConta() const;
+        void editarConta(const string& novoNome, const string& novaSenha);
+        void eliminarConta();
+        bool autenticar(Email*);
+        void setControladoraAutenticacao(IAAutenticacao*);
+};
+
+
+class Quadro {
+private:
+    Codigo codigo;
+    Texto nome;
+    Texto descricao;
+    Limite limite;
+
+public:
+    Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite);
+    string visualizarQuadro() const;
+    void eliminarQuadro();
+};
+
+class Cartao {
+private:
+    Codigo codigo;
+    Texto nome;
+    Texto descricao;
+    Coluna coluna;
+
+public:
+    Cartao(const string& codigo, const string& nome, const string& descricao, const string& coluna);
+    string visualizarCartao();
+    void moverCartao(const string& coluna);
+    void eliminarCartao();
+};
 
 
 

@@ -4,32 +4,7 @@
 #include <stdexcept>
 
 using namespace std;
-class Quadro {
-private:
-    Codigo codigo;
-    Texto nome;
-    Texto descricao;
-    Limite limite;
 
-public:
-    Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite);
-    string visualizarQuadro() const;
-    void eliminarQuadro();
-};
-
-class Cartao {
-private:
-    Codigo codigo;
-    Texto nome;
-    Texto descricao;
-    Coluna coluna;
-
-public:
-    Cartao(const string& codigo, const string& nome, const string& descricao, const string& coluna);
-    string visualizarCartao();
-    void moverCartao(const string& coluna);
-    void eliminarCartao();
-};
 
 class Email {
 private:

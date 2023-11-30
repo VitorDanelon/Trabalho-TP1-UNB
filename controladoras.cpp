@@ -1,6 +1,4 @@
 #include "controladoras.h"
-#include "dominios.h"
-#include "IAG.h"
 #include <iostream>
 #include <string>
 
