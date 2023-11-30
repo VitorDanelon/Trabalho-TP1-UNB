@@ -1,12 +1,12 @@
 // ---------------------------------------------------------------------------------
-// Incluir cabeÁalhos.
+// Incluir cabe√ßalhos.
 
 #include <stdexcept>
 #include <iostream>
 #include <string>
 
-#include "dominios.h"  // Certifique-se de incluir os cabeÁalhos corretos.
-#include "interfaces.h"
+#include "dominios.h"  // Certifique-se de incluir os cabe√ßalhos corretos.
+#include "IAG.h"
 #include "controladoras.h"
 #include "stubs.h"
 
@@ -19,12 +19,12 @@ int main() {
     IUQuadro  *cntrIUQuadro = new CntrIUQuadro();
     ILNQuadro *stubLNQuadro = new StubLNQuadro();
 
-    // Ligar inst‚ncia de controladora a inst‚ncia de stub.
+    // Ligar inst√¢ncia de controladora a inst√¢ncia de stub.
 
     cntrIUQuadro->setCntrLNQuadro(stubLNQuadro);
 
-    // Simular a apresentaÁ„o de tela inicial do sistema.
-    // Vamos assumir que a autenticaÁ„o j· foi realizada.
+    // Simular a apresenta√ß√£o de tela inicial do sistema.
+    // Vamos assumir que a autentica√ß√£o j√° foi realizada.
 
     string codigoQuadro;
     string codigoCartao;
@@ -32,14 +32,14 @@ int main() {
     string descricao;
     string limite;
 
-    // Exemplo de criaÁ„o de quadro.
+    // Exemplo de cria√ß√£o de quadro.
     try {
         cout << "Criar Quadro:" << endl;
-        cout << "Digite o cÛdigo do quadro: ";
+        cout << "Digite o c√≥digo do quadro: ";
         cin >> codigoQuadro;
         cout << "Digite o nome do quadro: ";
         cin >> nome;
-        cout << "Digite a descriÁ„o do quadro: ";
+        cout << "Digite a descri√ß√£o do quadro: ";
         cin >> descricao;
         cout << "Digite o limite do quadro: ";
         cin >> limite;
@@ -49,9 +49,9 @@ int main() {
         cout << "Erro ao criar quadro: " << exp.what() << endl;
     }
 
-    // Outras operaÁıes podem ser adicionadas conforme necess·rio.
+    // Outras opera√ß√µes podem ser adicionadas conforme necess√°rio.
 
-    // Destruir inst‚ncia de controladora e inst‚ncia de stub.
+    // Destruir inst√¢ncia de controladora e inst√¢ncia de stub.
 
     delete cntrIUQuadro;
     delete stubLNQuadro;
