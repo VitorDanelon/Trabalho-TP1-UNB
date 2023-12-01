@@ -50,7 +50,7 @@ public:
     virtual void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) = 0;
     virtual void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) = 0;
     virtual void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) = 0;
-    virtual ~ISCartao() {}  // Método destrutor virtual.
+    virtual ~ISCartao(){}  // Método destrutor virtual.
 };
 
 

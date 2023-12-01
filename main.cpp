@@ -18,8 +18,8 @@ int main() {
     apresentacao->apresentarQuadrosECartoes("testw@exemplo.com");
 
 
-    delete apresentacao;
-    delete cntrIAGestor;
+    //delete apresentacao;
+   // delete cntrIAGestor;
 
     return 0;
 
