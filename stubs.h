@@ -17,8 +17,10 @@ public:
     void visualizarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) override;
     void moverCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& novaColuna) override;
     void eliminarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) override;
-    void setCntrLNCartao(ISCartao* cntrISCartao) override;
+    void setCntrISCartao(ISCartao* cntrISCartao);
 };
+
+
 
 
 

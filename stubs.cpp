@@ -35,7 +35,7 @@ void StubGestor::eliminarCartao(const std::string& codigoQuadro, const std::stri
     std::cout << "Stub: Cartão eliminado - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << std::endl;
 }
 
-void StubGestor::setCntrLNCartao(ISCartao* cntrISCartao) {
+void StubGestor::setCntrISCartao(ISCartao* cntrISCartao) {
     // Não é necessário no stub
 }
 

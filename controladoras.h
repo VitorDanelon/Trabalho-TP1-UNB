@@ -8,7 +8,7 @@
 #include <iostream>
 
 using namespace std;
-
+/*
 class ControladoraConta : public IAAutenticacao {
 private:
     Email email;
@@ -24,7 +24,7 @@ public:
     bool autenticar(Email*);
     void setControladoraAutenticacao(IAAutenticacao*);
 };
-
+*/
 class CntrIAQuadro : public IAGestor {
 private:
     ISQuadro* cntrISQuadro;

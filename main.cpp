@@ -1,9 +1,8 @@
-#include <iostream>
-#include "dominios.h"
 #include "stubs.h"
+#include "dominios.h"
 #include "controladoras.h"
 #include "IAG.h"
-
+#include <iostream>
 using namespace std;
 
 

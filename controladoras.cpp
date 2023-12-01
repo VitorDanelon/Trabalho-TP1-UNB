@@ -214,14 +214,23 @@ void CntrIAGestor::eliminarCartao(const string& codigoQuadro, const string& codi
         cout << "Erro ao eliminar cartão: " << exp.what() << endl;
     }
 }
- /*
-void CntrIAGestor::setCntrISSistema(IISSistema* cntrISSistema) {
-    this->cntrISSistema = cntrISSistema;
-}
 
-void CntrIAGestor::setCntrISSistema(IISSistema* cntrISSistema) {
-    this->cntrISSistema = cntrISSistema;
-} */
+void CntrGestor::apresentarQuadrosECartoes(const std::string& email) {
+    // Aqui você pode chamar os métodos necessários do controlador para criar quadros e cartões.
+    // Certifique-se de adaptar isso às suas necessidades específicas.
+
+    // Criar quadro
+    criarQuadro("Q001", "Quadro 1", "Descrição Quadro 1", "10");
+
+    // Criar cartão
+    criarCartao("Q001", "C001", "Cartão 1", "Descrição Cartão 1", "TO_DO");
+
+    // Visualizar quadro
+    visualizarQuadro("Q001");
+
+    // Visualizar cartão
+    visualizarCartao("Q001", "C001");
+}
 }
 
 
