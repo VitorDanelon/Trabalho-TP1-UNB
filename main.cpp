@@ -1,10 +1,8 @@
-#include <stdexcept>
 #include <iostream>
-#include <string>
 #include "dominios.h"
+#include "stubs.h"
 #include "controladoras.h"
 #include "IAG.h"
-#include "stubs.h"
 
 using namespace std;
 
@@ -32,11 +30,11 @@ int main() {
     // Instanciar classe controladora e classe stub.
 
     IUQuadro* cntrIAQuadro = new CntrIAQuadro();
-    ILNQuadro* stubISQuadro = new StubISQuadro();
+    ISQuadro* stubISQuadro = new StubISQuadro();
 
     // Ligar instância de controladora a instância de stub.
 
-    cntrIAQuadro->setCntrLNQuadro(stubISQuadro);
+    cntrIAQuadro->setCntrISQuadro(stubISQuadro);
 
     // Simular a apresentação de tela inicial do sistema.
     // Vamos assumir que a autenticação já foi realizada.

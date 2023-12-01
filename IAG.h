@@ -1,11 +1,9 @@
-#include "dominios.cpp"
-#ifndef IAG.h_INCLUDED
-#define IAG.h_INCLUDED
+#ifndef INTERFACES_H_INCLUDED
+#define INTERFACES_H_INCLUDED
+#include <string>
 #include "dominios.h"
-//#include "IAPresentacao.h" // IA PRINCIPAL
-#include "controladoras.h"
-#include "IAG.h"
-#include <stdexcept>
+
+
 
 using namespace std;
 

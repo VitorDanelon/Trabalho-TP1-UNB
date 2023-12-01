@@ -1,6 +1,6 @@
 #include "controladoras.h"
 #include "dominios.h"
-#include "interfaces/IAA.h"
+#include "IAG"
 #include <iostream>
 #include <string>
 

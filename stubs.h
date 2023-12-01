@@ -1,9 +1,10 @@
 #ifndef STUBS_H_INCLUDED
 #define STUBS_H_INCLUDED
+#include "dominios.h"
 #include "IAG.h"
 #include <stdexcept>
 #include <iostream>
-
+#include <typeinfo>
 // Stubs para as interfaces de Quadro e Cartao.
 
 class StubISQuadro : public ISQuadro {
