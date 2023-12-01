@@ -1,6 +1,6 @@
 #include "controladoras.h"
 #include "dominios.h"
-#include "IAG"
+#include "IAG.H"
 #include <iostream>
 #include <string>
 
@@ -214,7 +214,7 @@ void CntrIAGestor::eliminarCartao(const string& codigoQuadro, const string& codi
         cout << "Erro ao eliminar cartão: " << exp.what() << endl;
     }
 }
-
+/*
 void CntrGestor::apresentarQuadrosECartoes(const std::string& email) {
     // Aqui você pode chamar os métodos necessários do controlador para criar quadros e cartões.
     // Certifique-se de adaptar isso às suas necessidades específicas.
@@ -232,5 +232,5 @@ void CntrGestor::apresentarQuadrosECartoes(const std::string& email) {
     visualizarCartao("Q001", "C001");
 }
 }
-
+ */
 

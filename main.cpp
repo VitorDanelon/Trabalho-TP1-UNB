@@ -1,7 +1,6 @@
-#include "stubs.h"
+/*#include "IAG.h"
 #include "dominios.h"
 #include "controladoras.h"
-#include "IAG.h"
 #include <iostream>
 using namespace std;
 

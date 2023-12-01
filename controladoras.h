@@ -1,7 +1,5 @@
 #ifndef ENTIDADES_H_INCLUDED
 #define ENTIDADES_H_INCLUDED
-
-
 #include "dominios.h"
 #include "IAG.h"
 #include <stdexcept>
@@ -33,7 +31,7 @@ public:
     void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override;
     void visualizarQuadro(const string& codigo) override;
     void eliminarQuadro(const string& codigo) override;
-    void setCntrISQuadro(ISQuadro* cntrISQuadro) override;
+    void setCntrISQuadro(ISQuadro* cntrISQuadro);
 };
 
 class CntrIACartao : public IAGestor {
@@ -45,7 +43,7 @@ public:
     void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override;
     void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override;
     void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override;
-    void setCntrISQuadro(ISQuadro* cntrISQuadro) override;
+    void setCntrISQuadro(ISQuadro* cntrISQuadro);
 };
 
 #endif // CONTROLADORAS_H_INCLUDED

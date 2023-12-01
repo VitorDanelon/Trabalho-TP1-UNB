@@ -7,18 +7,20 @@
 #include <typeinfo>
 
 
-class StubGestor : public IAGestor {
+class StubIAGestor : public IAGestor {
 public:
-    void criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) override;
-    void visualizarQuadro(const std::string& codigo) override;
-    void eliminarQuadro(const std::string& codigo) override;
-    void setCntrISQuadro(ISQuadro* cntrISQuadro) override;
-    void criarCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& nome, const std::string& descricao, const std::string& coluna) override;
-    void visualizarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) override;
-    void moverCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& novaColuna) override;
-    void eliminarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) override;
-    void setCntrISCartao(ISCartao* cntrISCartao);
+    bool autenticar(Email* email) override;
+    void exibirQuadrosECartoes(const Email& email) override;
+    void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override;
+    void visualizarQuadro(const string& codigo) override;
+    void eliminarQuadro(const string& codigo) override;
+    void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override;
+    void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override;
+    void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override;
+    void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override;
 };
+
+#endif // STUB_H_INCLUDED
 
 
 
@@ -80,6 +82,6 @@ public:
     void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override {
         std::cout << "StubLNCartao: eliminarCartao chamado" << std::endl;
     }
-}; */
+};
 
-#endif // STUBS_H_INCLUDED
+#endif // STUBS_H_INCLUDED*/
