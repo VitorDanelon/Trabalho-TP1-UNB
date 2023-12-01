@@ -54,7 +54,7 @@ public:
 };
 
 
-class Apresentacao : public IApresentacao {
+class Apresentacao : public IAApresentacao {
 private:
     IAGestor* cntrIAGestor;
 

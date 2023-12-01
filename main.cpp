@@ -6,6 +6,30 @@
 
 using namespace std;
 
+
+
+int main() {
+    StubGestor stub;
+
+    // Exemplo de utilização do stub
+    stub.criarQuadro("Q001", "Quadro 1", "Descrição Quadro 1", "10");
+    stub.visualizarQuadro("Q001");
+    stub.eliminarQuadro("Q001");
+
+    stub.criarCartao("Q001", "C001", "Cartão 1", "Descrição Cartão 1", "TO_DO");
+    stub.visualizarCartao("Q001", "C001");
+    stub.moverCartao("Q001", "C001", "EM_EXECUCAO");
+    stub.eliminarCartao("Q001", "C001");
+
+    return 0;
+}
+
+
+
+
+
+
+   /*
 int main() {
 
 
@@ -70,4 +94,4 @@ int main() {
     delete stubISQuadro;
 
     return 0;
-}
+} */

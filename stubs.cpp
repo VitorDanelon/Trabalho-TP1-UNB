@@ -1,4 +1,52 @@
 #include "stubs.h"
+
+
+
+
+void StubGestor::criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) {
+    std::cout << "Stub: Quadro criado - Código: " << codigo << ", Nome: " << nome << ", Descrição: " << descricao << ", Limite: " << limite << std::endl;
+}
+
+void StubGestor::visualizarQuadro(const std::string& codigo) {
+    std::cout << "Stub: Visualizando quadro - Código: " << codigo << std::endl;
+}
+
+void StubGestor::eliminarQuadro(const std::string& codigo) {
+    std::cout << "Stub: Quadro eliminado - Código: " << codigo << std::endl;
+}
+
+void StubGestor::setCntrISQuadro(ISQuadro* cntrISQuadro) {
+    // Não é necessário no stub
+}
+
+void StubGestor::criarCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& nome, const std::string& descricao, const std::string& coluna) {
+    std::cout << "Stub: Cartão criado - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << ", Nome: " << nome << ", Descrição: " << descricao << ", Coluna: " << coluna << std::endl;
+}
+
+void StubGestor::visualizarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) {
+    std::cout << "Stub: Visualizando cartão - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << std::endl;
+}
+
+void StubGestor::moverCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& novaColuna) {
+    std::cout << "Stub: Movendo cartão - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << ", Nova Coluna: " << novaColuna << std::endl;
+}
+
+void StubGestor::eliminarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) {
+    std::cout << "Stub: Cartão eliminado - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << std::endl;
+}
+
+void StubGestor::setCntrLNCartao(ISCartao* cntrISCartao) {
+    // Não é necessário no stub
+}
+
+
+
+
+
+
+
+
+
   /*
 // Implementação do método do stub para visualizar um cartão.
 void StubLNCartao::visualizarCartao(const string& codigoQuadro, const string& codigoCartao) {
@@ -70,7 +118,7 @@ void StubLNCartao::eliminarCartao(const string& codigoQuadro, const string& codi
     } catch (const exception& exp) {
         cout << "Erro ao eliminar cartão: " << exp.what() << endl;
     }
-*/
+
 
 // TESTE COM "DRIVER"
 
@@ -113,4 +161,4 @@ int main() {
 }
 
 
-}
+}*/
