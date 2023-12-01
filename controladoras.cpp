@@ -199,7 +199,7 @@ void CntrIACartao::moverCartao(const string& codigoQuadro, const string& codigoC
     }
 }
 
-void CntrIAGestor::eliminarCartao(const string& codigoQuadro, const string& codigoCartao) {
+void CntrISGestor::eliminarCartao(const string& codigoQuadro, const string& codigoCartao) {
     try {
         // 1. Verificar se os códigos são válidos.
         if (!Codigo::validarCodigo(codigoQuadro) || !Codigo::validarCodigo(codigoCartao)) {

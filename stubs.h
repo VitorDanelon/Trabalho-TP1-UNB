@@ -7,17 +7,17 @@
 #include <typeinfo>
 
 
-class StubIAGestor : public IAGestor {
+class StubISGestor : public ISGestor {
 public:
-    bool autenticar(Email* email) override;
-    void exibirQuadrosECartoes(const Email& email) override;
-    void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override;
-    void visualizarQuadro(const string& codigo) override;
-    void eliminarQuadro(const string& codigo) override;
-    void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override;
-    void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override;
-    void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override;
-    void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override;
+    bool autenticar(Email* email) ; // JA TEM METODO PRA ISSO
+    void exibirQuadrosECartoes(const Email& email) ;
+    void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) ;
+    void visualizarQuadro(const string& codigo) ;
+    void eliminarQuadro(const string& codigo) ;
+    void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) ;
+    void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) ;
+    void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) ;
+    void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) ;
 };
 
 #endif // STUB_H_INCLUDED

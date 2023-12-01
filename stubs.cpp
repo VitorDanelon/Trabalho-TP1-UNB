@@ -1,11 +1,13 @@
 #include "stubs.h"
-#include <iostream>
 #include "dominios.h"
 #include "controladoras.h"
 #include "IAG.h"
+#include <iostream>
 
 
-class StubIAGestor : public IAGestor {
+
+
+class StubISGestor : public ISGestor {
 private:
     bool usuarioAutenticado = false;
 
@@ -102,7 +104,7 @@ public:
 
 int main() {
     // Exemplo de uso do StubIAG
-    StubIAGestor stub;
+    StubISGestor stub;
     Email email;
     email.setEmail("usuario@dominio.com");
 
