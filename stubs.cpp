@@ -1,102 +1,169 @@
 #include "stubs.h"
-#include "dominios.h"
-#include "controladoras.h"
-#include "IAG.h"
-#include <iostream>
+
+using namespace std;
+// -------------------------------------------------------------------------------------------
+// Definiï¿½ï¿½es de constantes.
+
+const std::string StubISAutenticacao::TRIGGER_FALHA = "erro@email.com";
+const std::string StubISAutenticacao::TRIGGER_ERRO_SISTEMA = "erro.syst@email.com" ;
+
+// -------------------------------------------------------------------------------------------
+// Implementaï¿½ï¿½o de mï¿½todo.
+
+bool StubISAutenticacao::autenticar(const Email &email, const Senha &senha) {
+
+    // Apresentar dados recebidos.
+
+    cout << endl << "StubISAutenticacao::autenticar" << endl ;
+    cout << "Email = " << email.getEmail()   << endl ;
+    cout << "Senha = " << senha.getSenha()   << endl ;
+
+    // Diferentes comportamentos dependendo do valor do Email
+
+    if(email.getEmail() == TRIGGER_FALHA){
+        return false;
+    };
+    if(email.getEmail() == TRIGGER_ERRO_SISTEMA){
+      throw runtime_error("Erro de sistema");
+    };
+
+
+
+    return true;
+}
+
+// ImplementaÃ§Ã£o de mÃ©todos de quadro
+void StubIAQuadro::criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) {
+    std::cout << "Criando quadro com cÃ³digo: " << codigo << std::endl;
+    // LÃ³gica para criar quadro...
+}
+
+void StubIAQuadro::visualizarQuadro(const std::string& codigo) {
+    std::cout << "Visualizando quadro com cÃ³digo: " << codigo << std::endl;
+    // LÃ³gica para visualizar quadro...
+}
+
+void StubIAQuadro::eliminarQuadro(const std::string& codigo) {
+    std::cout << "Eliminando quadro com cÃ³digo: " << codigo << std::endl;
+    // LÃ³gica para eliminar quadro...
+}
+
+// ImplementaÃ§Ã£o de mÃ©todos de cartÃ£o
+void StubIACartao::criarCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& nome, const std::string& descricao, const std::string& coluna) {
+    std::cout << "Criando cartÃ£o com cÃ³digo: " << codigoCartao << " no quadro com cÃ³digo: " << codigoQuadro << std::endl;
+    // LÃ³gica para criar cartÃ£o...
+}
+
+void StubIACartao::visualizarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) {
+    std::cout << "Visualizando cartÃ£o com cÃ³digo: " << codigoCartao << " no quadro com cÃ³digo: " << codigoQuadro << std::endl;
+    // LÃ³gica para visualizar cartÃ£o...
+}
+
+void StubIACartao::moverCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& novaColuna) {
+    std::cout << "Movendo cartÃ£o com cÃ³digo: " << codigoCartao << " para a coluna: " << novaColuna << " no quadro com cÃ³digo: " << codigoQuadro << std::endl;
+    // LÃ³gica para mover cartÃ£o...
+}
+
+void StubIACartao::eliminarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) {
+    std::cout << "Eliminando cartÃ£o com cÃ³digo: " << codigoCartao << " no quadro com cÃ³digo: " << codigoQuadro << std::endl;
+    // LÃ³gica para eliminar cartÃ£o...
+}
 
 
 
 
-class StubISGestor : public ISGestor {
+
+/*
+class StubISGestor :: ISGestor {
 private:
     bool usuarioAutenticado = false;
 
 public:
     bool autenticar(Email* email) override {
-        // Implementação fictícia de autenticação
-        // Simplesmente marcando o usuário como autenticado
+        // ImplementaÃ§Ã£o fictÃ­cia de autenticaÃ§Ã£o
+        // Simplesmente marcando o usuÃ¡rio como autenticado
         usuarioAutenticado = true;
-        std::cout << "Usuário autenticado com sucesso." << std::endl;
+        std::cout << "UsuÃ¡rio autenticado com sucesso." << std::endl;
         return true;
     }
 
     void exibirQuadrosECartoes(const Email& email) override {
-        // Implementação fictícia para exibir quadros e cartões com base no email
+        // ImplementaÃ§Ã£o fictÃ­cia para exibir quadros e cartÃµes com base no email
         if (usuarioAutenticado) {
-            std::cout << "Exibindo quadros e cartões para o email: " << email.getEmail() << std::endl;
-            // Lógica para exibir quadros e cartões...
+            std::cout << "Exibindo quadros e cartÃµes para o email: " << email.getEmail() << std::endl;
+            // LÃ³gica para exibir quadros e cartÃµes...
         } else {
-            std::cout << "Usuário não autenticado. Autentique-se primeiro." << std::endl;
+            std::cout << "UsuÃ¡rio nÃ£o autenticado. Autentique-se primeiro." << std::endl;
         }
     }
 
     void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override {
-        // Implementação fictícia para criar um quadro
+        // ImplementaÃ§Ã£o fictÃ­cia para criar um quadro
         if (usuarioAutenticado) {
-            std::cout << "Criando quadro com código: " << codigo << std::endl;
-            // Lógica para criar quadro...
+            std::cout << "Criando quadro com cÃ³digo: " << codigo << std::endl;
+            // LÃ³gica para criar quadro...
         } else {
-            std::cout << "Usuário não autenticado. Autentique-se primeiro." << std::endl;
+            std::cout << "UsuÃ¡rio nÃ£o autenticado. Autentique-se primeiro." << std::endl;
         }
     }
 
     void visualizarQuadro(const string& codigo) override {
-        // Implementação fictícia para visualizar um quadro
+        // ImplementaÃ§Ã£o fictÃ­cia para visualizar um quadro
         if (usuarioAutenticado) {
-            std::cout << "Visualizando quadro com código: " << codigo << std::endl;
-            // Lógica para visualizar quadro...
+            std::cout << "Visualizando quadro com cÃ³digo: " << codigo << std::endl;
+            // LÃ³gica para visualizar quadro...
         } else {
-            std::cout << "Usuário não autenticado. Autentique-se primeiro." << std::endl;
+            std::cout << "UsuÃ¡rio nÃ£o autenticado. Autentique-se primeiro." << std::endl;
         }
     }
 
     void eliminarQuadro(const string& codigo) override {
-        // Implementação fictícia para eliminar um quadro
+        // ImplementaÃ§Ã£o fictÃ­cia para eliminar um quadro
         if (usuarioAutenticado) {
-            std::cout << "Eliminando quadro com código: " << codigo << std::endl;
-            // Lógica para eliminar quadro...
+            std::cout << "Eliminando quadro com cÃ³digo: " << codigo << std::endl;
+            // LÃ³gica para eliminar quadro...
         } else {
-            std::cout << "Usuário não autenticado. Autentique-se primeiro." << std::endl;
+            std::cout << "UsuÃ¡rio nÃ£o autenticado. Autentique-se primeiro." << std::endl;
         }
     }
 
     void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override {
-        // Implementação fictícia para criar um cartão
+        // ImplementaÃ§Ã£o fictÃ­cia para criar um cartÃ£o
         if (usuarioAutenticado) {
-            std::cout << "Criando cartão com código: " << codigoCartao << " no quadro com código: " << codigoQuadro << std::endl;
-            // Lógica para criar cartão...
+            std::cout << "Criando cartÃ£o com cÃ³digo: " << codigoCartao << " no quadro com cÃ³digo: " << codigoQuadro << std::endl;
+            // LÃ³gica para criar cartÃ£o...
         } else {
-            std::cout << "Usuário não autenticado. Autentique-se primeiro." << std::endl;
+            std::cout << "UsuÃ¡rio nÃ£o autenticado. Autentique-se primeiro." << std::endl;
         }
     }
 
     void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override {
-        // Implementação fictícia para visualizar um cartão
+        // ImplementaÃ§Ã£o fictÃ­cia para visualizar um cartÃ£o
         if (usuarioAutenticado) {
-            std::cout << "Visualizando cartão com código: " << codigoCartao << " no quadro com código: " << codigoQuadro << std::endl;
-            // Lógica para visualizar cartão...
+            std::cout << "Visualizando cartÃ£o com cÃ³digo: " << codigoCartao << " no quadro com cÃ³digo: " << codigoQuadro << std::endl;
+            // LÃ³gica para visualizar cartÃ£o...
         } else {
-            std::cout << "Usuário não autenticado. Autentique-se primeiro." << std::endl;
+            std::cout << "UsuÃ¡rio nÃ£o autenticado. Autentique-se primeiro." << std::endl;
         }
     }
 
     void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override {
-        // Implementação fictícia para mover um cartão
+        // ImplementaÃ§Ã£o fictÃ­cia para mover um cartÃ£o
         if (usuarioAutenticado) {
-            std::cout << "Movendo cartão com código: " << codigoCartao << " para a coluna: " << novaColuna << " no quadro com código: " << codigoQuadro << std::endl;
-            // Lógica para mover cartão...
+            std::cout << "Movendo cartÃ£o com cÃ³digo: " << codigoCartao << " para a coluna: " << novaColuna << " no quadro com cÃ³digo: " << codigoQuadro << std::endl;
+            // LÃ³gica para mover cartÃ£o...
         } else {
-            std::cout << "Usuário não autenticado. Autentique-se primeiro." << std::endl;
+            std::cout << "UsuÃ¡rio nÃ£o autenticado. Autentique-se primeiro." << std::endl;
         }
     }
 
     void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override {
-        // Implementação fictícia para eliminar um cartão
+        // ImplementaÃ§Ã£o fictÃ­cia para eliminar um cartÃ£o
         if (usuarioAutenticado) {
-            std::cout << "Eliminando cartão com código: " << codigoCartao << " no quadro com código: " << codigoQuadro << std::endl;
-            // Lógica para eliminar cartão...
+            std::cout << "Eliminando cartÃ£o com cÃ³digo: " << codigoCartao << " no quadro com cÃ³digo: " << codigoQuadro << std::endl;
+            // LÃ³gica para eliminar cartÃ£o...
         } else {
-            std::cout << "Usuário não autenticado. Autentique-se primeiro." << std::endl;
+            std::cout << "UsuÃ¡rio nÃ£o autenticado. Autentique-se primeiro." << std::endl;
         }
     }
 };
@@ -110,9 +177,9 @@ int main() {
 
     if (stub.autenticar(&email)) {
         stub.exibirQuadrosECartoes(email);
-        stub.criarQuadro("Q001", "Quadro 1", "Descrição Quadro 1", "10");
+        stub.criarQuadro("Q001", "Quadro 1", "DescriÃ§Ã£o Quadro 1", "10");
         stub.visualizarQuadro("Q001");
-        stub.criarCartao("Q001", "C001", "Cartao 1", "Descrição Cartao 1", "SOLICITADO");
+        stub.criarCartao("Q001", "C001", "Cartao 1", "DescriÃ§Ã£o Cartao 1", "SOLICITADO");
         stub.visualizarCartao("Q001", "C001");
         stub.moverCartao("Q001", "C001", "EM_EXECUCAO");
         stub.eliminarCartao("Q001", "C001");
@@ -123,42 +190,42 @@ int main() {
 }
 
 
-/*
+
 
 void StubGestor::criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) {
-    std::cout << "Stub: Quadro criado - Código: " << codigo << ", Nome: " << nome << ", Descrição: " << descricao << ", Limite: " << limite << std::endl;
+    std::cout << "Stub: Quadro criado - CÃ³digo: " << codigo << ", Nome: " << nome << ", DescriÃ§Ã£o: " << descricao << ", Limite: " << limite << std::endl;
 }
 
 void StubGestor::visualizarQuadro(const std::string& codigo) {
-    std::cout << "Stub: Visualizando quadro - Código: " << codigo << std::endl;
+    std::cout << "Stub: Visualizando quadro - CÃ³digo: " << codigo << std::endl;
 }
 
 void StubGestor::eliminarQuadro(const std::string& codigo) {
-    std::cout << "Stub: Quadro eliminado - Código: " << codigo << std::endl;
+    std::cout << "Stub: Quadro eliminado - CÃ³digo: " << codigo << std::endl;
 }
 
 void StubGestor::setCntrISQuadro(ISQuadro* cntrISQuadro) {
-    // Não é necessário no stub
+    // NÃ£o Ã© necessÃ¡rio no stub
 }
 
 void StubGestor::criarCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& nome, const std::string& descricao, const std::string& coluna) {
-    std::cout << "Stub: Cartão criado - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << ", Nome: " << nome << ", Descrição: " << descricao << ", Coluna: " << coluna << std::endl;
+    std::cout << "Stub: CartÃ£o criado - Quadro: " << codigoQuadro << ", CÃ³digo: " << codigoCartao << ", Nome: " << nome << ", DescriÃ§Ã£o: " << descricao << ", Coluna: " << coluna << std::endl;
 }
 
 void StubGestor::visualizarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) {
-    std::cout << "Stub: Visualizando cartão - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << std::endl;
+    std::cout << "Stub: Visualizando cartÃ£o - Quadro: " << codigoQuadro << ", CÃ³digo: " << codigoCartao << std::endl;
 }
 
 void StubGestor::moverCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& novaColuna) {
-    std::cout << "Stub: Movendo cartão - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << ", Nova Coluna: " << novaColuna << std::endl;
+    std::cout << "Stub: Movendo cartÃ£o - Quadro: " << codigoQuadro << ", CÃ³digo: " << codigoCartao << ", Nova Coluna: " << novaColuna << std::endl;
 }
 
 void StubGestor::eliminarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) {
-    std::cout << "Stub: Cartão eliminado - Quadro: " << codigoQuadro << ", Código: " << codigoCartao << std::endl;
+    std::cout << "Stub: CartÃ£o eliminado - Quadro: " << codigoQuadro << ", CÃ³digo: " << codigoCartao << std::endl;
 }
 
 void StubGestor::setCntrISCartao(ISCartao* cntrISCartao) {
-    // Não é necessário no stub
+    // NÃ£o Ã© necessÃ¡rio no stub
 }
 
 
@@ -170,107 +237,107 @@ void StubGestor::setCntrISCartao(ISCartao* cntrISCartao) {
 
 
   /*
-// Implementação do método do stub para visualizar um cartão.
+// ImplementaÃ§Ã£o do mÃ©todo do stub para visualizar um cartÃ£o.
 void StubLNCartao::visualizarCartao(const string& codigoQuadro, const string& codigoCartao) {
     cout << "StubLNCartao::visualizarCartao" << endl;
 
 
 
     try {
-        // Verificar se o código do cartão é válido (por exemplo, se existe).
+        // Verificar se o cÃ³digo do cartÃ£o Ã© vÃ¡lido (por exemplo, se existe).
         if (codigoCartao.empty()) {
-            throw invalid_argument("Código do cartão inválido.");
+            throw invalid_argument("CÃ³digo do cartÃ£o invÃ¡lido.");
         }
 
 
-        cout << "Visualizando informações do cartão com código " << codigoCartao << " do quadro " << codigoQuadro << endl;
+        cout << "Visualizando informaÃ§Ãµes do cartÃ£o com cÃ³digo " << codigoCartao << " do quadro " << codigoQuadro << endl;
     } catch (const exception& exp) {
-        cout << "Erro ao visualizar cartão: " << exp.what() << endl;
+        cout << "Erro ao visualizar cartÃ£o: " << exp.what() << endl;
     }
 }
 
-// Implementação do método do stub para mover um cartão.
+// ImplementaÃ§Ã£o do mÃ©todo do stub para mover um cartÃ£o.
 void StubLNCartao::moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) {
     cout << "StubLNCartao::moverCartao" << endl;
 
 
 
     try {
-        // Verificar se o código do cartão é válido (por exemplo, se existe).
+        // Verificar se o cÃ³digo do cartÃ£o Ã© vÃ¡lido (por exemplo, se existe).
         if (codigoCartao.empty()) {
-            throw invalid_argument("Código do cartão inválido.");
+            throw invalid_argument("CÃ³digo do cartÃ£o invÃ¡lido.");
         }
 
 
-        cout << "Movendo cartão com código " << codigoCartao << " para a coluna " << novaColuna << " no quadro " << codigoQuadro << endl;
+        cout << "Movendo cartÃ£o com cÃ³digo " << codigoCartao << " para a coluna " << novaColuna << " no quadro " << codigoQuadro << endl;
     } catch (const exception& exp) {
-        cout << "Erro ao mover cartão: " << exp.what() << endl;
+        cout << "Erro ao mover cartÃ£o: " << exp.what() << endl;
     }
 }
 
-// Implementação do método do stub para criar um cartão.
+// ImplementaÃ§Ã£o do mÃ©todo do stub para criar um cartÃ£o.
 void StubLNCartao::criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) {
     cout << "StubLNCartao::criarCartao" << endl;
 
     try {
-        // Verificar se o código do cartão é válido (por exemplo, se é único).
+        // Verificar se o cÃ³digo do cartÃ£o Ã© vÃ¡lido (por exemplo, se Ã© Ãºnico).
         if (codigoCartao.empty()) {
-            throw invalid_argument("Código do cartão inválido.");
+            throw invalid_argument("CÃ³digo do cartÃ£o invÃ¡lido.");
         }
 
 
-        cout << "Cartão com código " << codigoCartao << " criado com sucesso no quadro " << codigoQuadro << endl;
+        cout << "CartÃ£o com cÃ³digo " << codigoCartao << " criado com sucesso no quadro " << codigoQuadro << endl;
     } catch (const exception& exp) {
-        cout << "Erro ao criar cartão: " << exp.what() << endl;
+        cout << "Erro ao criar cartÃ£o: " << exp.what() << endl;
     }
 }
 
-// Implementação do método do stub para eliminar um cartão.
+// ImplementaÃ§Ã£o do mÃ©todo do stub para eliminar um cartÃ£o.
 void StubLNCartao::eliminarCartao(const string& codigoQuadro, const string& codigoCartao) {
     cout << "StubLNCartao::eliminarCartao" << endl;
 
 
     try {
-        // Verificar se o código do cartão é válido (por exemplo, se existe).
+        // Verificar se o cÃ³digo do cartÃ£o Ã© vÃ¡lido (por exemplo, se existe).
         if (codigoCartao.empty()) {
-            throw invalid_argument("Código do cartão inválido.");
+            throw invalid_argument("CÃ³digo do cartÃ£o invÃ¡lido.");
         }
 
-        cout << "Cartão com código " << codigoCartao << " eliminado com sucesso do quadro " << codigoQuadro << endl;
+        cout << "CartÃ£o com cÃ³digo " << codigoCartao << " eliminado com sucesso do quadro " << codigoQuadro << endl;
     } catch (const exception& exp) {
-        cout << "Erro ao eliminar cartão: " << exp.what() << endl;
+        cout << "Erro ao eliminar cartÃ£o: " << exp.what() << endl;
     }
 
 
 // TESTE COM "DRIVER"
 
-    // Stub da camada de apresentação
+    // Stub da camada de apresentaÃ§Ã£o
 class StubIAG : public IAG {
 public:
     void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override {
-        // Implementação do stub para criar um quadro
-        cout << "Quadro criado com código: " << codigo << ", nome: " << nome << ", descrição: " << descricao << ", limite: " << limite << endl;
+        // ImplementaÃ§Ã£o do stub para criar um quadro
+        cout << "Quadro criado com cÃ³digo: " << codigo << ", nome: " << nome << ", descriÃ§Ã£o: " << descricao << ", limite: " << limite << endl;
     }
 
     void associarQuadroUsuario(const string& email, const string& codigo) override {
-        // Implementação do stub para associar um quadro a um usuário
-        cout << "Quadro " << codigo << " associado ao usuário com email: " << email << endl;
+        // ImplementaÃ§Ã£o do stub para associar um quadro a um usuÃ¡rio
+        cout << "Quadro " << codigo << " associado ao usuÃ¡rio com email: " << email << endl;
     }
 };
 
 // Driver para testar as funcionalidades
 void testarFuncionalidades(IAG* iag) {
     // Criar quadro
-    iag->criarQuadro("Q001", "Quadro Teste", "Descrição do Quadro", "15");
+    iag->criarQuadro("Q001", "Quadro Teste", "DescriÃ§Ã£o do Quadro", "15");
 
-    // Associar quadro ao usuário
+    // Associar quadro ao usuÃ¡rio
     iag->associarQuadroUsuario("usuario@teste.com", "Q001");
 
     /
 }
 
 int main() {
-    // Use o Stub no lugar da implementação real da camada de apresentação
+    // Use o Stub no lugar da implementaÃ§Ã£o real da camada de apresentaÃ§Ã£o
     IAG* stub = new StubIAG();
 
     // Teste as funcionalidades usando o driver e o stub

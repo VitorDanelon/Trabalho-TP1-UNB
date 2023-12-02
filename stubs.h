@@ -1,12 +1,47 @@
 #ifndef STUBS_H_INCLUDED
 #define STUBS_H_INCLUDED
+
 #include "dominios.h"
-#include "IAG.h"
+#include "interfaces/IAA.h"
+
 #include <stdexcept>
 #include <iostream>
 #include <typeinfo>
 
+using namespace std;
 
+// -------------------------------------------------------------------------------------------
+// Declara��o de classe stub.
+//
+// Classe StubIAAutentica��o implementa a interface IAAutentica��o.
+
+class StubISAutenticacao:public ISAutenticacao{
+
+private:
+
+    // Defini��es de valores a serem usados como gatilhos para notifica��es de erros.
+
+    const static std::string TRIGGER_FALHA;
+    const static std::string TRIGGER_ERRO_SISTEMA;
+
+public:
+
+    // Declara��o de m�todo previsto em interface.
+
+    bool autenticar(const Email&, const Senha&);
+};
+
+
+
+
+
+
+
+
+
+
+
+/*
 class StubISGestor : public ISGestor {
 public:
     bool autenticar(Email* email) ; // JA TEM METODO PRA ISSO
@@ -35,7 +70,7 @@ public:
 
 
 // Stubs para as interfaces de Quadro e Cartao.
- /*
+
 class StubISQuadro : public ISQuadro {
 public:
     void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override;
