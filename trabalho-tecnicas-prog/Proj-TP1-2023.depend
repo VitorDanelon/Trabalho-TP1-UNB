@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1701378665 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
+1701395345 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
 	<iostream>
 	"dominios.h"
 	"stubs.h"
 	"controladoras.h"
 	"interfaces/IAA.h"
 
-1698026295 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
+1701394439 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
 	<stdexcept>
 
 1698026209 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\entidades.h
@@ -17,7 +17,7 @@
 	"dominios.h"
 	"entidades.h"
 
-1701378166 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.cpp
+1701394391 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.cpp
 	"dominios.h"
 	<regex>
 	<stdexcept>
@@ -94,16 +94,17 @@
 	"testes.h"
 	<iostream>
 
-1701379035 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.cpp
+1701392306 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.cpp
 	"controladoras.h"
 	"dominios.h"
 	"interfaces/IAA.h"
 	<iostream>
 	<string>
 
-1701379275 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.h
+1701391171 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.h
 	"dominios.h"
 	"interfaces/IAA.h"
+	"interfaces/IAC.h"
 	<stdexcept>
 	<string>
 
@@ -111,7 +112,7 @@
 	<string>
 	"dominios.h"
 
-1698026295 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\\dominios.h
+1701394439 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\\dominios.h
 	<stdexcept>
 
 1701379162 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\stubs.cpp
@@ -123,4 +124,7 @@
 	<stdexcept>
 	<iostream>
 	<typeinfo>
+
+1701299442 c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\interfaces\iac.h
+	<string>
 

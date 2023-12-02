@@ -151,8 +151,44 @@ int main() {
     }
 
     // Destruir instância de controladora e instância de stub.
-    delete controladoraAutenticacao;
-    delete stubISAutenticacao;
+    //delete controladoraAutenticacao;
+    //delete stubISAutenticacao;
+    cout << endl << "Modulo Conta" << endl;
+
+    ControladoraISConta conta;
+    conta.setDadosConta(email.getEmail(), "Jose", senha.getSenha());
+
+    IAConta *apresentacaoConta = &conta;
+    apresentacaoConta->exibirMenuContaApresentacao;
+
+
+
+
+    // ControladoraConta minhaConta(email.getEmail(), "Alfredo", "Ab15?");
+     // Criando uma instância do módulo ControladoraConta (módulo de conta)
+    //ControladoraConta minhaConta("meuemail@example.com", "Meu Nome", "MinhaSenha");
+
+    // Exemplo de interação com o módulo de conta através do módulo principal
+    //std::string meuEmail = email.getEmail();
+    //std::string minhaSenha = senha.getSenha();
+    //std::cout << "Dados da conta:\n";
+    // std::cout << meuEmail << std::endl;
+
+    //std::cout << "Senha:\n";
+    //std::cout << minhaSenha << std::endl;
+
+    // minhaConta.editarConta("NovoNome", "1Ac3?");
+
+    // std::cout << "Conta apos edicao:\n";
+    // std::cout << minhaConta.visualizarConta() << std::endl;
+
+    //minhaConta.eliminarConta();
+
+    //std::cout << "Conta após exclusão:\n";
+    //\\\std::cout << minhaConta.visualizarConta() << std::endl;
+
 
     return 0;
+
+
 }

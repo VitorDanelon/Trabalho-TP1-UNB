@@ -83,7 +83,7 @@ public:
      * @param senha A senha a ser definida.
      */
     //void setSenha(const string);
-    void setSenha(const std::string& senha);
+    void setSenha(const std::string senha);
     /**
      * @brief Método que obtém a senha atual.
      *

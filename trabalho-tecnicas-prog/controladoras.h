@@ -1,19 +1,53 @@
 #ifndef ENTIDADES_H_INCLUDED
 #define ENTIDADES_H_INCLUDED
-
 #include "dominios.h"
-
 #include "interfaces/IAA.h"
+#include "interfaces/IAC.h"
 #include <stdexcept>
 #include <string>
 
 using namespace std;
 
+class ControladoraISConta: public ISConta{
+private
+        Email email;
+        Texto nome;
+        Senha senha;
+
+public:
+
+    void setDadosConta(const string& email, const string& nome, const string& senha);
+    string visualizarConta() const ;
+    void editarConta(const string& novoNome, const string& novaSenha) ;
+    void eliminarConta();
+
+};
+
+class ControladoraConta : public IAConta {
+    private:
+        //Email email; /**< Email associado à conta. */
+        //Texto nome; /**< Nome associado à conta. */
+        //Senha senha; /**< Senha associada à conta. */
+        ISConta *controladoraISConta
+
+    public:
+        //ControladoraConta(const string& email, const string& nome, const string& senha);
+        //string visualizarConta() const ;
+        //void editarConta(const string& novoNome, const string& novaSenha) ;
+        //void eliminarConta();
+        //void setCntrISConta(ISConta*)
+        string visualizarContaApresentacao() const ;
+        void editarContaApresentacao() ;
+        void eliminarContaApresentacao();
+        void exibirMenuContaApresentacao();
+
+};
+
+
+
 
 class ControladoraAutenticacao : public IAAutenticacao {
     private:
-        // Email email; /**< Email associado � conta. */
-        // Senha senha; /**< Senha associada � conta. */
         ISAutenticacao *controladoraISAuth;
     public:
         bool autenticar(Email *);
@@ -101,6 +135,6 @@ public:
 };
 
 
-//Luca classe cartao
+
 
 #endif

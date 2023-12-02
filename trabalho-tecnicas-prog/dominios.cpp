@@ -44,7 +44,7 @@ bool Email::validarEmail(const std::string& email) {
 string Senha::getSenha() const {
     return senha;
 }
-void Senha::setSenha(const std::string& senha) {
+void Senha::setSenha(const std::string senha) {
     if (!validarSenha(senha)) {
         throw std::invalid_argument("Senha invalida.");
     }

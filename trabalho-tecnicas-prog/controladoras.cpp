@@ -7,32 +7,74 @@
 using namespace std;
 
 
-// ControladoraConta::ControladoraConta(const string& email, const string& nome, const string& senha) {
-//     this->email.setEmail(email);
-//     this->nome.setTexto(nome);
-//     this->senha.setSenha(senha);
-// }
+ void ControladoraConta::setDadosConta(const string& email, const string& nome, const string& senha) {
+    this->email.setEmail(email);
+    this->nome.setTexto(nome);
+    this->senha.setSenha(senha);
+ }
 
-// string ControladoraConta::visualizarConta() const {
-//     return "Email: " + email.getEmail() + "\nNome: " + nome.getTexto() + "\nSenha: " + senha.getSenha();
-// }
+string ControladoraISConta::visualizarConta() const {
+    return "Email: " + email.getEmail() + "\nNome: " + nome.getTexto() + "\nSenha: " + senha.getSenha();
+}
 
-// void ControladoraConta::editarConta(const string& novoNome, const string& novaSenha) {
-//     nome.setTexto(novoNome);
-//     senha.setSenha(novaSenha);
-// }
+ void ControladoraISConta::editarConta(const string& novoNome, const string& novaSenha) {
+     nome.setTexto(novoNome);
+    senha.setSenha(novaSenha);
+}
 
-// void ControladoraConta::eliminarConta(){
-//     email.setEmail("");
-//     nome.setTexto("");
-//     senha.setSenha("");
-// }
+void ControladoraISConta::eliminarConta(){
+    email.setEmail("");
+    nome.setTexto("");
+    senha.setSenha("");
+}
+
+//void ControladoraConta::setCntrISConta(ISConta *controladoraISConta){
+    //this->controladoraISConta = controladoraISConta;
+//};
+
+
+void ControladoraConta::exibirMenuConta(){
+    int opcao;
+        std::cout << "1. Visualizar Conta\n2. Editar Conta\n3. Eliminar Conta\nEscolha uma opcao: ";
+        std::cin >> opcao;
+
+        switch (opcao) {
+            case 1:
+                visualizarConta();
+                break;
+            case 2:
+                editarConta();
+                break;
+            case 3:
+                eliminarConta();
+                break;
+            default:
+                std::cout << "Opcao invalida!" << std::endl;
+                break;
+        }
+    }
+
+
+};
+
+void ControladoraConta::editarContaApresentacao(){
+    ControladoraISConta.editarConta();
+};
+
+string ControladoraConta::visualizarContaApresentacao(){
+    ControladoraISConta.visualizarConta();
+};
+void ControladoraConta::eliminarContaApresentacao(){
+    ControladoraISConta.eliminarConta();
+}
+
 void ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth){
         this->controladoraISAuth = controladoraISAuth;
 }
 
 bool ControladoraAutenticacao::autenticar(Email *email) {
-    Senha senha;
+    //Senha senha;
+    Senha* senha = new Senha();
     string entrada;
 
     // Solicitar Email e senha.
@@ -45,9 +87,9 @@ bool ControladoraAutenticacao::autenticar(Email *email) {
             std::cout << "Digite o Email : ";
             std::cin >> entrada;
             email->setEmail(entrada); // Converte o int para string
-            std::cout << "Digite a senha     : ";
+            std::cout << "Digite a senha : ";
             std::cin >> entrada;
-            senha.setSenha(entrada); // Converte o int para string
+            senha->setSenha(entrada); // Converte o int para string
             break;
         }
         catch (const std::invalid_argument &exp) {
@@ -57,7 +99,7 @@ bool ControladoraAutenticacao::autenticar(Email *email) {
 
     // Solicitar autentica��o.
 
-    bool resultado = controladoraISAuth->autenticar(*email, senha);
+    bool resultado = controladoraISAuth->autenticar(*email, *senha);
 
     // Retornar resultado da autentica��o.
 
