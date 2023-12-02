@@ -1,9 +1,10 @@
 #include "controladoras.h"
 #include "dominios.h"
-#include "interfaces/IAA.h"
+#include "IAA.h"
+#include "IAC.h"
+#include "IAG.h"
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 

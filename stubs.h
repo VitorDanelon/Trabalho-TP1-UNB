@@ -1,10 +1,13 @@
 #ifndef STUBS_H_INCLUDED
 #define STUBS_H_INCLUDED
 #include "dominios.h"
+#include "IAG.h"
+#include "IAA.h"
+#include "IAC.h"
 #include <stdexcept>
 #include <iostream>
 #include <typeinfo>
-#include "IAG.h"
+
 
 using namespace std;
 

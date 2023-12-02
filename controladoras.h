@@ -1,15 +1,16 @@
 #ifndef ENTIDADES_H_INCLUDED
 #define ENTIDADES_H_INCLUDED
 #include "dominios.h"
+#include "IAA.h"
+#include "IAC.h"
 #include "IAG.h"
 #include <stdexcept>
-#include <iostream>
-
+#include <string>
 using namespace std;
 
 class ControladoraISConta: public ISConta{
 private
-        Email email;
+        Email email:
         Texto nome;
         Senha senha;
 
@@ -27,7 +28,7 @@ class ControladoraConta : public IAConta {
         //Email email; /**< Email associado à conta. */
         //Texto nome; /**< Nome associado à conta. */
         //Senha senha; /**< Senha associada à conta. */
-        ISConta *controladoraISConta
+        ISConta *controladoraISConta;
 
     public:
         //ControladoraConta(const string& email, const string& nome, const string& senha);

@@ -1,9 +1,10 @@
 #include <iostream>
-#include "dominios.h"
 #include "stubs.h"
 #include "controladoras.h"
 #include "IAA.h"
-
+#include <iostream>
+#include "dominios.h"
+#include "stubs.h"
 using namespace std;
 
 int main() {
@@ -54,29 +55,6 @@ int main() {
     apresentacaoConta->exibirMenuContaApresentacao;
 
    return 0;
-
-   // Criar instância do stub
-    StubISAutenticacao stubAutenticacao;
-    StubIAG stubGestor;
-
-    // Configurar o gestor de autenticação
-    stubGestor.setCntrISAutenticacao(&stubAutenticacao);
-
-    // Realizar a autenticação
-    Email emailAutenticado("email@dominio.com");
-    Senha senhaAutenticacao("senha123");
-    bool autenticado = stubAutenticacao.autenticar(emailAutenticado, senhaAutenticacao);
-
-    if (autenticado) {
-        // Se autenticado, exibir quadros e cartões genéricos
-        stubGestor.exibirQuadrosECartoes(emailAutenticado);
-    } else {
-        cout << "Autenticação falhou." << endl;
-    }
-
-    return 0;
-
-
 
 
 
