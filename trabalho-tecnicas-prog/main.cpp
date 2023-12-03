@@ -8,7 +8,7 @@
 #include "stubs.h"
 #include "controladoras.h"
 // #include "testes.h"
-#include "interfaces/IAA.h"
+#include "IAA.h"
 
 using namespace std;
 

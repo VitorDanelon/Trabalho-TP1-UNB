@@ -30,13 +30,14 @@
 
 1701134584 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.cpp
 
-1697940456 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
+1701631496 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
 	<iostream>
 	"dominios.h"
-	"entidades.h"
-	"testes.h"
+	"stubs.h"
+	"controladoras.h"
+	"IAA.h"
 
-1697945267 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
+1701631312 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.h
 	<stdexcept>
 
 1697944954 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\entidades.h
@@ -47,15 +48,13 @@
 	"dominios.h"
 	"entidades.h"
 
-1697946884 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.cpp
-	"testes.h"
-	<iostream>
+1701625881 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.cpp
 
 1697944922 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\entidades.cpp
 	"entidades.h"
 	<iostream>
 
-1697945986 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.cpp
+1701631312 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\dominios.cpp
 	"dominios.h"
 	<regex>
 	<stdexcept>
@@ -123,4 +122,28 @@
 	<stdexcept>
 	<iostream>
 	<typeinfo>
+
+1701625881 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\stubs.cpp
+	"stubs.h"
+
+1701631475 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\stubs.h
+	"dominios.h"
+	"IAA.h"
+	<stdexcept>
+	<iostream>
+	<typeinfo>
+
+1701631303 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\interfaces\iaa.h
+	<string>
+	"dominios.h"
+
+1701631303 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\iaa.h
+	<string>
+	"dominios.h"
+
+1701631455 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.h
+	"dominios.h"
+	"IAA.h"
+	<stdexcept>
+	<string>
 
