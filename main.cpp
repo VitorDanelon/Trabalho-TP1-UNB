@@ -1,23 +1,19 @@
-#include "dominios.h"
-#include "stubs.h"
-#include "controladoras.h"
 #include "IAA.h"
 #include "IAG.h"
 #include "IAC.h"
+#include "stubs.h"
+#include "controladoras.h"
 #include <iostream>
 
 using namespace std;
 
-
 int main() {
+    // Criação e configuração da controladora de autenticação e stub correspondente
+    ControladoraAutenticacao controladoraAutenticacao;
+    StubISAutenticacao stubISAutenticacao;
+    controladoraAutenticacao.setCntrISAutenticacao(&stubISAutenticacao);
 
-    IAAutenticacao *controladoraAutenticacao = new ControladoraAutenticacao();
-    ISAutenticacao *stubISAutenticacao = new StubISAutenticacao();
-
-    // Ligar instância de controladora a instância de stub.
-    controladoraAutenticacao->setCntrISAutenticacao(stubISAutenticacao);
-
-
+    // Simulação de autenticação
     bool resultado;
     Email email;
     Senha senha;
@@ -28,7 +24,7 @@ int main() {
 
         try {
             // Solicitar serviço de autenticação.
-            resultado = controladoraAutenticacao->autenticar(&email);
+            resultado = controladoraAutenticacao.autenticar(&email);
         } catch (const runtime_error &exp) {
             cout << "Erro de sistema." << endl;
             break;
@@ -36,18 +32,22 @@ int main() {
 
         // Criticar resultado da autenticação.
         if (resultado) {
-            cout << endl << "Sucesso autenticacao." << endl;
+            cout << endl << "Sucesso autenticação." << endl;
             cout << endl << "Email = " << email.getEmail() << endl;
             break;
         } else {
-            cout << endl << "Erro autenticacao." << endl;
+            cout << endl << "Erro autenticação." << endl;
             break;
         }
     }
 
-    // Destruir instância de controladora e instância de stub.
-    delete controladoraAutenticacao;
-    delete stubISAutenticacao;
+    // Criação e configuração da controladora de gestão (quadros e cartões) e stub correspondente
+    ControladoraGestor controladoraGestor;
+    StubISGestor stubISGestor;
+    controladoraGestor.setCntrISGestor(&stubISGestor);
+
+    // Simular operações de gestão (quadros e cartões) após a autenticação bem-sucedida
+    // Você pode adicionar aqui as chamadas aos métodos da controladoraGestor para criar, visualizar, eliminar quadros, cartões, etc.
 
     return 0;
 }

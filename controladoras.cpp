@@ -1,50 +1,55 @@
 #include "controladoras.h"
 #include "dominios.h"
-#include "IAA.h"
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-void ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth){
-        this->controladoraISAuth = controladoraISAuth;
+// Métodos de ControladoraAutenticacao
+void ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth) {
+    this->controladoraISAuth = controladoraISAuth;
 }
 
 bool ControladoraAutenticacao::autenticar(Email *email) {
     Senha senha;
     string entrada;
 
-    // Solicitar Email e senha.
-
-    while(true) {
-
-        std::cout << std::endl << "Autenticacao de usuario." << std::endl << std::endl;
+    while (true) {
+        cout << endl << "Autenticacao de usuario." << endl << endl;
 
         try {
-            std::cout << "Digite o Email : ";
-            std::cin >> entrada;
-            email->setEmail(entrada); // Converte o int para string
-            std::cout << "Digite a senha     : ";
-            std::cin >> entrada;
-            senha.setSenha(entrada); // Converte o int para string
+            cout << "Digite o Email : ";
+            cin >> entrada;
+            email->setEmail(entrada);
+            cout << "Digite a senha     : ";
+            cin >> entrada;
+            senha.setSenha(entrada);
             break;
-        }
-        catch (const std::invalid_argument &exp) {
-            std::cout << std::endl << "Dado em formato incorreto." << std::endl;
+        } catch (const std::invalid_argument &exp) {
+            cout << endl << "Dado em formato incorreto." << endl;
         }
     }
 
-    // Solicitar autenticacaoo.
-
     bool resultado = controladoraISAuth->autenticar(*email, senha);
-
-    // Retornar resultado da autenticacao.
 
     return resultado;
 }
 
+// Métodos de ControladoraGestor
+void ControladoraGestor::setCntrISGestor(ISGestor* cntrISGestor) {
+    this->controladoraISGestor = cntrISGestor;
+}
 
+bool ControladoraGestor::autenticar(Email* email) {
+    // Implementação
+    return false;
+}
 
+void ControladoraGestor::exibirQuadrosECartoes(const Email& email) {
+    // Implementação
+    cout << "Exibindo quadros e cartões..." << endl;
+}
+
+// Métodos de Quadro
 Quadro::Quadro(const string& codigo, const string& nome, const string& descricao, const string& limite) {
     this->codigo.setCodigo(codigo);
     this->nome.setTexto(nome);
@@ -52,33 +57,27 @@ Quadro::Quadro(const string& codigo, const string& nome, const string& descricao
     this->limite.setLimite(limite);
 }
 
-
-
 string Quadro::visualizarQuadro() const {
-    return "Quadro: " + codigo.getCodigo() + "\nNome: " + nome.getTexto() + "\nDescri��o: " + descricao.getTexto() + "\nLimite: " + limite.getLimite();
-
+    return "Quadro: " + codigo.getCodigo() + "\nNome: " + nome.getTexto() + "\nDescrição: " + descricao.getTexto() + "\nLimite: " + limite.getLimite();
 }
 
-void Quadro::eliminarQuadro(){
+void Quadro::eliminarQuadro() {
     codigo.setCodigo("");
     nome.setTexto("");
     descricao.setTexto("");
     limite.setLimite("");
 }
 
-Cartao::Cartao(const string& codigo, const string& nome, const string& descricao, const string& coluna){
+// Métodos de Cartao
+Cartao::Cartao(const string& codigo, const string& nome, const string& descricao, const string& coluna) {
     this->codigo.setCodigo(codigo);
     this->nome.setTexto(nome);
     this->descricao.setTexto(descricao);
     this->coluna.setColuna(coluna);
-
 }
 
 string Cartao::visualizarCartao() {
-
     return "Codigo: " + codigo.getCodigo() + "\nNome: " + nome.getTexto() + "\nDescricao: " + descricao.getTexto() + "\nColuna: " + coluna.getColuna();
-
-
 }
 
 void Cartao::moverCartao(const string& coluna) {
@@ -90,18 +89,14 @@ void Cartao::eliminarCartao() {
     nome.setTexto("");
     descricao.setTexto("");
     coluna.setColuna("SOLICITADO");
-
 }
-// ---------------------------------------------------------------------------------]
 
-
-
+// Métodos de CntrIAQuadro
 void CntrIAQuadro::criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) {
     try {
         // Chamada do método do serviço do sistema para criar um quadro.
         cntrISSistema->criarQuadro(codigo, nome, descricao, limite);
         cout << "Quadro criado com sucesso!" << endl;
-
     } catch (const exception& exp) {
         cout << "Erro ao criar quadro: " << exp.what() << endl;
     }
@@ -109,22 +104,8 @@ void CntrIAQuadro::criarQuadro(const string& codigo, const string& nome, const s
 
 void CntrIAQuadro::visualizarQuadro(const string& codigo) {
     try {
-        // 1. Verificar se o código do quadro é válido.
-        Codigo codigoObjeto;
-        if (!codigoObjeto.validarCodigo(codigo)) {
-            cout << "Erro ao ver o quadro: ";
-        }
-
-        // 2. Chamar o método do serviço do sistema para visualizar o quadro.
-        Quadro quadro = cntrISSistema->visualizarQuadro(codigo);
-
-        // 3. Exibir as informações do quadro.
-        cout << "Detalhes do Quadro:" << endl;
-        cout << "Código: " << quadro.getCodigo().getCodigo() << endl;
-        cout << "Nome: " << quadro.getNome().getTexto() << endl;
-        cout << "Descrição: " << quadro.getDescricao().getTexto() << endl;
-        cout << "Limite: " << quadro.getLimite().getLimite() << endl;
-
+        // Implementação para visualizar o quadro
+        // Chame o método do serviço do sistema, por exemplo: cntrISSistema->visualizarQuadro(codigo);
     } catch (const exception& exp) {
         cout << "Erro ao visualizar quadro: " << exp.what() << endl;
     }
@@ -132,84 +113,48 @@ void CntrIAQuadro::visualizarQuadro(const string& codigo) {
 
 void CntrIAQuadro::eliminarQuadro(const string& codigo) {
     try {
-        // 1. Verificar se o código do quadro é válido.
-        if (!Codigo::validarCodigo(codigo)) {
-            throw invalid_argument("Código de quadro inválido.");
-        }
-
-        // 2. Chamar o método do serviço do sistema para eliminar o quadro.
-        cntrISSistema->eliminarQuadro(codigo);
-        cout << "Quadro eliminado com sucesso!" << endl;
-
+        // Implementação para eliminar o quadro
+        // Chame o método do serviço do sistema, por exemplo: cntrISSistema->eliminarQuadro(codigo);
     } catch (const exception& exp) {
         cout << "Erro ao eliminar quadro: " << exp.what() << endl;
     }
 }
 
+// Métodos de CntrIACartao
+void CntrIACartao::criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) {
+    try {
+        // Chamada do método do serviço do sistema para criar um cartao.
+        cntrISSistema->criarCartao(codigoQuadro, codigoCartao, nome, descricao, coluna);
+        cout << "Cartao criado com sucesso!" << endl;
+    } catch (const exception& exp) {
+        cout << "Erro ao criar cartao: " << exp.what() << endl;
+    }
+}
+
 void CntrIACartao::visualizarCartao(const string& codigoQuadro, const string& codigoCartao) {
     try {
-        // 1. Verificar se os códigos são válidos.
-        if (!Codigo::validarCodigo(codigoQuadro) || !Codigo::validarCodigo(codigoCartao)) {
-            throw invalid_argument("Códigos inválidos para visualizar o cartão.");
-        }
-
-        // 2. Chamar o método do serviço do sistema para visualizar o cartão.
-        cntrISSistema->visualizarCartao(codigoQuadro, codigoCartao);
-        // Exiba as informações do cartão conforme necessário.
-
+        // Implementação para visualizar o cartao
+        // Chame o método do serviço do sistema, por exemplo: cntrISSistema->visualizarCartao(codigoQuadro, codigoCartao);
     } catch (const exception& exp) {
-        cout << "Erro ao visualizar cartão: " << exp.what() << endl;
+        cout << "Erro ao visualizar cartao: " << exp.what() << endl;
     }
 }
 
 void CntrIACartao::moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) {
     try {
-        // 1. Verificar se os códigos e a nova coluna são válidos.
-        if (!Codigo::validarCodigo(codigoQuadro) || !Codigo::validarCodigo(codigoCartao) || !Coluna::validarColuna(novaColuna)) {
-            throw invalid_argument("Códigos ou coluna inválidos para mover o cartão.");
-        }
-
-        // 2. Chamar o método do serviço do sistema para mover o cartão.
-        cntrISSistema->moverCartao(codigoQuadro, codigoCartao, novaColuna);
-        cout << "Cartão movido com sucesso para a coluna " << novaColuna << endl;
-
+        // Implementação para mover o cartao
+        // Chame o método do serviço do sistema, por exemplo: cntrISSistema->moverCartao(codigoQuadro, codigoCartao, novaColuna);
     } catch (const exception& exp) {
-        cout << "Erro ao mover cartão: " << exp.what() << endl;
+        cout << "Erro ao mover cartao: " << exp.what() << endl;
     }
 }
 
+// Métodos de CntrISGestor
 void CntrISGestor::eliminarCartao(const string& codigoQuadro, const string& codigoCartao) {
     try {
-        // 1. Verificar se os códigos são válidos.
-        if (!Codigo::validarCodigo(codigoQuadro) || !Codigo::validarCodigo(codigoCartao)) {
-            throw invalid_argument("Códigos inválidos para eliminar o cartão.");
-        }
-
-        // 2. Chamar o método do serviço do sistema para eliminar o cartão.
-        cntrISSistema->eliminarCartao(codigoQuadro, codigoCartao);
-        cout << "Cartão eliminado com sucesso!" << endl;
-
+        // Implementação para eliminar o cartao
+        // Chame o método do serviço do sistema, por exemplo: cntrISSistema->eliminarCartao(codigoQuadro, codigoCartao);
     } catch (const exception& exp) {
-        cout << "Erro ao eliminar cartão: " << exp.what() << endl;
+        cout << "Erro ao eliminar cartao: " << exp.what() << endl;
     }
 }
-/*
-void CntrGestor::apresentarQuadrosECartoes(const std::string& email) {
-    // Aqui você pode chamar os métodos necessários do controlador para criar quadros e cartões.
-    // Certifique-se de adaptar isso às suas necessidades específicas.
-
-    // Criar quadro
-    criarQuadro("Q001", "Quadro 1", "Descrição Quadro 1", "10");
-
-    // Criar cartão
-    criarCartao("Q001", "C001", "Cartão 1", "Descrição Cartão 1", "TO_DO");
-
-    // Visualizar quadro
-    visualizarQuadro("Q001");
-
-    // Visualizar cartão
-    visualizarCartao("Q001", "C001");
-}
-}
- */
-
