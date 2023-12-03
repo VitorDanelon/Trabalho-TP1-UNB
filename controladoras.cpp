@@ -5,85 +5,69 @@
 #include "IAG.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-class ControladoraConta : public ISConta::IAConta {
-public:
-    void visualizarConta() override;
-    void editarConta() override;
-    void eliminarConta() override;
-    void exibirMenuConta();
+void ControladoraConta::setDadosConta(const string& email, const string& nome, const string& senha) {
+    controladoraISConta->setDadosConta(email, nome, senha);
+}
 
-    void editarContaApresentacao();
-    std::string visualizarContaApresentacao();
-    void eliminarContaApresentacao();
-};
-
-
- void ControladoraConta::setDadosConta(const string& email, const string& nome, const string& senha) {
-    this->email.setEmail(email);
-    this->nome.setTexto(nome);
-    this->senha.setSenha(senha);
- }
+ControladoraISConta::~ControladoraISConta() {
+    // Implementação do destrutor, se necessário.
+}
 
 string ControladoraISConta::visualizarConta() const {
     return "Email: " + email.getEmail() + "\nNome: " + nome.getTexto() + "\nSenha: " + senha.getSenha();
 }
 
- void ControladoraISConta::editarConta(const string& novoNome, const string& novaSenha) {
-     nome.setTexto(novoNome);
+void ControladoraISConta::editarConta(const string& novoNome, const string& novaSenha) {
+    nome.setTexto(novoNome);
     senha.setSenha(novaSenha);
 }
 
-void ControladoraISConta::eliminarConta(){
+void ControladoraISConta::eliminarConta() {
     email.setEmail("");
     nome.setTexto("");
     senha.setSenha("");
 }
 
-//void ControladoraConta::setCntrISConta(ISConta *controladoraISConta){
-    //this->controladoraISConta = controladoraISConta;
-//};
-
-
-void ControladoraConta::exibirMenuConta(){
+void ControladoraConta::exibirMenuConta() {
     int opcao;
-        std::cout << "1. Visualizar Conta\n2. Editar Conta\n3. Eliminar Conta\nEscolha uma opcao: ";
-        std::cin >> opcao;
+    cout << "1. Visualizar Conta\n2. Editar Conta\n3. Eliminar Conta\nEscolha uma opção: ";
+    cin >> opcao;
 
-        switch (opcao) {
-            case 1:
-                visualizarConta();
-                break;
-            case 2:
-                editarConta();
-                break;
-            case 3:
-                eliminarConta();
-                break;
-            default:
-                std::cout << "Opcao invalida!" << std::endl;
-                break;
-        }
+    switch (opcao) {
+        case 1:
+            controladoraISConta->visualizarConta();
+            break;
+        case 2:
+            controladoraISConta->editarConta();
+            break;
+        case 3:
+            controladoraISConta->eliminarConta();
+            break;
+        default:
+            cout << "Opção inválida!" << endl;
+            break;
     }
-
-
-};
-
-void ControladoraConta::editarContaApresentacao(){
-    ControladoraISConta.editarConta();
-};
-
-string ControladoraConta::visualizarContaApresentacao(){
-    ControladoraISConta.visualizarConta();
 }
 
-void ControladoraConta::eliminarContaApresentacao(){
-    ControladoraISConta.eliminarConta();
+ControladoraConta::ControladoraConta(ControladoraISConta* cntrISConta) : controladoraISConta(cntrISConta) {}
+
+void ControladoraConta::visualizarConta() {
+    controladoraISConta->visualizarConta();
 }
 
-void ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth){
-        this->controladoraISAuth = controladoraISAuth;
+void ControladoraConta::editarConta() {
+    controladoraISConta->editarConta();
+}
+
+void ControladoraConta::eliminarConta() {
+    controladoraISConta->eliminarConta();
+}
+
+void ControladoraConta::exibirMenuContaApresentacao() {
+    controladoraISConta->exibirMenuContaApresentacao();
 }
 
 bool ControladoraAutenticacao::autenticar(Email *email) {

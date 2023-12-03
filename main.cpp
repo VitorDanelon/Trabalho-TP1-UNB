@@ -50,11 +50,14 @@ int main() {
     //delete stubISAutenticacao;
     cout << endl << "Modulo Conta" << endl;
 
+
+
+
     ControladoraISConta conta;
     conta.setDadosConta(email.getEmail(), "Jose", senha.getSenha());
 
-    IAConta *apresentacaoConta = &conta;
-    apresentacaoConta->exibirMenuContaApresentacao;
+    IAConta* apresentacaoConta = &conta;
+    apresentacaoConta->exibirMenuContaApresentacao();
 
    return 0;
 
