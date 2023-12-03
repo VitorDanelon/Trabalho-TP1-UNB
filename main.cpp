@@ -54,7 +54,7 @@ int main() {
 
 
     ControladoraISConta conta;
-    conta.setDadosConta(email.getEmail(), "Jose", senha.getSenha());
+    conta.setDadosConta(email.getEmail(), "Jose", "senha");
 
     IAConta* apresentacaoConta = &conta;
     apresentacaoConta->exibirMenuContaApresentacao();

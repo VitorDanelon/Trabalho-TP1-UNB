@@ -8,7 +8,7 @@
 #include <string>
 
 using namespace std;
-class ControladoraISConta : public ISConta {
+class ControladoraISConta : public ISConta{
 private:
     Email email;
     Texto nome;
@@ -16,7 +16,7 @@ private:
 
 public:
     void setDadosConta(const string& email, const string& nome, const string& senha);
-    string visualizarConta() const override;
+    std::string visualizarConta() const override;
     void editarConta() override;
     void eliminarConta() override;
     virtual ~ControladoraISConta(); // Adicione o destrutor virtual.

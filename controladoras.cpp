@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 void ControladoraConta::setDadosConta(const string& email, const string& nome, const string& senha) {
     controladoraISConta->setDadosConta(email, nome, senha);
 }
@@ -16,7 +17,7 @@ ControladoraISConta::~ControladoraISConta() {
     // Implementação do destrutor, se necessário.
 }
 
-string ControladoraISConta::visualizarConta() const {
+std::string ControladoraISConta::visualizarConta() const {
     return "Email: " + email.getEmail() + "\nNome: " + nome.getTexto() + "\nSenha: " + senha.getSenha();
 }
 
