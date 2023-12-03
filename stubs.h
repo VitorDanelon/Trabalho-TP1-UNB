@@ -33,13 +33,12 @@ public:
 };
 
 
-class StubIAG : public ISGestor {
+class StubISGestor : public ISGestor {
 private:
     const static std::string TRIGGER_FALHA;
     const static std::string TRIGGER_ERRO_SISTEMA;
 
 public:
-    void exibirQuadrosECartoes(const Email& email);
     void criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) override;
     void visualizarQuadro(const std::string& codigo) override;
     void eliminarQuadro(const std::string& codigo) override;

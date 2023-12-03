@@ -9,8 +9,8 @@
 using namespace std;
 
 class ControladoraISConta: public ISConta{
-private
-        Email email:
+private:
+        Email email;
         Texto nome;
         Senha senha;
 

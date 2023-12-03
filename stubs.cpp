@@ -32,9 +32,6 @@ bool StubISAutenticacao::autenticar(const Email &email, const Senha &senha) {
     return true;
 }
 
-// Definições de valores a serem usados como gatilhos para notificações de erros.
-const std::string StubIAG::TRIGGER_FALHA = "erro@email.com";
-const std::string StubIAG::TRIGGER_ERRO_SISTEMA = "erro.syst@email.com";
 
 // Implementação de métodos de quadro
 void StubIAG::criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) {

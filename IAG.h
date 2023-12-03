@@ -20,7 +20,7 @@ class ISGestor;
 
 class IAG {
 public:
-    virtual void exibirQuadrosECartoes(const Email& email) = 0;
+
     virtual void criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) = 0;
     virtual void visualizarQuadro(const std::string& codigo) = 0;
     virtual void eliminarQuadro(const std::string& codigo) = 0;
@@ -33,7 +33,6 @@ public:
 
 class ISGestor {
 public:
-    virtual void exibirQuadrosECartoes(const Email& email) = 0;
     virtual void criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) = 0;
     virtual void visualizarQuadro(const std::string& codigo) = 0;
     virtual void eliminarQuadro(const std::string& codigo) = 0;

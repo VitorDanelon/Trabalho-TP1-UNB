@@ -2,6 +2,17 @@
 
 // Interface entre M�dulo Principal e a Classe Conta
 class ISConta {
+
+    class IAConta{
+    //virtual void exibirMenuConta(ISConta*) = 0;
+    //virtual ~IAConta() = default;
+    virtual void visualizarConta() = 0;
+    virtual void editarConta() = 0;
+    virtual void eliminarConta() = 0;
+    void exibirMenuContaApresentacao();
+    virtual ~IApresentacaoConta() = default;
+
+};
 public:
     //virtual std::string visualizarConta() const = 0;
     //virtual void editarConta(const std::string& novoNome, const std::string& novaSenha) = 0;
@@ -12,13 +23,4 @@ public:
     virtual void eliminarConta() = 0;
     virtual ~IServicoConta() = default;
 };
-class IAConta{
-    //virtual void exibirMenuConta(ISConta*) = 0;
-    //virtual ~IAConta() = default;
-    virtual void visualizarConta() = 0;
-    virtual void editarConta() = 0;
-    virtual void eliminarConta() = 0;
-    void exibirMenuContaApresentacao();
-    virtual ~IApresentacaoConta() = default;
 
-};
