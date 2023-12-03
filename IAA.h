@@ -1,8 +1,8 @@
-#ifndef INTERFACES_H_INCLUDED
-#define INTERFACES_H_INCLUDED
-
+#ifndef IAA_H_INCLUDED
+#define IAA_H_INCLUDED
 #include <string>
 #include "dominios.h"
+#include "stubs.h"
 
 class ISAutenticacao;
 
@@ -15,7 +15,7 @@ public:
 
 class ISAutenticacao{
 public:
-    virtual bool autenticar(const Email&, const Senha&) = 0;    // M�todo por meio do qual � solicitado servi�o.
+    virtual bool autenticar(const Email&, const Senha&) = 0;    // Metodo por meio do qual � solicitado servi�o.
     virtual ~ISAutenticacao() = default;
 };
 

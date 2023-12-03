@@ -7,6 +7,18 @@
 #include <string>
 using namespace std;
 
+class ControladoraConta : public ISConta::IAConta {
+public:
+    void visualizarConta() override;
+    void editarConta() override;
+    void eliminarConta() override;
+    void exibirMenuConta();
+
+    void editarContaApresentacao();
+    std::string visualizarContaApresentacao();
+    void eliminarContaApresentacao();
+};
+
 
  void ControladoraConta::setDadosConta(const string& email, const string& nome, const string& senha) {
     this->email.setEmail(email);
@@ -64,7 +76,8 @@ void ControladoraConta::editarContaApresentacao(){
 
 string ControladoraConta::visualizarContaApresentacao(){
     ControladoraISConta.visualizarConta();
-};
+}
+
 void ControladoraConta::eliminarContaApresentacao(){
     ControladoraISConta.eliminarConta();
 }

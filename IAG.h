@@ -4,14 +4,6 @@
 
 #include "dominios.h"
 
-// -------------------------------------------------------------------------------------------
-// Declaração de interface para serviço de autenticação provido pela camada de serviço.
-
-class ISAutenticacao {
-public:
-    virtual bool autenticar(const Email&, const Senha&) = 0;
-    virtual ~ISAutenticacao() {}  // Destrutor virtual.
-};
 
 // -------------------------------------------------------------------------------------------
 // Declaração de interface para serviço de quadro provido pela camada de serviço.

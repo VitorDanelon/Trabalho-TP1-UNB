@@ -2,6 +2,8 @@
 #include "stubs.h"
 #include "controladoras.h"
 #include "IAA.h"
+#include "IAC.h"
+#include "IAG.h"
 #include <iostream>
 #include "dominios.h"
 #include "stubs.h"
