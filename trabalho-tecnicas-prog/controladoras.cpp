@@ -6,6 +6,67 @@
 
 using namespace std;
 
+void ControladoraConta::setDadosConta(const string email, const string nome, const string senha) {
+    this->email.setEmail(email);
+    this->nome.setTexto(nome);
+    this->senha.setSenha(senha);
+}
+
+void ControladoraConta::exibirMenuContaApresentacao(){
+    int opcao;
+        std::cout << "1. Visualizar Conta\n2. Editar Conta\n3. Eliminar Conta\n Escolha uma opcao: ";
+        std::cin >> opcao;
+
+        switch (opcao) {
+        case 1:
+            visualizarConta();
+            break;
+        case 2:
+            editarConta();
+            break
+        case 3:
+            eliminarConta();
+            break
+        default:
+            std::cout << "Opcao Invalida!" << std::endl;
+            break;
+        }
+}
+
+void ControladoraConta::editarContaApresentacao() {
+    ControladoraISConta.editarConta();
+
+}
+
+void ControladoraConta::visualizarConta() {
+    ControladoraISConta.visualizarConta();
+
+}
+
+void ControladoraConta::eliminarConta() {
+    ControladoraISConta.eliminarConta();
+
+}
+
+string ControladoraISConta::visualizarContaServico() {
+    return "Email: " + email.getEmail() + "\nNome: " + nome.getTexto() + "\nSenha: " + senha.getSenha();
+
+}
+
+void ControladoraISConta::editarContaServico(const string novoNome, const string novaSenha) {
+    nome.setTexto(novoNome);
+    senha.setSenha(novaSenha);
+
+}
+
+void ControladoraISConta::eliminarContaServico() {
+    email.setEmail("");
+    nome.setTexto("");
+    senha.setSenha("");
+
+}
+
+
 void ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth){
         this->controladoraISAuth = controladoraISAuth;
 }

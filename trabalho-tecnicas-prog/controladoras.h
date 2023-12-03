@@ -2,13 +2,12 @@
 #define ENTIDADES_H_INCLUDED
 
 #include "dominios.h"
-
+#include "IAC.h"
 #include "IAA.h"
 #include <stdexcept>
 #include <string>
 
 using namespace std;
-
 
 class ControladoraAutenticacao : public IAAutenticacao {
     private:
@@ -20,6 +19,29 @@ class ControladoraAutenticacao : public IAAutenticacao {
         void setCntrISAutenticacao(ISAutenticacao*);
 };
 
+class ControladoraISConta: public ISConta{
+private:
+    Email email;
+    Texto nome;
+    Senha senha;
+public:
+    void setDadosConta(const string email, const string nome, const string senha);
+    string visualizarConta() const;
+    void editarConta(const string novoNome, const string novaSenha);
+    void eliminarConta();
+};
+
+class ControladoraConta: public IAConta {
+private:
+    ISConta *controladoraISConta;
+
+public:
+    string visualizarConta();
+    void editarContaApresentacao();
+    void eliminarContaApresentacao();
+    void exibirMenuContaApresentacao();
+
+};
 // void inline ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth){
 //         this->controladoraISAuth = controladoraISAuth;
 // };
