@@ -2,8 +2,9 @@
 #define STUBS_H_INCLUDED
 
 #include "dominios.h"
-#include "IAG.h"
 #include "IAA.h"
+#include "IAG.h"
+#include "IAC.h"
 #include <stdexcept>
 #include <iostream>
 #include <typeinfo>

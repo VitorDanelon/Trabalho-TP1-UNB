@@ -1,9 +1,10 @@
-#include "IAA.h"
-#include "IAG.h"
-#include "IAC.h"
+#include <iostream>
+#include "dominios.h"
 #include "stubs.h"
 #include "controladoras.h"
-#include <iostream>
+#include "IAG.h"
+#include "IAC.h"
+#include "IAA.h"
 
 using namespace std;
 

@@ -1,6 +1,7 @@
 #ifndef INTERFACES_H_INCLUDED
 #define INTERFACES_H_INCLUDED
 #include <string>
+#include "IAA.h"
 #include "dominios.h"
 
 // Interface entre Módulo Principal e a Classe Conta
