@@ -1,5 +1,7 @@
 #include <string>
-
+//222033157
+//Tentativa de implementação Interface de apresentação de conta.
+/*
 class ISConta;
 // Interface entre Módulo Principal e a Classe Conta
 class IAConta {
@@ -17,3 +19,4 @@ public:
     virtual void eliminarConta() = 0;
     virtual ~ISConta() = default;
 };
+*/

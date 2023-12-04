@@ -31,6 +31,24 @@ public:
     bool autenticar(const Email&, const Senha&);
 };
 
+// Tentativas do Trabalho 2 Stubs
+/*
+//202023940
+class StubISGestor : public ISGestor {
+private:
+    const static std::string TRIGGER_FALHA;
+    const static std::string TRIGGER_ERRO_SISTEMA;
+
+public:
+    void criarQuadro(const std::string& codigo, const std::string& nome, const std::string& descricao, const std::string& limite) override;
+    void visualizarQuadro(const std::string& codigo) override;
+    void eliminarQuadro(const std::string& codigo) override;
+    void criarCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& nome, const std::string& descricao, const std::string& coluna) override;
+    void visualizarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) override;
+    void moverCartao(const std::string& codigoQuadro, const std::string& codigoCartao, const std::string& novaColuna) override;
+    void eliminarCartao(const std::string& codigoQuadro, const std::string& codigoCartao) override;
+};
+*/
 
 #endif // STUBS_H_INCLUDED
 

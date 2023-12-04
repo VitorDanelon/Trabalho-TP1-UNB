@@ -1,10 +1,8 @@
-// Arquivo interfaces\IAA.h
 #ifndef INTERFACES_H_INCLUDED
 #define INTERFACES_H_INCLUDED
-
 #include <string>
 #include "dominios.h"
-
+//222031822
 
 class ISAutenticacao;
 

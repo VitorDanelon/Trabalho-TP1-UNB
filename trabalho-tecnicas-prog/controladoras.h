@@ -1,6 +1,5 @@
 #ifndef ENTIDADES_H_INCLUDED
 #define ENTIDADES_H_INCLUDED
-
 #include "dominios.h"
 #include "IAC.h"
 #include "IAA.h"
@@ -8,7 +7,9 @@
 #include <string>
 
 using namespace std;
-
+//222031822
+//222033157
+//202023940
 class ControladoraAutenticacao : public IAAutenticacao {
     private:
         // Email email; /**< Email associado � conta. */
@@ -19,37 +20,6 @@ class ControladoraAutenticacao : public IAAutenticacao {
         void setCntrISAutenticacao(ISAutenticacao*);
 };
 
-class ControladoraISConta: public ISConta{
-private:
-    Email email;
-    Texto nome;
-    Senha senha;
-public:
-    void setDadosConta(const string email, const string nome, const string senha);
-    string visualizarConta() const;
-    void editarConta(const string novoNome, const string novaSenha);
-    void eliminarConta();
-};
-
-class ControladoraConta: public IAConta {
-private:
-    ISConta *controladoraISConta;
-
-public:
-    string visualizarConta();
-    void editarContaApresentacao();
-    void eliminarContaApresentacao();
-    void exibirMenuContaApresentacao();
-
-};
-// void inline ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth){
-//         this->controladoraISAuth = controladoraISAuth;
-// };
-
-//222031822
-/**
- * @brief Classe que representa o quadro Kanban.
- */
 class Quadro{
     private:
         Codigo codigo; /**< C�digo associado ao quadro. */
@@ -122,7 +92,56 @@ public:
     void eliminarCartao();
 };
 
+// Tentativas do Trabalho 2
+/*
+//222033157
+class ControladoraISConta: public ISConta{
+private:
+    Email email;
+    Texto nome;
+    Senha senha;
+public:
+    void setDadosConta(const string email, const string nome, const string senha);
+    string visualizarConta() const;
+    void editarConta(const string novoNome, const string novaSenha);
+    void eliminarConta();
+};
 
-//Luca classe cartao
+class ControladoraConta: public IAConta {
+private:
+    ISConta *controladoraISConta;
+
+public:
+    string visualizarConta();
+    void editarContaApresentacao();
+    void eliminarContaApresentacao();
+    void exibirMenuContaApresentacao();
+
+};
+// void inline ControladoraAutenticacao::setCntrISAutenticacao(ISAutenticacao *controladoraISAuth){
+//         this->controladoraISAuth = controladoraISAuth;
+// };
+
+//222031822
+/**
+ * @brief Classe que representa o quadro Kanban.
+
+ //202023940
+ class CntrIAG : public ISGestor {
+private:
+    IAG* CntrIAG;
+
+public:
+    void criarQuadro(const string& codigo, const string& nome, const string& descricao, const string& limite) override;
+    void visualizarQuadro(const string& codigo) override;
+    void eliminarQuadro(const string& codigo) override;
+    void setCntrISQuadro(IAG* cntrIAQuadro);
+    void criarCartao(const string& codigoQuadro, const string& codigoCartao, const string& nome, const string& descricao, const string& coluna) override;
+    void visualizarCartao(const string& codigoQuadro, const string& codigoCartao) override;
+    void moverCartao(const string& codigoQuadro, const string& codigoCartao, const string& novaColuna) override;
+    void eliminarCartao(const string& codigoQuadro, const string& codigoCartao) override;
+};
+ */
+
 
 #endif

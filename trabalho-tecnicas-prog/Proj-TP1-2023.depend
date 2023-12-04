@@ -30,7 +30,7 @@
 
 1701134584 source:c:\users\rcs\desktop\trab-tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\testes.cpp
 
-1701632518 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
+1701643886 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\main.cpp
 	<iostream>
 	"dominios.h"
 	"stubs.h"
@@ -126,7 +126,7 @@
 1701625881 source:c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\stubs.cpp
 	"stubs.h"
 
-1701632518 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\stubs.h
+1701643229 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\stubs.h
 	"dominios.h"
 	"IAA.h"
 	<stdexcept>
@@ -137,13 +137,17 @@
 	<string>
 	"dominios.h"
 
-1701632518 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\iaa.h
+1701641768 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\iaa.h
 	<string>
 	"dominios.h"
 
-1701636611 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.h
+1701643886 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\controladoras.h
 	"dominios.h"
+	"IAC.h"
 	"IAA.h"
 	<stdexcept>
+	<string>
+
+1701643886 c:\users\vitor\onedrive\documents\unb\tp1\trabalho-tp1-unb\trabalho-tecnicas-prog\iac.h
 	<string>
 
